@@ -4,56 +4,1294 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>London Training Convention 2026</title>
+<title>Colombo Training Convention 2026</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
 :root{
-  --ocean:#0877B9;--ocean-deep:#07536D;--teal:#0A7C78;--sun:#F7C94B;--sunset:#F37B45;
-  --red-error:#C94242;--ink:#173043;--muted:#617683;--white:#FFFFFF;--success:#148A63;
+  --ocean:#0877B9;
+  --ocean-deep:#07536D;
+  --teal:#0A7C78;
+
+  --sun:#F7C94B;
+  --sunset:#F37B45;
+  --coral:#ED6A58;
+
+  --ink:#173043;
+  --muted:#617683;
+
+  --white:#FFFFFF;
+
+  --success:#148A63;
+  --error:#C94242;
+
   --font-body:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   --font-display:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  --hero-bg-image:url('https://iili.io/nF0X6ZB.png');
-  --poster-ar:1.75587;--safe-fraction:.45;
-  --safe-y:calc(min(calc(100vw * var(--poster-ar)),100vh) * var(--safe-fraction));
+
+  /*
+    OPTIONAL:
+    Replace none with your final Colombo poster/background.
+
+    Example:
+    --hero-bg-image:url('https://your-image-link.com/colombo.jpg');
+  */
+  --hero-bg-image:none;
+
+  --poster-ar:1.75587;
+  --safe-fraction:.43;
+
+  --safe-y:
+    calc(
+      min(
+        calc(100vw * var(--poster-ar)),
+        100vh
+      )
+      *
+      var(--safe-fraction)
+    );
 }
-@supports (height:100dvh){:root{--safe-y:calc(min(calc(100vw * var(--poster-ar)),100dvh) * var(--safe-fraction));}}
-*{margin:0;padding:0;box-sizing:border-box}html,body{height:100%}
-body{position:relative;min-height:100vh;overflow-x:hidden;font-family:var(--font-body);color:var(--ink);background:linear-gradient(180deg,#BFEAFF 0%,#FFF1B8 48%,#FFD6B2 72%,#F5FBFB 100%)}
-.hero-bg{position:fixed;inset:0;z-index:0;pointer-events:none;background-image:var(--hero-bg-image),linear-gradient(145deg,#9CE2FF 0%,#E5F8FF 35%,#FFE17A 65%,#FF9A62 100%);background-size:contain,cover;background-position:top center,center;background-repeat:no-repeat,no-repeat}
-.bg-overlay{position:fixed;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(255,255,255,0) 0%,rgba(255,255,255,0) calc(var(--safe-y) - 80px),rgba(247,252,252,.64) calc(var(--safe-y) + 20px),rgba(247,252,252,.94) 78%,rgba(247,252,252,.99) 100%)}
-.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-.confetti{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:80}
-.page{position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:var(--safe-y) 18px 30px;text-align:center}@supports(height:100dvh){.page{min-height:100dvh}}
-.countdown-wrap{width:min(100%,390px);margin:0 auto 16px;padding:14px 16px 15px;border:1px solid rgba(255,255,255,.82);border-radius:20px;background:rgba(255,255,255,.78);-webkit-backdrop-filter:blur(16px) saturate(135%);backdrop-filter:blur(16px) saturate(135%);box-shadow:0 12px 34px rgba(12,79,103,.14);opacity:0;animation:rise .55s .05s ease both}
-.countdown-label{display:flex;align-items:center;justify-content:center;gap:7px;font-family:var(--font-display);font-weight:800;font-size:.72rem;letter-spacing:.055em;text-transform:uppercase;color:var(--ocean-deep);margin-bottom:10px;text-shadow:none}.countdown-label:before{content:'';width:7px;height:7px;border-radius:50%;background:var(--sunset);box-shadow:0 0 0 5px rgba(243,123,69,.12)}
-.countdown-stats{display:flex;align-items:center;justify-content:center;gap:8px}.stat-box{display:flex;flex-direction:column;align-items:center;justify-content:center;width:62px;height:58px;border-radius:16px;background:rgba(238,249,252,.94);border:1px solid rgba(8,119,185,.12)}.stat-num{font-family:var(--font-display);font-weight:800;font-size:1.34rem;line-height:1;color:var(--ocean-deep);font-variant-numeric:tabular-nums}.stat-label{margin-top:4px;font-family:var(--font-body);font-weight:700;font-size:.52rem;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}.stat-sep{font-family:var(--font-display);font-weight:800;color:var(--sunset);font-size:1rem}
-.countdown-done{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.9);color:var(--ocean-deep);font-family:var(--font-display);font-weight:800;font-size:.85rem;padding:9px 18px;border-radius:999px;border:1px solid rgba(8,119,185,.16)}.countdown-done:before{content:'';width:8px;height:8px;border-radius:50%;background:var(--sunset);flex-shrink:0}
-.card{position:relative;width:100%;max-width:390px;margin:0 auto;padding:26px 20px 22px;overflow:hidden;text-align:center;border-radius:26px;border:1px solid rgba(255,255,255,.92);background:rgba(255,255,255,.89);-webkit-backdrop-filter:blur(20px) saturate(140%);backdrop-filter:blur(20px) saturate(140%);box-shadow:0 24px 60px rgba(12,79,103,.16),0 2px 8px rgba(12,79,103,.06);opacity:0;animation:rise .6s .12s ease both}.card:before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--ocean) 0%,var(--teal) 38%,var(--sun) 67%,var(--sunset) 100%)}
-.divider-gem{display:inline-flex;align-items:center;justify-content:center;gap:8px;margin:0 0 10px;padding:7px 12px;border-radius:999px;background:#EDF8FC;color:var(--ocean-deep);font-family:var(--font-display);font-weight:800;font-size:.82rem;letter-spacing:.01em}.divider-gem:before,.divider-gem:after{display:none}.divider-gem .gem{color:var(--sunset);font-size:.48rem}.card-instruction{font-family:var(--font-body);font-size:.87rem;line-height:1.5;color:var(--muted);max-width:310px;margin:0 auto 19px}
-input{display:block;width:100%;min-height:50px;padding:13px 15px;font-size:16px;font-family:var(--font-body);font-weight:600;color:var(--ink);text-align:center;border-radius:15px;border:1.5px solid #D8E7EC;outline:none;background:#fff;margin-bottom:12px;transition:border-color .18s ease,box-shadow .18s ease,background .18s ease}input:focus{border-color:var(--ocean);box-shadow:0 0 0 4px rgba(8,119,185,.11);background:#FBFEFF}input::placeholder{color:#8AA0AA;font-weight:500}input[aria-invalid=true]{border-color:var(--red-error);box-shadow:0 0 0 4px rgba(201,66,66,.1)}
-button{font-family:var(--font-body)}#btn{width:100%;min-height:50px;padding:13px;border:0;border-radius:15px;cursor:pointer;background:linear-gradient(110deg,var(--ocean) 0%,var(--teal) 100%);color:#fff;font-weight:800;font-size:.94rem;letter-spacing:0;box-shadow:0 12px 24px rgba(8,119,185,.22);transition:transform .15s ease,box-shadow .15s ease,filter .15s ease}#btn:hover{transform:translateY(-1px);box-shadow:0 16px 28px rgba(8,119,185,.25);filter:saturate(1.08)}#btn:active{transform:translateY(0)}#btn:disabled{cursor:not-allowed;transform:none}#btn.success-state{background:#EBF8F2;color:var(--success);border:1px solid #BDE9D8;box-shadow:none}button:focus-visible,input:focus-visible{outline:2px solid var(--ocean);outline-offset:2px}
-.loader{display:none;margin-top:14px;align-items:center;justify-content:center;gap:8px;font-family:var(--font-body);font-size:.86rem;font-weight:700;color:var(--ocean-deep)}.loader.show{display:flex}.spinner{width:15px;height:15px;border:2px solid rgba(8,119,185,.18);border-top-color:var(--ocean);border-radius:50%;display:inline-block;animation:spin .75s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
-#msg{margin-top:12px;text-align:center;font-weight:700;font-family:var(--font-body);font-size:.86rem;line-height:1.4;min-height:0}.success{color:var(--success)}.error{color:var(--red-error)}
-.downloads{display:none;margin-top:18px}.downloads.show{display:block}.docs-list{display:flex;flex-direction:column;gap:9px;text-align:left}.doc-row{display:flex;align-items:center;gap:12px;min-height:64px;padding:12px;border-radius:17px;text-decoration:none;background:#fff;border:1px solid #DDECEF;color:var(--ink);box-shadow:0 5px 14px rgba(25,88,108,.055);transition:transform .15s ease,border-color .15s ease,box-shadow .15s ease,background .15s ease}a.doc-row:hover,a.doc-row:focus-visible{transform:translateY(-1px);background:#FFFCF8;border-color:rgba(243,123,69,.55);box-shadow:0 10px 22px rgba(25,88,108,.09)}.doc-row.pending{background:#F8FAFA;border-color:#E7EEEE;cursor:default;box-shadow:none}.doc-icon{flex-shrink:0;width:40px;height:40px;border-radius:13px;display:flex;align-items:center;justify-content:center;color:var(--ocean-deep);background:linear-gradient(145deg,#E7F8FF,#F1FBF7);border:1px solid rgba(8,119,185,.1)}.doc-row.pending .doc-icon{color:#91A2A8;background:#EEF2F3;border-color:#E3E9EA}.doc-icon svg{width:18px;height:18px}.doc-text{display:flex;flex-direction:column;gap:3px;min-width:0;flex:1}.doc-title{font-weight:800;font-size:.88rem;color:#173D4C}.doc-row.pending .doc-title{color:#70838B}.doc-desc{font-size:.74rem;color:var(--muted);line-height:1.35}.doc-desc.doc-soon{color:#A37545;font-style:normal;font-weight:700}.doc-chevron{flex-shrink:0;width:18px;height:18px;display:flex;align-items:center;justify-content:center;border-radius:50%;color:var(--sunset);background:#FFF2E9;opacity:1}.doc-status{flex-shrink:0;width:17px;height:17px;color:#A0AEB3;opacity:1}
-.reset-link{margin-top:15px;background:transparent;border:0;box-shadow:none;padding:6px 4px;width:auto;font-family:var(--font-body);font-size:.78rem;font-weight:700;letter-spacing:0;color:var(--ocean-deep);text-decoration:underline;text-underline-offset:3px;cursor:pointer}.reset-link:hover{color:var(--ocean)}.reset-link[hidden]{display:none}
-.footer-note{margin-top:auto;padding-top:26px;font-family:var(--font-display);font-size:.83rem;font-weight:800;letter-spacing:.02em;color:#24596A;text-shadow:0 1px 8px rgba(255,255,255,.8)}
-@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
-.toast{position:fixed;left:50%;top:14px;transform:translate(-50%,-8px);z-index:100;pointer-events:none;white-space:nowrap;max-width:90vw;background:rgba(255,255,255,.94);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.9);border-radius:999px;padding:10px 16px;color:var(--ocean-deep);font-family:var(--font-body);font-size:.82rem;font-weight:800;box-shadow:0 12px 30px rgba(12,79,103,.18);opacity:0;transition:opacity .25s ease,transform .25s ease}.toast.show{opacity:1;transform:translate(-50%,0)}
-.popup-overlay{display:none;position:fixed;inset:0;z-index:90;align-items:center;justify-content:center;background:rgba(8,50,65,.48);-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);padding:20px}.popup-overlay.show{display:flex}.popup-box{position:relative;background:rgba(255,255,255,.97);border:1px solid rgba(255,255,255,.92);border-radius:24px;padding:18px;max-width:480px;width:100%;max-height:86vh;display:flex;flex-direction:column;gap:12px;box-shadow:0 30px 70px rgba(7,83,109,.28)}.popup-box:before{content:'';position:absolute;left:18px;right:18px;top:0;height:4px;border-radius:0 0 4px 4px;background:linear-gradient(90deg,var(--ocean),var(--sun),var(--sunset))}.popup-eyebrow{margin:0;background:transparent;padding:2px;color:var(--ocean-deep)}.popup-close{position:absolute;top:-12px;right:-8px;width:36px;height:36px;border-radius:50%;border:0;cursor:pointer;background:var(--sunset);color:#fff;font-size:17px;line-height:1;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(243,123,69,.28);z-index:2}.popup-close:hover{opacity:.94}.popup-well{background:#F4F8F9;border:1px solid #E2EDEF;border-radius:16px;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:7px}.popup-loading{display:flex;align-items:center;justify-content:center;gap:8px;padding:38px 12px;font-family:var(--font-body);font-size:.86rem;font-weight:700;color:var(--ocean-deep)}.popup-loading .spinner{border-color:rgba(8,119,185,.18);border-top-color:var(--ocean)}.popup-well iframe{width:100%;height:56vh;border:none;border-radius:11px;background:#fff}.popup-well img{display:block;width:auto;height:auto;max-width:100%;max-height:70vh;border-radius:11px;background:#fff;object-fit:contain}
-@media(min-width:600px){.card{max-width:420px;padding:30px 28px 25px}.countdown-wrap{max-width:420px}.stat-box{width:66px;height:60px}.stat-num{font-size:1.42rem}}
-@media(max-width:380px){.page{padding-left:13px;padding-right:13px}.card{padding:24px 16px 20px}.doc-row{padding:10px}.doc-desc{font-size:.71rem}}
-@media(max-width:480px){.popup-well iframe{height:49vh}.popup-well img{max-height:57vh}}
-@media(orientation:landscape) and (max-height:500px){.hero-bg{position:absolute;inset:auto;top:0;left:0;right:0;height:62vh}.bg-overlay{display:none}.page{padding-top:calc(62vh + 16px)}}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}}
+
+@supports (height:100dvh){
+  :root{
+    --safe-y:
+      calc(
+        min(
+          calc(100vw * var(--poster-ar)),
+          100dvh
+        )
+        *
+        var(--safe-fraction)
+      );
+  }
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html,
+body{
+  min-height:100%;
+}
+
+body{
+  overflow-x:hidden;
+  font-family:var(--font-body);
+  color:var(--ink);
+  background:#F5FBFC;
+}
+
+
+/* =========================================================
+   TROPICAL COLOMBO BACKGROUND
+   ========================================================= */
+
+.hero-bg{
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+
+  background-image:
+    var(--hero-bg-image),
+
+    radial-gradient(
+      circle at 84% 11%,
+      rgba(255,220,72,.95) 0,
+      rgba(255,220,72,.70) 9%,
+      rgba(255,220,72,0) 24%
+    ),
+
+    radial-gradient(
+      circle at 9% 28%,
+      rgba(39,177,224,.42) 0,
+      rgba(39,177,224,0) 30%
+    ),
+
+    linear-gradient(
+      155deg,
+      #84D9FA 0%,
+      #CDEFFF 27%,
+      #FFF1A5 56%,
+      #FFC073 76%,
+      #F58A60 100%
+    );
+
+  background-size:
+    contain,
+    100% 100%,
+    100% 100%,
+    100% 100%;
+
+  background-position:
+    top center,
+    center,
+    center,
+    center;
+
+  background-repeat:
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    no-repeat;
+}
+
+
+/* light transition from artwork into UI */
+
+.bg-overlay{
+  position:fixed;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0) 0%,
+      rgba(255,255,255,0) calc(var(--safe-y) - 80px),
+      rgba(248,252,251,.50) calc(var(--safe-y) + 15px),
+      rgba(248,252,251,.90) 76%,
+      rgba(248,252,251,.98) 100%
+    );
+}
+
+
+.sr-only{
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  white-space:nowrap;
+  border:0;
+}
+
+
+.confetti{
+  position:fixed;
+  inset:0;
+  z-index:80;
+  pointer-events:none;
+  overflow:hidden;
+}
+
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.page{
+  position:relative;
+  z-index:2;
+
+  min-height:100vh;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+
+  padding:
+    var(--safe-y)
+    18px
+    30px;
+}
+
+@supports (height:100dvh){
+  .page{
+    min-height:100dvh;
+  }
+}
+
+
+/* =========================================================
+   COUNTDOWN
+   ========================================================= */
+
+.countdown-wrap{
+  width:min(100%,400px);
+
+  margin:
+    0 auto 16px;
+
+  padding:
+    14px 16px 15px;
+
+  border:
+    1px solid
+    rgba(255,255,255,.85);
+
+  border-radius:20px;
+
+  background:
+    rgba(255,255,255,.79);
+
+  -webkit-backdrop-filter:
+    blur(16px)
+    saturate(135%);
+
+  backdrop-filter:
+    blur(16px)
+    saturate(135%);
+
+  box-shadow:
+    0 12px 34px
+    rgba(12,79,103,.14);
+}
+
+
+.countdown-label{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+
+  margin-bottom:10px;
+
+  font-family:var(--font-display);
+  font-size:.74rem;
+  font-weight:800;
+
+  letter-spacing:.045em;
+  text-transform:uppercase;
+
+  color:var(--ocean-deep);
+}
+
+
+.countdown-label::before{
+  content:"";
+
+  width:7px;
+  height:7px;
+
+  border-radius:50%;
+
+  background:var(--sunset);
+
+  box-shadow:
+    0 0 0 5px
+    rgba(243,123,69,.12);
+}
+
+
+.countdown-stats{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+}
+
+
+.stat-box{
+  width:62px;
+  height:58px;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:16px;
+
+  background:
+    rgba(239,250,253,.95);
+
+  border:
+    1px solid
+    rgba(8,119,185,.12);
+}
+
+
+.stat-num{
+  font-family:var(--font-display);
+  font-size:1.35rem;
+  line-height:1;
+  font-weight:800;
+
+  color:var(--ocean-deep);
+
+  font-variant-numeric:
+    tabular-nums;
+}
+
+
+.stat-label{
+  margin-top:4px;
+
+  font-size:.54rem;
+  font-weight:700;
+
+  color:var(--muted);
+
+  letter-spacing:.09em;
+  text-transform:uppercase;
+}
+
+
+.stat-sep{
+  color:var(--sunset);
+  font-size:1rem;
+  font-weight:800;
+}
+
+
+.countdown-done{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+
+  padding:
+    9px 18px;
+
+  border-radius:999px;
+
+  background:
+    rgba(255,255,255,.90);
+
+  border:
+    1px solid
+    rgba(8,119,185,.16);
+
+  color:var(--ocean-deep);
+
+  font-family:var(--font-display);
+  font-size:.86rem;
+  font-weight:800;
+}
+
+
+/* =========================================================
+   CARD
+   ========================================================= */
+
+.card{
+  position:relative;
+  overflow:hidden;
+
+  width:100%;
+  max-width:400px;
+
+  padding:
+    26px 20px 22px;
+
+  border-radius:26px;
+
+  border:
+    1px solid
+    rgba(255,255,255,.92);
+
+  background:
+    rgba(255,255,255,.90);
+
+  -webkit-backdrop-filter:
+    blur(20px)
+    saturate(140%);
+
+  backdrop-filter:
+    blur(20px)
+    saturate(140%);
+
+  box-shadow:
+    0 24px 60px
+    rgba(12,79,103,.16),
+    0 2px 8px
+    rgba(12,79,103,.06);
+}
+
+
+.card::before{
+  content:"";
+
+  position:absolute;
+
+  top:0;
+  left:0;
+  right:0;
+
+  height:5px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--ocean) 0%,
+      var(--teal) 35%,
+      var(--sun) 67%,
+      var(--sunset) 100%
+    );
+}
+
+
+.section-kicker{
+  display:inline-flex;
+  align-items:center;
+
+  gap:7px;
+
+  margin-bottom:8px;
+
+  padding:
+    6px 10px;
+
+  border-radius:999px;
+
+  background:#EDF8FC;
+
+  color:var(--ocean-deep);
+
+  font-size:.67rem;
+  font-weight:800;
+
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+
+
+.section-kicker::before{
+  content:"";
+
+  width:7px;
+  height:7px;
+
+  border-radius:50%;
+
+  background:var(--sun);
+}
+
+
+.card-title{
+  font-family:var(--font-display);
+
+  font-size:1.34rem;
+  font-weight:800;
+
+  line-height:1.22;
+
+  letter-spacing:-.025em;
+
+  color:#123A4A;
+}
+
+
+.card-instruction{
+  max-width:310px;
+
+  margin:
+    7px auto 19px;
+
+  text-align:center;
+
+  color:var(--muted);
+
+  font-size:.87rem;
+  line-height:1.5;
+}
+
+
+/* =========================================================
+   INPUT
+   ========================================================= */
+
+.input-wrap{
+  position:relative;
+  margin-bottom:12px;
+}
+
+
+.input-icon{
+  position:absolute;
+
+  left:14px;
+  top:50%;
+
+  width:18px;
+  height:18px;
+
+  transform:
+    translateY(-50%);
+
+  color:var(--ocean);
+
+  pointer-events:none;
+}
+
+
+input{
+  display:block;
+
+  width:100%;
+  min-height:50px;
+
+  padding:
+    13px 14px
+    13px 44px;
+
+  border-radius:15px;
+
+  border:
+    1.5px solid
+    #D8E7EC;
+
+  outline:none;
+
+  background:#FFFFFF;
+
+  color:var(--ink);
+
+  font-family:var(--font-body);
+  font-size:16px;
+  font-weight:600;
+
+  transition:
+    border-color .18s ease,
+    box-shadow .18s ease;
+}
+
+
+input::placeholder{
+  color:#8AA0AA;
+  font-weight:500;
+}
+
+
+input:focus{
+  border-color:var(--ocean);
+
+  box-shadow:
+    0 0 0 4px
+    rgba(8,119,185,.11);
+}
+
+
+input[aria-invalid="true"]{
+  border-color:var(--error);
+
+  box-shadow:
+    0 0 0 4px
+    rgba(201,66,66,.1);
+}
+
+
+/* =========================================================
+   MAIN BUTTON
+   ========================================================= */
+
+#btn{
+  width:100%;
+  min-height:50px;
+
+  border:0;
+
+  border-radius:15px;
+
+  cursor:pointer;
+
+  color:#FFFFFF;
+
+  background:
+    linear-gradient(
+      110deg,
+      var(--ocean) 0%,
+      var(--teal) 100%
+    );
+
+  font-family:var(--font-body);
+  font-size:.94rem;
+  font-weight:800;
+
+  box-shadow:
+    0 12px 24px
+    rgba(8,119,185,.22);
+
+  transition:
+    transform .15s ease,
+    box-shadow .15s ease;
+}
+
+
+#btn:hover{
+  transform:
+    translateY(-1px);
+
+  box-shadow:
+    0 16px 28px
+    rgba(8,119,185,.25);
+}
+
+
+#btn:disabled{
+  cursor:not-allowed;
+}
+
+
+#btn.success-state{
+  color:var(--success);
+
+  background:#EBF8F2;
+
+  border:
+    1px solid
+    #BDE9D8;
+
+  box-shadow:none;
+}
+
+
+/* =========================================================
+   LOADING / STATUS
+   ========================================================= */
+
+.loader{
+  display:none;
+
+  margin-top:14px;
+
+  align-items:center;
+  justify-content:center;
+
+  gap:8px;
+
+  color:var(--ocean-deep);
+
+  font-size:.86rem;
+  font-weight:600;
+}
+
+
+.loader.show{
+  display:flex;
+}
+
+
+.spinner{
+  width:15px;
+  height:15px;
+
+  border:
+    2px solid
+    rgba(8,119,185,.18);
+
+  border-top-color:
+    var(--ocean);
+
+  border-radius:50%;
+
+  animation:
+    spin .75s linear infinite;
+}
+
+
+#msg{
+  margin-top:12px;
+
+  text-align:center;
+
+  font-size:.86rem;
+  font-weight:700;
+  line-height:1.4;
+}
+
+
+.success{
+  color:var(--success);
+}
+
+
+.error{
+  color:var(--error);
+}
+
+
+/* =========================================================
+   DOCUMENTS
+   ========================================================= */
+
+.downloads{
+  display:none;
+  margin-top:18px;
+}
+
+
+.downloads.show{
+  display:block;
+}
+
+
+.docs-heading{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  margin:
+    0 1px 9px;
+}
+
+
+.docs-heading span:first-child{
+  color:var(--ocean-deep);
+
+  font-size:.74rem;
+  font-weight:800;
+
+  letter-spacing:.07em;
+  text-transform:uppercase;
+}
+
+
+.docs-heading span:last-child{
+  color:var(--muted);
+  font-size:.7rem;
+}
+
+
+.docs-list{
+  display:flex;
+  flex-direction:column;
+
+  gap:9px;
+
+  text-align:left;
+}
+
+
+.doc-row{
+  display:flex;
+  align-items:center;
+
+  gap:12px;
+
+  min-height:64px;
+
+  padding:12px;
+
+  border-radius:17px;
+
+  border:
+    1px solid
+    #DDECEF;
+
+  background:#FFFFFF;
+
+  color:var(--ink);
+
+  text-decoration:none;
+
+  box-shadow:
+    0 5px 14px
+    rgba(25,88,108,.055);
+
+  transition:
+    transform .15s ease,
+    border-color .15s ease,
+    box-shadow .15s ease;
+}
+
+
+a.doc-row:hover,
+a.doc-row:focus-visible{
+  transform:
+    translateY(-1px);
+
+  border-color:
+    rgba(243,123,69,.55);
+
+  box-shadow:
+    0 10px 22px
+    rgba(25,88,108,.09);
+}
+
+
+.doc-icon{
+  flex-shrink:0;
+
+  width:40px;
+  height:40px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:13px;
+
+  color:var(--ocean-deep);
+
+  background:
+    linear-gradient(
+      145deg,
+      #E7F8FF,
+      #F1FBF7
+    );
+
+  border:
+    1px solid
+    rgba(8,119,185,.1);
+}
+
+
+.doc-icon svg{
+  width:18px;
+  height:18px;
+}
+
+
+.doc-text{
+  flex:1;
+  min-width:0;
+
+  display:flex;
+  flex-direction:column;
+
+  gap:3px;
+}
+
+
+.doc-title{
+  color:#173D4C;
+
+  font-size:.88rem;
+  font-weight:800;
+}
+
+
+.doc-desc{
+  color:var(--muted);
+
+  font-size:.74rem;
+  line-height:1.35;
+}
+
+
+.doc-chevron{
+  flex-shrink:0;
+
+  width:18px;
+  height:18px;
+
+  color:var(--sunset);
+}
+
+
+.doc-row.pending{
+  cursor:default;
+
+  background:#F8FAFA;
+
+  box-shadow:none;
+
+  border-color:#E6EEEE;
+}
+
+
+.doc-row.pending .doc-icon{
+  color:#91A2A8;
+  background:#EEF2F3;
+}
+
+
+.doc-desc.doc-soon{
+  color:#A37545;
+
+  font-weight:700;
+}
+
+
+.doc-status{
+  width:17px;
+  height:17px;
+
+  color:#A0AEB3;
+}
+
+
+/* product collateral sunny accent */
+
+.doc-row[data-doc="pc"] .doc-icon{
+  color:#A85D16;
+
+  background:
+    linear-gradient(
+      145deg,
+      #FFF8D8,
+      #FFF0E4
+    );
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+.reset-link{
+  display:inline-flex;
+
+  margin-top:15px;
+
+  padding:6px 4px;
+
+  border:0;
+
+  background:transparent;
+
+  color:var(--ocean-deep);
+
+  font-family:var(--font-body);
+
+  font-size:.78rem;
+  font-weight:700;
+
+  text-decoration:underline;
+
+  text-underline-offset:3px;
+
+  cursor:pointer;
+}
+
+
+.reset-link[hidden]{
+  display:none;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer-note{
+  margin-top:auto;
+
+  padding-top:26px;
+
+  color:#24596A;
+
+  font-family:var(--font-display);
+  font-size:.83rem;
+  font-weight:800;
+
+  text-shadow:
+    0 1px 8px
+    rgba(255,255,255,.9);
+}
+
+
+/* =========================================================
+   TOAST
+   ========================================================= */
+
+.toast{
+  position:fixed;
+
+  top:14px;
+  left:50%;
+
+  z-index:100;
+
+  max-width:90vw;
+
+  transform:
+    translate(-50%,-8px);
+
+  padding:
+    10px 16px;
+
+  border-radius:999px;
+
+  border:
+    1px solid
+    rgba(255,255,255,.86);
+
+  background:
+    rgba(255,255,255,.94);
+
+  color:var(--ocean-deep);
+
+  font-size:.82rem;
+  font-weight:800;
+
+  white-space:nowrap;
+
+  box-shadow:
+    0 12px 30px
+    rgba(12,79,103,.18);
+
+  opacity:0;
+
+  pointer-events:none;
+
+  transition:
+    opacity .25s ease,
+    transform .25s ease;
+}
+
+
+.toast.show{
+  opacity:1;
+
+  transform:
+    translate(-50%,0);
+}
+
+
+/* =========================================================
+   ANNOUNCEMENT
+   ========================================================= */
+
+.popup-overlay{
+  display:none;
+
+  position:fixed;
+
+  inset:0;
+
+  z-index:90;
+
+  align-items:center;
+  justify-content:center;
+
+  padding:20px;
+
+  background:
+    rgba(8,50,65,.48);
+
+  -webkit-backdrop-filter:
+    blur(5px);
+
+  backdrop-filter:
+    blur(5px);
+}
+
+
+.popup-overlay.show{
+  display:flex;
+}
+
+
+.popup-box{
+  position:relative;
+
+  width:100%;
+  max-width:480px;
+  max-height:86vh;
+
+  padding:18px;
+
+  display:flex;
+  flex-direction:column;
+
+  gap:12px;
+
+  border-radius:24px;
+
+  border:
+    1px solid
+    rgba(255,255,255,.9);
+
+  background:
+    rgba(255,255,255,.97);
+
+  box-shadow:
+    0 30px 70px
+    rgba(7,83,109,.28);
+}
+
+
+.popup-box::before{
+  content:"";
+
+  position:absolute;
+
+  top:0;
+  left:18px;
+  right:18px;
+
+  height:4px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--ocean),
+      var(--sun),
+      var(--sunset)
+    );
+}
+
+
+.popup-title{
+  text-align:center;
+
+  font-family:var(--font-display);
+  font-size:1rem;
+  font-weight:800;
+
+  color:var(--ocean-deep);
+}
+
+
+.popup-close{
+  position:absolute;
+
+  top:-12px;
+  right:-8px;
+
+  width:36px;
+  height:36px;
+
+  border:0;
+  border-radius:50%;
+
+  cursor:pointer;
+
+  background:var(--sunset);
+
+  color:#FFFFFF;
+
+  font-size:17px;
+
+  box-shadow:
+    0 8px 20px
+    rgba(243,123,69,.28);
+}
+
+
+.popup-well{
+  min-height:100px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  overflow:hidden;
+
+  padding:7px;
+
+  border-radius:16px;
+
+  background:#F4F8F9;
+
+  border:
+    1px solid
+    #E2EDEF;
+}
+
+
+.popup-loading{
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  gap:8px;
+
+  padding:
+    38px 12px;
+
+  color:var(--ocean-deep);
+
+  font-size:.86rem;
+  font-weight:700;
+}
+
+
+.popup-well iframe{
+  width:100%;
+  height:56vh;
+
+  border:0;
+
+  border-radius:11px;
+
+  background:#FFFFFF;
+}
+
+
+.popup-well img{
+  display:block;
+
+  width:auto;
+  height:auto;
+
+  max-width:100%;
+  max-height:70vh;
+
+  object-fit:contain;
+
+  border-radius:11px;
+
+  background:#FFFFFF;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@keyframes spin{
+  to{
+    transform:rotate(360deg);
+  }
+}
+
+
+@media (min-width:600px){
+  .card{
+    max-width:420px;
+
+    padding:
+      30px 28px 25px;
+  }
+
+  .countdown-wrap{
+    max-width:420px;
+  }
+}
+
+
+@media (max-width:380px){
+  .page{
+    padding-left:13px;
+    padding-right:13px;
+  }
+
+  .card{
+    padding:
+      24px 16px 20px;
+  }
+
+  .doc-row{
+    padding:10px;
+  }
+}
+
+
+@media (max-width:480px){
+  .popup-well iframe{
+    height:49vh;
+  }
+
+  .popup-well img{
+    max-height:57vh;
+  }
+}
+
+
+@media (prefers-reduced-motion:reduce){
+  *,
+  *::before,
+  *::after{
+    animation-duration:.001ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.001ms!important;
+  }
+}
 
 </style>
-
 </head>
 
 
@@ -81,7 +1319,7 @@ button{font-family:var(--font-body)}#btn{width:100%;min-height:50px;padding:13px
 
 <h1 class="sr-only">
 
-  London Training Convention 2026 — IndusInd Nippon Life
+  Colombo Training Convention 2026
 
 </h1>
 
@@ -108,7 +1346,7 @@ button{font-family:var(--font-body)}#btn{width:100%;min-height:50px;padding:13px
       class="countdown-label"
       id="countdownLabel">
 
-      Counting down to London 2026
+      Counting down to Colombo 2026
 
     </p>
 
@@ -131,9 +1369,7 @@ button{font-family:var(--font-body)}#btn{width:100%;min-height:50px;padding:13px
         </span>
 
         <span class="stat-label">
-
           Days
-
         </span>
 
       </div>
@@ -159,9 +1395,7 @@ button{font-family:var(--font-body)}#btn{width:100%;min-height:50px;padding:13px
         </span>
 
         <span class="stat-label">
-
           Hrs
-
         </span>
 
       </div>
@@ -187,12 +1421,11 @@ button{font-family:var(--font-body)}#btn{width:100%;min-height:50px;padding:13px
         </span>
 
         <span class="stat-label">
-
           Mins
-
         </span>
 
       </div>
+
 
     </div>
 
@@ -200,29 +1433,31 @@ button{font-family:var(--font-body)}#btn{width:100%;min-height:50px;padding:13px
 
 
 
-  <!-- VERIFICATION CARD -->
+  <!-- ACCESS CARD -->
 
   <section class="card">
 
 
-    <p
-      class="divider-gem"
-      aria-hidden="true">
+    <div class="section-kicker">
 
-      <span class="gem">◆</span>
+      Colombo Travel Hub
 
-      <span>Your Documents</span>
+    </div>
 
-      <span class="gem">◆</span>
 
-    </p>
+    <h2 class="card-title">
+
+      Your Colombo journey starts here
+
+    </h2>
 
 
     <p class="card-instruction">
 
-      Enter your registered Employee ID or Mobile Number to access them.
+      Enter your registered Employee ID or Mobile Number to unlock your personalised convention documents.
 
     </p>
+
 
 
     <form
@@ -231,42 +1466,59 @@ button{font-family:var(--font-body)}#btn{width:100%;min-height:50px;padding:13px
 
 
       <label
-        for="input"
-        class="sr-only">
+        class="sr-only"
+        for="input">
 
         Employee ID or Mobile Number
 
       </label>
 
 
-      <input
+      <div class="input-wrap">
 
-        id="input"
 
-        name="input"
+        <svg
+          class="input-icon"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          aria-hidden="true">
 
-        type="text"
+          <circle
+            cx="12"
+            cy="8"
+            r="3.3">
+          </circle>
 
-        inputmode="text"
+          <path
+            d="M5.7 19c.8-3.4 3-5.1 6.3-5.1s5.5 1.7 6.3 5.1">
+          </path>
 
-        autocapitalize="off"
+        </svg>
 
-        spellcheck="false"
 
-        placeholder="Employee ID / Mobile No."
+        <input
+          id="input"
+          name="input"
+          type="text"
+          inputmode="text"
+          autocapitalize="off"
+          spellcheck="false"
+          placeholder="Employee ID / Mobile No."
+          autocomplete="off"
+          aria-describedby="msg"
+        >
 
-        autocomplete="off"
 
-        aria-describedby="msg"
-
-      >
+      </div>
 
 
       <button
         type="submit"
         id="btn">
 
-        Access My Documents
+        Unlock My Colombo Travel Pack
 
       </button>
 
@@ -281,18 +1533,14 @@ button{font-family:var(--font-body)}#btn{width:100%;min-height:50px;padding:13px
       role="status"
       aria-live="polite">
 
-
       <span class="spinner"></span>
 
-
       <span>
-
-        Searching...
-
+        Finding your Colombo documents...
       </span>
 
-
     </div>
+
 
 
     <div
@@ -308,6 +1556,19 @@ button{font-family:var(--font-body)}#btn{width:100%;min-height:50px;padding:13px
       id="downloads">
 
 
+      <div class="docs-heading">
+
+        <span>
+          Your Colombo Pack
+        </span>
+
+        <span>
+          Tap to open
+        </span>
+
+      </div>
+
+
       <div
         class="docs-list"
         id="docsList">
@@ -319,16 +1580,12 @@ button{font-family:var(--font-body)}#btn{width:100%;min-height:50px;padding:13px
 
 
     <button
-
       type="button"
-
       class="reset-link"
-
       id="resetLink"
-
       hidden>
 
-      Look up a different ID
+      Use a different Employee ID
 
     </button>
 
@@ -339,7 +1596,7 @@ button{font-family:var(--font-body)}#btn{width:100%;min-height:50px;padding:13px
 
   <p class="footer-note">
 
-    See you in London
+    See you in Colombo ☀
 
   </p>
 
@@ -349,21 +1606,15 @@ button{font-family:var(--font-body)}#btn{width:100%;min-height:50px;padding:13px
 
 
 <!-- ========================================================
-     GENERAL ANNOUNCEMENT POPUP
+     ANNOUNCEMENT POPUP
      ======================================================== -->
 
 <div
-
   class="popup-overlay"
-
   id="popupOverlay"
-
   role="dialog"
-
   aria-modal="true"
-
-  aria-label="Announcement"
-
+  aria-label="Colombo convention announcement"
   onclick="if(event.target===this)closePopup()">
 
 
@@ -371,13 +1622,9 @@ button{font-family:var(--font-body)}#btn{width:100%;min-height:50px;padding:13px
 
 
     <button
-
       type="button"
-
       class="popup-close"
-
       onclick="closePopup()"
-
       aria-label="Close announcement">
 
       ✕
@@ -385,15 +1632,9 @@ button{font-family:var(--font-body)}#btn{width:100%;min-height:50px;padding:13px
     </button>
 
 
-    <p
-      class="divider-gem popup-eyebrow"
-      aria-hidden="true">
+    <p class="popup-title">
 
-      <span class="gem">◆</span>
-
-      <span>Announcement</span>
-
-      <span class="gem">◆</span>
+      Colombo Convention Update
 
     </p>
 
@@ -408,33 +1649,24 @@ button{font-family:var(--font-body)}#btn{width:100%;min-height:50px;padding:13px
         <span class="spinner"></span>
 
         <span>
-
           Loading announcement...
-
         </span>
 
       </div>
 
 
       <img
-
         id="popupImage"
-
-        alt="Announcement"
-
-        style="display:none;">
+        alt="Colombo Convention Announcement"
+        style="display:none;"
+      >
 
 
       <iframe
-
         id="popupFrame"
-
         src=""
-
-        title="Notice"
-
+        title="Colombo Convention Announcement"
         style="display:none;">
-
       </iframe>
 
 
@@ -458,54 +1690,29 @@ const API_URL =
 "https://script.google.com/macros/s/AKfycbxrW_2FiQXPp64YLDEvKEJC-FNu4qiVfHNhr7iyj_9yuFb6a2P7OUHl4vI2N-39JAir/exec";
 
 
-
-/* ============================================================
-   CONVENTION DATE
-   ============================================================ */
-
+/*
+  Change only if the Colombo convention date changes.
+*/
 const CONVENTION_DATE =
 new Date("2026-11-24T00:00:00");
 
 
-
-/* ============================================================
-   VERIFIED EMPLOYEE
-
-   This stores the Employee ID / Mobile Number that successfully
-   passed verification.
-
-   It is then used to associate every document click with the
-   correct employee row in Google Sheets.
-   ============================================================ */
-
 let verifiedLookupValue = "";
 
+let popupShownThisLoad = false;
 
 
 /* ============================================================
    DOCUMENT AVAILABILITY
-
-   true  = document can be displayed if a URL exists
-   false = always show Coming Soon
-
-   Even when true, a blank URL returned by Apps Script will
-   automatically display "Coming soon".
    ============================================================ */
 
 const DOC_AVAILABILITY = {
-
   f1:true,
-
   f2:true,
-
   f3:true,
-
   f4:true,
-
   pc:true
-
 };
-
 
 
 /* ============================================================
@@ -513,97 +1720,31 @@ const DOC_AVAILABILITY = {
    ============================================================ */
 
 const ICON_NOTE =
-
-'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">'+
-
-'<path d="M4 1.8h5.2L12 4.6v9.6H4z"/>'+
-
-'<path d="M9.2 1.8v2.8H12"/>'+
-
-'<path d="M6 8.4h4M6 10.6h4"/>'+
-
-'</svg>';
-
+'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 1.8h5.2L12 4.6v9.6H4z"/><path d="M9.2 1.8v2.8H12"/><path d="M6 8.4h4M6 10.6h4"/></svg>';
 
 
 const ICON_PLANE =
-
-'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">'+
-
-'<path d="M14.5 1.5 1.7 6.4l4.2 1.6"/>'+
-
-'<path d="M14.5 1.5 9.6 14.3l-3.7-6.3 8.6-6.5z"/>'+
-
-'</svg>';
-
+'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 1.5 1.7 6.4l4.2 1.6"/><path d="M14.5 1.5 9.6 14.3l-3.7-6.3 8.6-6.5z"/></svg>';
 
 
 const ICON_CAL =
-
-'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">'+
-
-'<rect x="2" y="3" width="12" height="11" rx="1.3"/>'+
-
-'<path d="M2 6.4h12"/>'+
-
-'<path d="M5.4 1.6v2.4M10.6 1.6v2.4"/>'+
-
-'</svg>';
-
+'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="12" height="11" rx="1.3"/><path d="M2 6.4h12"/><path d="M5.4 1.6v2.4M10.6 1.6v2.4"/></svg>';
 
 
 const ICON_HOTEL =
+'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M1.6 13V4.4"/><path d="M1.6 10.4h12.8v2.6"/><path d="M3.8 10.4V6.8h6.8a1.8 1.8 0 0 1 1.8 1.8v1.8"/></svg>';
 
-'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">'+
-
-'<path d="M1.6 13V4.4"/>'+
-
-'<path d="M1.6 10.4h12.8v2.6"/>'+
-
-'<path d="M3.8 10.4V6.8h6.8a1.8 1.8 0 0 1 1.8 1.8v1.8"/>'+
-
-'</svg>';
-
-
-
-/* Product Collateral icon */
 
 const ICON_PRODUCT =
-
-'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">'+
-
-'<rect x="2" y="2" width="12" height="12" rx="1.5"/>'+
-
-'<path d="M5 5h6"/>'+
-
-'<path d="M5 8h6"/>'+
-
-'<path d="M5 11h4"/>'+
-
-'</svg>';
-
+'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="12" height="12" rx="1.5"/><path d="M5 5h6M5 8h6M5 11h4"/></svg>';
 
 
 const ICON_CLOCK =
-
-'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">'+
-
-'<circle cx="8" cy="8" r="6.4"/>'+
-
-'<path d="M8 4.8V8l2.6 1.6"/>'+
-
-'</svg>';
-
+'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6.4"/><path d="M8 4.8V8l2.6 1.6"/></svg>';
 
 
 const ICON_CHEVRON =
-
-'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">'+
-
-'<path d="M6 3.5 11 8l-5 4.5"/>'+
-
-'</svg>';
-
+'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3.5 11 8l-5 4.5"/></svg>';
 
 
 /* ============================================================
@@ -613,90 +1754,54 @@ const ICON_CHEVRON =
 const DOCS = [
 
   {
-
     key:"f1",
-
     label:"CEO's Note",
-
-    desc:"A short welcome message ahead of the convention.",
-
+    desc:"A welcome message ahead of the Colombo convention.",
     icon:ICON_NOTE
-
   },
 
   {
-
     key:"f2",
-
     label:"Travel Tickets",
-
-    desc:"Your flight and transfer details.",
-
+    desc:"Your flights and travel details for Colombo.",
     icon:ICON_PLANE
-
   },
 
   {
-
     key:"f3",
-
     label:"Itinerary",
-
-    desc:"The full day-by-day schedule.",
-
+    desc:"Your complete Colombo day-by-day schedule.",
     icon:ICON_CAL
-
   },
 
   {
-
     key:"f4",
-
     label:"Accommodation",
-
-    desc:"Your hotel and stay information.",
-
+    desc:"Your Colombo hotel and stay information.",
     icon:ICON_HOTEL
-
   },
 
   {
-
     key:"pc",
-
     label:"Product Collateral",
-
     desc:"Product information and reference material.",
-
     icon:ICON_PRODUCT
-
   }
 
 ];
 
 
-
 /* ============================================================
    CLICK TRACKING
 
-   Examples sent to Apps Script:
-
-   ?action=track&input=EMP001&doc=f1
-   ?action=track&input=EMP001&doc=f2
-   ?action=track&input=EMP001&doc=f3
-   ?action=track&input=EMP001&doc=f4
-   ?action=track&input=EMP001&doc=pc
-   ?action=track&input=EMP001&doc=pu
-
-   Apps Script then writes "1" into the corresponding Check column.
+   Apps Script increments:
+   1 → 2 → 3 → 4 ...
    ============================================================ */
 
-function trackDocument(docKey){
+async function trackDocument(docKey){
 
   if(!verifiedLookupValue){
-
-    return;
-
+    return null;
   }
 
 
@@ -708,296 +1813,330 @@ function trackDocument(docKey){
 
     "&input=" +
 
-    encodeURIComponent(verifiedLookupValue) +
+    encodeURIComponent(
+      verifiedLookupValue
+    ) +
 
     "&doc=" +
 
-    encodeURIComponent(docKey) +
+    encodeURIComponent(
+      docKey
+    ) +
 
     "&_=" +
 
     Date.now();
 
 
+  try{
 
-  fetch(
-
-    trackingUrl,
-
-    {
-
-      method:"GET",
-
-      cache:"no-store"
-
-    }
-
-  )
-
-  .then(function(response){
-
-    return response.json();
-
-  })
-
-  .then(function(data){
-
-    if(data.status !== "success"){
-
-      console.warn(
-
-        "Tracking failed:",
-
-        docKey,
-
-        data
-
+    const response =
+      await fetch(
+        trackingUrl,
+        {
+          method:"GET",
+          cache:"no-store"
+        }
       );
 
-    }
 
-  })
+    const data =
+      await response.json();
 
-  .catch(function(error){
 
-    console.warn(
-
-      "Tracking request failed:",
-
+    console.log(
+      "Tracked:",
       docKey,
-
-      error
-
+      "Count:",
+      data.count
     );
 
-  });
+
+    return data;
+
+  }catch(error){
+
+    console.warn(
+      "Tracking failed:",
+      docKey,
+      error
+    );
+
+    return null;
+
+  }
 
 }
 
 
-
 /* ============================================================
-   DOCUMENT LIST
-
-   Every document always appears.
-
-   If available + URL exists:
-       clickable
-
-   Otherwise:
-       Coming soon
+   DOCUMENT RENDERING
    ============================================================ */
 
 function renderDocs(fileMap){
 
   const list =
-
-    document.getElementById("docsList");
+    document.getElementById(
+      "docsList"
+    );
 
 
   list.innerHTML = "";
 
 
-
   DOCS.forEach(function(d){
 
-
     const url =
-
       String(
-
         fileMap[d.key] || ""
-
       ).trim();
 
 
-
-    const isAvailable =
-
+    const available =
       Boolean(
-
         DOC_AVAILABILITY[d.key]
-
       )
-
       &&
-
       url !== "";
 
 
+    if(available){
 
-    /* ========================================================
-       AVAILABLE DOCUMENT
-       ======================================================== */
-
-    if(isAvailable){
-
-
-      const a =
-
-        document.createElement("a");
+      const link =
+        document.createElement(
+          "a"
+        );
 
 
-      a.className =
-
+      link.className =
         "doc-row";
 
 
-      a.href =
+      link.dataset.doc =
+        d.key;
 
+
+      link.href =
         url;
 
 
-      a.target =
-
+      link.target =
         "_blank";
 
 
-      a.rel =
-
+      link.rel =
         "noopener";
 
 
-      a.setAttribute(
-
+      link.setAttribute(
         "aria-label",
-
-        d.label +
-
-        " — " +
-
-        d.desc
-
+        d.label + " — " + d.desc
       );
 
 
-
-      a.innerHTML =
+      link.innerHTML =
 
         '<span class="doc-icon" aria-hidden="true">' +
-
           d.icon +
-
         '</span>' +
 
         '<span class="doc-text">' +
 
           '<span class="doc-title">' +
-
             d.label +
-
           '</span>' +
 
           '<span class="doc-desc">' +
-
             d.desc +
-
           '</span>' +
 
         '</span>' +
 
         '<span class="doc-chevron" aria-hidden="true">' +
-
           ICON_CHEVRON +
-
         '</span>';
 
 
+      /*
+        IMPORTANT:
+        Create blank tab immediately,
+        then update counter,
+        then open actual file.
+      */
 
-      /* Track every document click */
-
-      a.addEventListener(
-
+      link.addEventListener(
         "click",
+        async function(event){
 
-        function(){
+          event.preventDefault();
 
-          trackDocument(
 
-            d.key
+          const newTab =
+            window.open(
+              "about:blank",
+              "_blank"
+            );
 
-          );
+
+          if(newTab){
+
+            try{
+
+              newTab.document.write(
+                '<!DOCTYPE html>' +
+                '<html>' +
+                '<head>' +
+                '<meta name="viewport" content="width=device-width,initial-scale=1">' +
+                '<title>Opening Colombo document...</title>' +
+                '</head>' +
+
+                '<body style="' +
+                'margin:0;' +
+                'height:100vh;' +
+                'display:flex;' +
+                'align-items:center;' +
+                'justify-content:center;' +
+                'font-family:Arial,sans-serif;' +
+                'background:#F4FBFC;' +
+                'color:#07536D;' +
+                '">' +
+
+                '<div style="text-align:center;">' +
+
+                '<div style="' +
+                'font-size:18px;' +
+                'font-weight:700;' +
+                '">' +
+                'Opening your document...' +
+                '</div>' +
+
+                '<div style="' +
+                'margin-top:6px;' +
+                'font-size:13px;' +
+                'opacity:.65;' +
+                '">' +
+                'Your Colombo travel pack is loading' +
+                '</div>' +
+
+                '</div>' +
+
+                '</body>' +
+                '</html>'
+              );
+
+            }catch(error){
+
+            }
+
+          }
+
+
+          /*
+            Increment count first.
+          */
+
+          const result =
+            await trackDocument(
+              d.key
+            );
+
+
+          if(
+            result &&
+            result.status === "success"
+          ){
+
+            console.log(
+              d.label +
+              " total opens = " +
+              result.count
+            );
+
+          }
+
+
+          /*
+            Open document after tracking.
+          */
+
+          if(newTab){
+
+            newTab.location.replace(
+              url
+            );
+
+          }else{
+
+            window.location.href =
+              url;
+
+          }
 
         }
-
       );
 
 
-
-      list.appendChild(a);
+      list.appendChild(
+        link
+      );
 
     }
 
 
-
-    /* ========================================================
-       COMING SOON DOCUMENT
-       ======================================================== */
-
     else{
 
-
       const row =
-
-        document.createElement("div");
+        document.createElement(
+          "div"
+        );
 
 
       row.className =
-
         "doc-row pending";
 
 
+      row.dataset.doc =
+        d.key;
+
+
       row.setAttribute(
-
         "aria-disabled",
-
         "true"
-
       );
-
 
 
       row.innerHTML =
 
         '<span class="doc-icon" aria-hidden="true">' +
-
           d.icon +
-
         '</span>' +
 
         '<span class="doc-text">' +
 
           '<span class="doc-title">' +
-
             d.label +
-
           '</span>' +
 
           '<span class="doc-desc doc-soon">' +
-
             'Coming soon' +
-
           '</span>' +
 
         '</span>' +
 
         '<span class="doc-status" aria-hidden="true">' +
-
           ICON_CLOCK +
-
         '</span>';
 
 
-
-      list.appendChild(row);
+      list.appendChild(
+        row
+      );
 
     }
-
 
   });
 
 }
-
 
 
 /* ============================================================
@@ -1006,164 +2145,114 @@ function renderDocs(fileMap){
 
 function getDaysRemaining(){
 
-
   const now =
-
     new Date();
 
 
-  const startOfToday =
-
+  const today =
     new Date(
-
       now.getFullYear(),
-
       now.getMonth(),
-
       now.getDate()
-
     );
 
 
-  const startOfTarget =
-
+  const target =
     new Date(
-
       CONVENTION_DATE.getFullYear(),
-
       CONVENTION_DATE.getMonth(),
-
       CONVENTION_DATE.getDate()
-
     );
-
-
-  const diffMs =
-
-    startOfTarget -
-
-    startOfToday;
 
 
   return Math.round(
-
-    diffMs /
-
-    (1000 * 60 * 60 * 24)
-
+    (target - today)
+    /
+    86400000
   );
 
 }
 
 
-
 function updateCountdown(){
 
-
-  const wrap =
-
-    document.getElementById(
-
-      "countdownWrap"
-
-    );
-
-
-  const label =
-
-    document.getElementById(
-
-      "countdownLabel"
-
-    );
-
-
-  const statsBox =
-
-    document.getElementById(
-
-      "countdownStats"
-
-    );
-
-
-  let donePill =
-
-    document.getElementById(
-
-      "countdownDone"
-
-    );
-
-
-  const diffMs =
-
+  const diff =
     CONVENTION_DATE -
-
     new Date();
 
 
+  const label =
+    document.getElementById(
+      "countdownLabel"
+    );
 
-  if(diffMs <= 0){
+
+  const stats =
+    document.getElementById(
+      "countdownStats"
+    );
 
 
-    statsBox.style.display =
+  const wrap =
+    document.getElementById(
+      "countdownWrap"
+    );
 
+
+  let done =
+    document.getElementById(
+      "countdownDone"
+    );
+
+
+  if(diff <= 0){
+
+    stats.style.display =
       "none";
 
 
     label.style.display =
-
       "none";
 
 
-    if(!donePill){
+    if(!done){
 
-
-      donePill =
-
+      done =
         document.createElement(
-
           "div"
-
         );
 
 
-      donePill.id =
-
+      done.id =
         "countdownDone";
 
 
-      donePill.className =
-
+      done.className =
         "countdown-done";
 
 
       wrap.appendChild(
-
-        donePill
-
+        done
       );
 
     }
 
 
-    donePill.style.display =
-
+    done.style.display =
       "inline-flex";
 
 
-    donePill.textContent =
+    done.textContent =
 
       getDaysRemaining() === 0
 
       ?
 
-      "Today's the day"
+      "Colombo starts today!"
 
       :
 
-      "See you in London";
+      "See you in Colombo";
 
 
     return;
@@ -1171,177 +2260,147 @@ function updateCountdown(){
   }
 
 
+  if(done){
 
-  if(donePill){
-
-    donePill.style.display =
-
+    done.style.display =
       "none";
 
   }
 
 
-
   label.style.display =
-
-    "block";
-
-
-  statsBox.style.display =
-
     "flex";
 
 
+  stats.style.display =
+    "flex";
+
 
   const days =
-
     Math.floor(
-
-      diffMs /
-
+      diff /
       86400000
-
     );
 
 
   const hours =
-
     Math.floor(
-
-      (diffMs % 86400000)
-
+      (
+        diff %
+        86400000
+      )
       /
-
       3600000
-
     );
 
 
   const mins =
-
     Math.floor(
-
-      (diffMs % 3600000)
-
+      (
+        diff %
+        3600000
+      )
       /
-
       60000
-
     );
 
 
-
   document.getElementById(
-
     "cdDays"
-
   ).textContent =
-
     days;
 
 
-
   document.getElementById(
-
     "cdHours"
-
   ).textContent =
-
-    String(hours).padStart(
-
+    String(
+      hours
+    ).padStart(
       2,
-
       "0"
-
     );
 
 
-
   document.getElementById(
-
     "cdMins"
-
   ).textContent =
-
-    String(mins).padStart(
-
+    String(
+      mins
+    ).padStart(
       2,
-
       "0"
-
     );
 
 }
 
 
-
 /* ============================================================
-   ANNOUNCEMENT POPUP
+   ANNOUNCEMENT
    ============================================================ */
 
-let lastFocusedEl = null;
+let lastFocusedEl =
+  null;
 
+
+const POPUP_SESSION_KEY =
+  "colomboConventionPopupShown";
+
+
+function isImageUrl(url){
+
+  return /\.(png|jpe?g|gif|webp|bmp|svg)(\?.*)?$/i.test(
+    url
+  );
+
+}
+
+
+function openPopup(){
+
+  lastFocusedEl =
+    document.activeElement;
+
+
+  document
+    .getElementById(
+      "popupOverlay"
+    )
+    .classList
+    .add(
+      "show"
+    );
+
+}
 
 
 function closePopup(){
 
-
   document
-
     .getElementById(
-
       "popupOverlay"
-
     )
-
     .classList
-
     .remove(
-
       "show"
-
     );
 
 
-  document
-
-    .getElementById(
-
-      "popupFrame"
-
-    )
-
-    .src = "";
+  document.getElementById(
+    "popupFrame"
+  ).src =
+    "";
 
 
-  document
-
-    .getElementById(
-
-      "popupImage"
-
-    )
-
-    .src = "";
-
-
-  document.removeEventListener(
-
-    "keydown",
-
-    onPopupKeydown
-
-  );
+  document.getElementById(
+    "popupImage"
+  ).src =
+    "";
 
 
   if(
-
-    lastFocusedEl
-
-    &&
-
+    lastFocusedEl &&
     typeof lastFocusedEl.focus === "function"
-
   ){
 
     lastFocusedEl.focus();
@@ -1351,207 +2410,90 @@ function closePopup(){
 }
 
 
-
-function onPopupKeydown(e){
-
-  if(e.key === "Escape"){
-
-    closePopup();
-
-  }
-
-}
-
-
-
-function openPopup(){
-
-
-  lastFocusedEl =
-
-    document.activeElement;
-
-
-  document
-
-    .getElementById(
-
-      "popupOverlay"
-
-    )
-
-    .classList
-
-    .add(
-
-      "show"
-
-    );
-
-
-  document.addEventListener(
-
-    "keydown",
-
-    onPopupKeydown
-
-  );
-
-
-  const closeBtn =
-
-    document.querySelector(
-
-      ".popup-close"
-
-    );
-
-
-  if(closeBtn){
-
-    closeBtn.focus();
-
-  }
-
-}
-
-
-
-/* ============================================================
-   ANNOUNCEMENT FILE DETECTION
-   ============================================================ */
-
-function isImageUrl(url){
-
-  return /\.(png|jpe?g|gif|webp|bmp|svg)(\?.*)?$/i.test(
-
-    url
-
-  );
-
-}
-
-
-
-/* ============================================================
-   POPUP SESSION STORAGE
-   ============================================================ */
-
-const POPUP_SESSION_KEY =
-
-  "conventionPopupShown";
-
-
-
 function renderPopupContent(url){
 
-
   const img =
-
     document.getElementById(
-
       "popupImage"
-
     );
 
 
   const frame =
-
     document.getElementById(
-
       "popupFrame"
-
     );
 
 
   const loading =
-
     document.getElementById(
-
       "popupLoading"
-
     );
 
 
-
   loading.style.display =
-
     "flex";
 
 
   img.style.display =
-
     "none";
 
 
   frame.style.display =
-
     "none";
-
 
 
   if(isImageUrl(url)){
 
-
-    frame.src = "";
-
-
-    img.onload = function(){
+    frame.src =
+      "";
 
 
-      loading.style.display =
+    img.onload =
+      function(){
 
-        "none";
+        loading.style.display =
+          "none";
 
+        img.style.display =
+          "block";
 
-      img.style.display =
-
-        "block";
-
-    };
-
-
-    img.onerror = function(){
+      };
 
 
-      loading.style.display =
+    img.onerror =
+      function(){
 
-        "none";
+        loading.style.display =
+          "none";
 
-    };
+      };
 
 
     img.src =
-
       url;
 
   }
 
 
-
   else{
 
-
-    img.src = "";
-
-
-    frame.onload = function(){
+    img.src =
+      "";
 
 
-      loading.style.display =
+    frame.onload =
+      function(){
 
-        "none";
+        loading.style.display =
+          "none";
 
+        frame.style.display =
+          "block";
 
-      frame.style.display =
-
-        "block";
-
-    };
+      };
 
 
     frame.src =
-
       url;
 
   }
@@ -1559,26 +2501,14 @@ function renderPopupContent(url){
 }
 
 
-
-/* ============================================================
-   LOAD GENERAL ANNOUNCEMENT
-   ============================================================ */
-
 async function showGeneralPopup(){
 
-
   if(
-
     sessionStorage.getItem(
-
       POPUP_SESSION_KEY
-
     )
-
     ===
-
     "1"
-
   ){
 
     return;
@@ -1586,97 +2516,52 @@ async function showGeneralPopup(){
   }
 
 
-
   try{
 
-
     const response =
-
       await fetch(
-
         API_URL +
-
-        "?action=popup" +
-
-        "&_=" +
-
+        "?action=popup&_=" +
         Date.now(),
-
         {
-
           cache:"no-store"
-
         }
-
       );
 
 
     const data =
-
       await response.json();
 
 
-
     if(
-
-      data
-
-      &&
-
+      data &&
       data.popup
-
     ){
 
-
       renderPopupContent(
-
         data.popup
-
       );
 
 
       sessionStorage.setItem(
-
         POPUP_SESSION_KEY,
-
         "1"
-
       );
+
+
+      popupShownThisLoad =
+        true;
 
 
       openPopup();
 
     }
 
-
-
-    else{
-
-
-      console.warn(
-
-        "Announcement popup: no popup URL received.",
-
-        data
-
-      );
-
-    }
-
-
-  }
-
-
-
-  catch(error){
-
+  }catch(error){
 
     console.error(
-
-      "Announcement popup request failed.",
-
+      "Colombo announcement error:",
       error
-
     );
 
   }
@@ -1684,145 +2569,94 @@ async function showGeneralPopup(){
 }
 
 
-
 /* ============================================================
-   POPUP PREVIEW TEST
-
-   Browser console example:
-
-   __previewPopup("https://example.com/image.jpg")
-   ============================================================ */
-
-window.__previewPopup = function(url){
-
-  renderPopupContent(url);
-
-  openPopup();
-
-};
-
-
-
-/* ============================================================
-   RESET LOOKUP
+   RESET
    ============================================================ */
 
 function resetLookupState(){
 
+  verifiedLookupValue =
+    "";
 
-  verifiedLookupValue = "";
 
-
-  const inputEl =
-
+  const input =
     document.getElementById(
-
       "input"
-
     );
 
 
   const msg =
-
     document.getElementById(
-
       "msg"
-
     );
 
 
   const downloads =
-
     document.getElementById(
-
       "downloads"
-
     );
 
 
   const btn =
-
     document.getElementById(
-
       "btn"
-
     );
 
 
-  const resetLink =
-
+  const reset =
     document.getElementById(
-
       "resetLink"
-
     );
 
 
-
-  inputEl.value =
-
+  input.value =
     "";
 
 
-  inputEl.removeAttribute(
-
+  input.removeAttribute(
     "aria-invalid"
-
   );
 
 
-  msg.className =
-
+  msg.innerHTML =
     "";
 
 
-  msg.innerHTML =
-
+  msg.className =
     "";
 
 
   downloads.classList.remove(
-
     "show"
-
   );
 
 
   document.getElementById(
-
     "docsList"
-
   ).innerHTML =
-
     "";
 
 
   btn.disabled =
-
     false;
 
 
   btn.textContent =
-
-    "Access My Documents";
+    "Unlock My Colombo Travel Pack";
 
 
   btn.classList.remove(
-
     "success-state"
-
   );
 
 
-  resetLink.hidden =
-
+  reset.hidden =
     true;
 
 
-  inputEl.focus();
+  input.focus();
 
 }
-
 
 
 /* ============================================================
@@ -1830,7 +2664,6 @@ function resetLookupState(){
    ============================================================ */
 
 async function searchDoc(event){
-
 
   if(event){
 
@@ -1840,125 +2673,85 @@ async function searchDoc(event){
 
 
   const inputEl =
-
     document.getElementById(
-
       "input"
-
     );
 
 
   const value =
-
     inputEl.value.trim();
 
 
   const msg =
-
     document.getElementById(
-
       "msg"
-
     );
 
 
   const loader =
-
     document.getElementById(
-
       "loader"
-
     );
 
 
   const btn =
-
     document.getElementById(
-
       "btn"
-
     );
 
 
   const downloads =
-
     document.getElementById(
-
       "downloads"
-
     );
 
 
-  const resetLink =
-
+  const reset =
     document.getElementById(
-
       "resetLink"
-
     );
-
 
 
   msg.className =
-
     "";
 
 
   msg.innerHTML =
-
     "";
 
 
   downloads.classList.remove(
-
     "show"
-
   );
 
 
   inputEl.removeAttribute(
-
     "aria-invalid"
-
   );
 
 
   btn.classList.remove(
-
     "success-state"
-
   );
 
 
-  resetLink.hidden =
-
+  reset.hidden =
     true;
 
 
-
-  /* ========================================================
-     EMPTY FIELD
-     ======================================================== */
-
   if(value === ""){
 
-
     msg.className =
-
       "error";
 
 
-    msg.innerHTML =
-
+    msg.textContent =
       "Please enter your Employee ID or Mobile Number.";
 
 
     inputEl.setAttribute(
-
       "aria-invalid",
-
       "true"
-
     );
 
 
@@ -1970,101 +2763,56 @@ async function searchDoc(event){
   }
 
 
-
   loader.classList.add(
-
     "show"
-
   );
 
 
   btn.disabled =
-
     true;
-
 
 
   try{
 
-
     const response =
-
       await fetch(
-
         API_URL +
-
         "?input=" +
-
         encodeURIComponent(
-
           value
-
-        )
-
-        +
-
+        ) +
         "&_=" +
-
         Date.now(),
-
         {
-
           cache:"no-store"
-
         }
-
       );
 
 
-
     const data =
-
       await response.json();
 
 
-
     loader.classList.remove(
-
       "show"
-
     );
 
 
-
-    /* ======================================================
-       VERIFIED
-       ====================================================== */
-
     if(data.status === "success"){
 
-
-      /*
-       Store the exact Employee ID / Mobile used to verify.
-       This value is used for click tracking.
-      */
-
       verifiedLookupValue =
-
         value;
 
 
-
       msg.className =
-
         "success";
 
 
-      msg.innerHTML =
-
-        "You're verified — your documents are ready below.";
-
+      msg.textContent =
+        "You're verified — your Colombo travel pack is ready.";
 
 
-      /* ====================================================
-         FIVE DOCUMENTS
-         ==================================================== */
-
-      const fileMap = {
+      renderDocs({
 
         f1:data.f1,
 
@@ -2076,82 +2824,47 @@ async function searchDoc(event){
 
         pc:data.pc
 
-      };
-
-
-
-      renderDocs(
-
-        fileMap
-
-      );
-
+      });
 
 
       downloads.classList.add(
-
         "show"
-
       );
 
 
-
       btn.textContent =
-
-        "✓ Verified";
+        "✓ Colombo Access Unlocked";
 
 
       btn.classList.add(
-
         "success-state"
-
       );
 
 
       btn.disabled =
-
         true;
 
 
-
-      resetLink.hidden =
-
+      reset.hidden =
         false;
 
 
+      /*
+        Track announcement if it was actually shown
+        during this page load.
+      */
 
-      /* ====================================================
-         PU / ANNOUNCEMENT TRACKING
+      if(popupShownThisLoad){
 
-         The announcement appears before Employee ID is known.
-
-         Once the employee verifies, if the announcement had
-         actually been displayed in this browser session,
-         PU ID Check is marked as 1 for this employee.
-         ==================================================== */
-
-      if(
-
-        sessionStorage.getItem(
-
-          POPUP_SESSION_KEY
-
-        )
-
-        ===
-
-        "1"
-
-      ){
-
-        trackDocument(
-
+        await trackDocument(
           "pu"
-
         );
 
-      }
 
+        popupShownThisLoad =
+          false;
+
+      }
 
 
       celebrateSuccess();
@@ -2159,30 +2872,21 @@ async function searchDoc(event){
     }
 
 
-
-    /* ======================================================
-       EMPLOYEE NOT FOUND
-       ====================================================== */
-
     else{
 
-
       verifiedLookupValue =
-
         "";
 
 
       btn.disabled =
-
         false;
 
 
       msg.className =
-
         "error";
 
 
-      msg.innerHTML =
+      msg.textContent =
 
         data.message
 
@@ -2192,11 +2896,8 @@ async function searchDoc(event){
 
 
       inputEl.setAttribute(
-
         "aria-invalid",
-
         "true"
-
       );
 
     }
@@ -2204,47 +2905,32 @@ async function searchDoc(event){
   }
 
 
-
-  /* ========================================================
-     NETWORK ERROR
-     ======================================================== */
-
   catch(error){
 
-
     verifiedLookupValue =
-
       "";
 
 
     loader.classList.remove(
-
       "show"
-
     );
 
 
     btn.disabled =
-
       false;
 
 
     msg.className =
-
       "error";
 
 
-    msg.innerHTML =
-
-      "Unable to connect to server. Please check your internet connection and try again.";
+    msg.textContent =
+      "Unable to connect to the server. Please check your internet connection and try again.";
 
 
     console.error(
-
-      "Employee lookup failed:",
-
+      "Colombo employee lookup failed:",
       error
-
     );
 
   }
@@ -2252,198 +2938,152 @@ async function searchDoc(event){
 }
 
 
-
 /* ============================================================
-   FORM EVENTS
+   EVENTS
    ============================================================ */
 
 document
-
   .getElementById(
-
     "lookupForm"
-
   )
-
   .addEventListener(
-
     "submit",
-
     searchDoc
-
   );
-
 
 
 document
-
   .getElementById(
-
     "resetLink"
-
   )
-
   .addEventListener(
-
     "click",
-
     resetLookupState
-
   );
 
-
-
-/* ============================================================
-   PAGE LOAD
-   ============================================================ */
 
 window.addEventListener(
-
   "DOMContentLoaded",
-
   function(){
-
 
     updateCountdown();
 
 
     setInterval(
-
       updateCountdown,
-
       20000
-
     );
 
 
     showGeneralPopup();
 
   }
-
 );
 
 
-
 /* ============================================================
-   CELEBRATION MESSAGES
+   COLOMBO SUCCESS MESSAGES
    ============================================================ */
 
 const messagesUpcoming = [
 
-  "Can't wait to see you in London!",
+  "Colombo is calling! 🌴",
 
-  "Big Ben is counting the days too.",
+  "Sun, sea and Colombo are getting closer!",
 
-  "London, we're almost there!",
+  "Your Colombo adventure is almost here!",
 
-  "See you under the lights!"
+  "Sri Lanka, here we come!",
+
+  "Your Colombo travel pack is ready!"
 
 ];
 
 
 const messagesTomorrow = [
 
-  "One more sleep till London!",
+  "One more sleep till Colombo!",
 
-  "Bags packed? Tomorrow's the day!",
+  "Bags packed? Colombo awaits!",
 
-  "Almost wheels up for London!"
+  "Tomorrow, the Colombo adventure begins!"
 
 ];
 
 
 const messagesToday = [
 
-  "Today's the day — see you in London!",
+  "Today's the day — Colombo, here we come!",
 
-  "It's happening! London, here we come!",
+  "Welcome to your Colombo adventure!",
 
-  "Big Ben's ready — are you?"
+  "Sun, sea and Colombo — let's go!"
 
 ];
 
 
 const messagesPast = [
 
-  "Hope London was unforgettable!",
+  "Hope Colombo was unforgettable!",
 
-  "Thanks for making it a night to remember!",
+  "Thanks for making Colombo memorable!",
 
-  "Until the next convention — cheers!"
+  "Until the next adventure!"
 
 ];
 
 
-
 function pickMilestoneMessage(){
 
-
   const days =
-
     getDaysRemaining();
 
 
   let pool;
 
 
-
   if(days > 1){
 
     pool =
-
       messagesUpcoming;
 
   }
 
-
   else if(days === 1){
 
     pool =
-
       messagesTomorrow;
 
   }
 
-
   else if(days === 0){
 
     pool =
-
       messagesToday;
 
   }
 
-
   else{
 
     pool =
-
       messagesPast;
 
   }
 
 
-
   return pool[
-
     Math.floor(
-
       Math.random()
-
       *
-
       pool.length
-
     )
-
   ];
 
 }
 
 
-
-let toastTimer = null;
-
+let toastTimer =
+  null;
 
 
 /* ============================================================
@@ -2452,442 +3092,236 @@ let toastTimer = null;
 
 function fireConfettiBurst(){
 
-
   const container =
-
     document.getElementById(
-
       "confetti"
-
     );
 
 
   const colors = [
 
-    "#DDAE4E",
+    "#0877B9",
 
-    "#FFFFFF",
+    "#0A7C78",
 
-    "#B8862E",
+    "#F7C94B",
 
-    "#F3E1B0"
+    "#F37B45",
+
+    "#FFFFFF"
 
   ];
 
 
-  const w =
-
+  const width =
     window.innerWidth;
 
 
-  const h =
-
+  const height =
     window.innerHeight;
 
 
-  const count =
-
-    34;
-
-
-
   for(
-
     let i = 0;
-
-    i < count;
-
+    i < 34;
     i++
-
   ){
 
-
-    const s =
-
+    const piece =
       document.createElement(
-
         "span"
-
       );
 
 
     const startX =
-
       Math.random()
-
       *
-
-      w;
+      width;
 
 
     const startY =
-
       -30
-
       -
-
       Math.random()
-
       *
-
       160;
 
 
-    const fallDist =
-
-      h
-
+    const fall =
+      height
       -
-
       startY
-
       +
-
-      60
-
+      100
       +
-
       Math.random()
-
       *
-
-      120;
+      100;
 
 
     const drift =
-
       (
-
         Math.random()
-
         *
-
         2
-
         -
-
         1
-
       )
-
       *
-
       140;
 
 
-    const rot =
-
+    const rotation =
       Math.random()
-
       *
-
-      720
-
-      -
-
-      360;
-
-
-    const delay =
-
-      Math.random()
-
-      *
-
-      700;
+      720;
 
 
     const size =
-
       6
-
       +
-
       Math.random()
-
       *
-
       4;
 
 
-
-    s.style.position =
-
+    piece.style.position =
       "absolute";
 
 
-    s.style.left =
+    piece.style.left =
+      startX + "px";
 
-      startX
 
+    piece.style.top =
+      startY + "px";
+
+
+    piece.style.width =
+      size + "px";
+
+
+    piece.style.height =
+      (
+        size
+        *
+        1.8
+      )
       +
-
       "px";
 
 
-    s.style.top =
-
-      startY
-
-      +
-
-      "px";
+    piece.style.borderRadius =
+      "2px";
 
 
-    s.style.width =
-
-      size
-
-      +
-
-      "px";
-
-
-    s.style.height =
-
-      size
-
-      *
-
-      1.8
-
-      +
-
-      "px";
-
-
-    s.style.borderRadius =
-
-      "1px";
-
-
-    s.style.background =
+    piece.style.background =
 
       colors[
-
         Math.floor(
-
           Math.random()
-
           *
-
           colors.length
-
         )
-
       ];
 
 
-    s.style.opacity =
-
-      "0";
-
-
     container.appendChild(
-
-      s
-
+      piece
     );
 
 
+    const animation =
+      piece.animate(
+        [
 
-    (function(
+          {
+            transform:
+              "translate(0,0)",
+            opacity:1
+          },
 
-      span,
+          {
+            transform:
+              "translate(" +
+              drift +
+              "px," +
+              fall +
+              "px) rotate(" +
+              rotation +
+              "deg)",
 
-      dx,
+            opacity:0
+          }
 
-      dy,
+        ],
 
-      r,
+        {
+          duration:
+            2700
+            +
+            Math.random()
+            *
+            1200,
 
-      d
-
-    ){
-
-
-      setTimeout(
-
-        function(){
-
-
-          span.style.opacity =
-
-            "1";
-
-
-          const anim =
-
-            span.animate(
-
-              [
-
-                {
-
-                  transform:
-
-                    "translate(0,0) rotate(0deg)",
-
-                  opacity:1
-
-                },
-
-                {
-
-                  transform:
-
-                    "translate("
-
-                    +
-
-                    dx
-
-                    +
-
-                    "px,"
-
-                    +
-
-                    dy
-
-                    +
-
-                    "px) rotate("
-
-                    +
-
-                    r
-
-                    +
-
-                    "deg)",
-
-                  opacity:0
-
-                }
-
-              ],
-
-              {
-
-                duration:
-
-                  2800
-
-                  +
-
-                  Math.random()
-
-                  *
-
-                  1400,
-
-                easing:
-
-                  "cubic-bezier(.3,.5,.4,1)"
-
-              }
-
-            );
-
-
-
-          anim.onfinish =
-
-            function(){
-
-              span.remove();
-
-            };
-
-        },
-
-        d
-
+          easing:
+            "cubic-bezier(.3,.5,.4,1)"
+        }
       );
 
 
-    })(
+    animation.onfinish =
+      function(){
 
-      s,
+        piece.remove();
 
-      drift,
-
-      fallDist,
-
-      rot,
-
-      delay
-
-    );
+      };
 
   }
 
 }
 
 
-
-/* ============================================================
-   SUCCESS CELEBRATION
-   ============================================================ */
-
 function celebrateSuccess(){
-
 
   fireConfettiBurst();
 
 
   const toast =
-
     document.getElementById(
-
       "toast"
-
     );
 
 
   toast.textContent =
-
     pickMilestoneMessage();
 
 
   toast.classList.add(
-
     "show"
-
   );
 
 
   clearTimeout(
-
     toastTimer
-
   );
 
 
   toastTimer =
-
     setTimeout(
-
       function(){
 
         toast.classList.remove(
-
           "show"
-
         );
 
       },
-
-      2200
-
+      2300
     );
 
 }
 
 </script>
 
-
 </body>
-
 </html>
