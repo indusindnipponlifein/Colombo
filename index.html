@@ -42,7 +42,7 @@
 
 
   /* ========================================================
-     CHANGE ONLY THIS URL TO THE FINAL COLOMBO POSTER
+     REPLACE THIS WITH THE FINAL COLOMBO POSTER IMAGE
      ======================================================== */
 
   --hero-bg-image:
@@ -131,6 +131,7 @@ body{
   pointer-events:none;
 
   background-image:
+
     var(--hero-bg-image),
 
     linear-gradient(
@@ -505,13 +506,9 @@ body{
   background:
     linear-gradient(
       90deg,
-
       var(--ocean) 0%,
-
       var(--teal) 38%,
-
       var(--sun) 67%,
-
       var(--sunset) 100%
     );
 }
@@ -689,7 +686,7 @@ input[aria-invalid="true"]{
 
 
 /* ============================================================
-   CTA
+   CTA BUTTON
    ============================================================ */
 
 #btn{
@@ -832,7 +829,7 @@ input[aria-invalid="true"]{
 
 
 /* ============================================================
-   DOCUMENTS
+   DOCUMENT HUB
    ============================================================ */
 
 .downloads{
@@ -1177,7 +1174,7 @@ a.doc-row:focus-visible{
 
 
 /* ============================================================
-   PU ANNOUNCEMENT
+   PU ANNOUNCEMENT POPUP
    ============================================================ */
 
 .popup-overlay{
@@ -1361,7 +1358,7 @@ a.doc-row:focus-visible{
 
 
 /* ============================================================
-   ANIMATIONS
+   ANIMATION
    ============================================================ */
 
 @keyframes spin{
@@ -1375,7 +1372,8 @@ a.doc-row:focus-visible{
 
 
 /* ============================================================
-   MOBILE — FIRST SCREEN OPTIMISATION
+   MOBILE
+   Bigger than previous version + shifted lower
    ============================================================ */
 
 @media (max-width:480px){
@@ -1383,350 +1381,486 @@ a.doc-row:focus-visible{
   :root{
 
     /*
-      Crucial adjustment:
-      reduces poster space enough to keep CTA above fold.
-    */
+     * Pushes the UI lower so that the poster title/content
+     * remains clear above the countdown.
+     */
 
-    --safe-fraction:.38;
+    --safe-fraction:.445;
 
   }
 
 
   .page{
+
     padding:
       var(--safe-y)
-      13px
-      20px;
+      15px
+      24px;
+
   }
 
 
+  /* COUNTDOWN */
+
   .countdown-wrap{
-    width:min(100%,360px);
+
+    width:min(
+      100%,
+      390px
+    );
 
     margin:
-      0 auto 8px;
+      0 auto 12px;
 
     padding:
-      8px 10px 9px;
+      11px 13px 12px;
 
-    border-radius:16px;
+    border-radius:
+      19px;
+
   }
 
 
   .countdown-label{
-    gap:5px;
 
-    margin-bottom:5px;
+    gap:6px;
 
-    font-size:.59rem;
+    margin-bottom:7px;
 
-    letter-spacing:.03em;
+    font-size:.66rem;
+
+    letter-spacing:.035em;
 
     white-space:nowrap;
+
   }
 
 
   .countdown-label::before{
-    width:6px;
-    height:6px;
+
+    width:7px;
+
+    height:7px;
 
     box-shadow:
-      0 0 0 3px
+      0 0 0 4px
       rgba(243,123,69,.12);
+
   }
 
 
   .countdown-stats{
-    gap:6px;
+
+    gap:7px;
+
   }
 
 
   .stat-box{
-    width:51px;
-    height:43px;
 
-    border-radius:12px;
+    width:57px;
+
+    height:49px;
+
+    border-radius:14px;
+
   }
 
 
   .stat-num{
-    font-size:1rem;
+
+    font-size:1.15rem;
+
   }
 
 
   .stat-label{
-    margin-top:2px;
 
-    font-size:.43rem;
+    margin-top:3px;
+
+    font-size:.47rem;
+
   }
 
 
   .stat-sep{
-    font-size:.7rem;
+
+    font-size:.8rem;
+
   }
 
 
+  /* CARD */
+
   .card{
-    max-width:360px;
+
+    width:100%;
+
+    max-width:390px;
 
     padding:
-      16px 15px 15px;
+      20px 18px 18px;
 
-    border-radius:20px;
+    border-radius:
+      23px;
+
   }
 
 
   .card::before{
-    height:4px;
+
+    height:5px;
+
   }
 
 
   .section-kicker{
-    gap:5px;
 
-    margin-bottom:4px;
+    gap:6px;
+
+    margin-bottom:6px;
 
     padding:
-      4px 8px;
+      5px 9px;
 
-    font-size:.55rem;
+    font-size:.61rem;
 
-    letter-spacing:.06em;
+    letter-spacing:.065em;
+
   }
 
 
   .section-kicker::before{
-    width:6px;
-    height:6px;
+
+    width:7px;
+
+    height:7px;
+
   }
 
 
   .card-title{
-    font-size:1.04rem;
 
-    line-height:1.17;
+    font-size:1.18rem;
+
+    line-height:1.2;
+
+    letter-spacing:-.02em;
+
   }
 
 
   .card-instruction{
-    max-width:300px;
+
+    max-width:325px;
 
     margin:
-      4px auto 9px;
+      6px auto 13px;
 
-    font-size:.72rem;
+    font-size:.78rem;
 
-    line-height:1.34;
+    line-height:1.4;
+
   }
 
 
+  /* INPUT */
+
   .input-wrap{
-    margin-bottom:7px;
+
+    margin-bottom:9px;
+
   }
 
 
   .input-icon{
-    left:13px;
 
-    width:15px;
-    height:15px;
+    left:14px;
+
+    width:17px;
+
+    height:17px;
+
   }
 
 
   input{
-    min-height:41px;
+
+    min-height:47px;
 
     padding:
-      9px 11px
-      9px 38px;
+      11px 13px
+      11px 42px;
 
-    border-radius:12px;
+    border-radius:14px;
 
-    font-size:15px;
+    font-size:16px;
+
   }
 
+
+  /* CTA */
 
   #btn{
-    min-height:42px;
 
-    border-radius:12px;
+    min-height:47px;
 
-    font-size:.84rem;
+    border-radius:14px;
+
+    font-size:.91rem;
+
   }
 
 
+  /* RESULTS */
+
   .downloads{
-    margin-top:11px;
+
+    margin-top:14px;
+
   }
 
 
   .docs-heading{
-    margin-bottom:6px;
+
+    margin-bottom:8px;
+
+  }
+
+
+  .docs-heading span:first-child{
+
+    font-size:.72rem;
+
+  }
+
+
+  .docs-heading span:last-child{
+
+    font-size:.69rem;
+
   }
 
 
   .docs-list{
-    gap:6px;
+
+    gap:8px;
+
   }
 
 
   .doc-row{
-    min-height:53px;
+
+    min-height:59px;
 
     padding:
-      8px 9px;
+      10px 11px;
 
-    border-radius:13px;
+    border-radius:15px;
+
   }
 
 
   .doc-icon{
-    width:32px;
-    height:32px;
 
-    border-radius:10px;
+    width:37px;
+
+    height:37px;
+
+    border-radius:11px;
+
   }
 
 
   .doc-icon svg{
-    width:15px;
-    height:15px;
+
+    width:17px;
+
+    height:17px;
+
   }
 
 
   .doc-title{
-    font-size:.79rem;
+
+    font-size:.84rem;
+
   }
 
 
   .doc-desc{
-    font-size:.67rem;
+
+    font-size:.71rem;
+
+    line-height:1.32;
+
   }
 
 
   .reset-link{
-    margin-top:9px;
 
-    font-size:.7rem;
+    margin-top:11px;
+
+    font-size:.74rem;
+
   }
 
 
   .footer-note{
-    padding-top:13px;
 
-    font-size:.72rem;
+    padding-top:20px;
+
+    font-size:.78rem;
+
   }
 
 
   .popup-well iframe{
+
     height:49vh;
+
   }
 
 
   .popup-well img{
+
     max-height:57vh;
+
   }
 
 }
 
 
-/* Even shorter browser viewports */
+/* ============================================================
+   SHORT MOBILE SCREENS
+   ============================================================ */
 
 @media (max-width:480px) and (max-height:700px){
 
   :root{
-    --safe-fraction:.35;
+
+    --safe-fraction:.42;
+
   }
 
 
   .countdown-wrap{
-    margin-bottom:6px;
+
+    margin-bottom:9px;
 
     padding:
-      6px 9px;
+      9px 11px;
+
   }
 
 
   .countdown-label{
-    margin-bottom:3px;
 
-    font-size:.55rem;
+    margin-bottom:5px;
+
+    font-size:.62rem;
+
   }
 
 
   .stat-box{
-    width:48px;
-    height:38px;
+
+    width:54px;
+
+    height:45px;
+
   }
 
 
   .stat-num{
-    font-size:.9rem;
+
+    font-size:1.05rem;
+
   }
 
 
   .card{
+
     padding:
-      13px 13px 13px;
+      17px 16px 16px;
+
   }
 
 
   .card-title{
-    font-size:.96rem;
+
+    font-size:1.1rem;
+
   }
 
 
   .card-instruction{
-    margin:
-      3px auto 7px;
 
-    font-size:.69rem;
+    margin:
+      5px auto 10px;
+
+    font-size:.74rem;
+
   }
 
 
   input{
-    min-height:39px;
+
+    min-height:44px;
+
   }
 
 
   #btn{
-    min-height:39px;
+
+    min-height:44px;
+
   }
 
 }
 
 
-/* Desktop */
+/* ============================================================
+   DESKTOP
+   ============================================================ */
 
 @media (min-width:600px){
 
   .card{
+
     max-width:420px;
 
     padding:
       29px 28px 24px;
+
   }
 
 
   .countdown-wrap{
+
     max-width:420px;
+
   }
 
 }
 
 
-/* Reduced motion */
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
 
 @media (prefers-reduced-motion:reduce){
 
   *,
   *::before,
   *::after{
+
     animation-duration:.001ms !important;
 
     animation-iteration-count:1 !important;
 
     transition-duration:.001ms !important;
+
   }
 
 }
@@ -2040,7 +2174,7 @@ a.doc-row:focus-visible{
 
 
 <!-- ========================================================
-     PU / ANNOUNCEMENT
+     PU / GENERAL ANNOUNCEMENT
      ======================================================== -->
 
 <div
@@ -2140,19 +2274,15 @@ let verifiedLookupValue =
 "";
 
 
-/*
-  True only if PU popup was actually displayed on this page load.
-*/
-
 let popupShownThisLoad =
 false;
 
 
 /* ============================================================
-   DOCUMENT AVAILABILITY
+   VISIBLE DOCUMENTS
 
-   F4 continues existing in Apps Script / Sheet but is
-   intentionally NOT displayed on the Colombo page yet.
+   F4 remains available in Apps Script / Google Sheet.
+   It is simply hidden on the Colombo page for now.
    ============================================================ */
 
 const DOC_AVAILABILITY = {
@@ -2197,7 +2327,7 @@ const ICON_CHEVRON =
 
 
 /* ============================================================
-   FOUR VISIBLE COLOMBO DOCUMENTS
+   FOUR COLOMBO DOCUMENTS
 
    F1 = CEO's Note
    F3 = Itinerary
@@ -2480,11 +2610,11 @@ function renderDocs(
 
 
         /*
-         * Reliable counter:
+         * Reliable tracking:
          *
-         * 1. User taps document.
+         * 1. User clicks.
          * 2. Blank tab opens immediately.
-         * 3. Google Sheet counter increments.
+         * 3. Counter is updated.
          * 4. Actual document opens.
          */
 
@@ -2575,18 +2705,10 @@ function renderDocs(
             }
 
 
-            /*
-             * Increment counter.
-             */
-
             await trackDocument(
               d.key
             );
 
-
-            /*
-             * Open document.
-             */
 
             if(
               newTab
@@ -3489,8 +3611,8 @@ async function searchDoc(
 
 
       /*
-       * F4 may still be returned by Apps Script,
-       * but Colombo intentionally ignores it for now.
+       * F4 can continue being returned by Apps Script.
+       * We intentionally do not display it yet.
        */
 
       renderDocs({
@@ -3531,8 +3653,8 @@ async function searchDoc(
       /*
        * PU remains active.
        *
-       * Popup appears before employee identity is known.
-       * Once the employee verifies, record the PU view.
+       * Once the employee verifies,
+       * record that the announcement was shown.
        */
 
       if(
