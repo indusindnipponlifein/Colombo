@@ -8,13 +8,11 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
 :root{
-
   --ocean:#0877B9;
   --ocean-deep:#07536D;
   --teal:#0A7C78;
@@ -24,8 +22,6 @@
 
   --ink:#173043;
   --muted:#617683;
-
-  --white:#FFFFFF;
 
   --success:#148A63;
   --error:#C94242;
@@ -46,7 +42,7 @@
 
 
   /* ========================================================
-     REPLACE THIS WITH FINAL COLOMBO BACKGROUND
+     CHANGE ONLY THIS URL TO THE FINAL COLOMBO POSTER
      ======================================================== */
 
   --hero-bg-image:
@@ -66,7 +62,6 @@
       *
       var(--safe-fraction)
     );
-
 }
 
 
@@ -90,9 +85,9 @@
 
 
 *{
-  box-sizing:border-box;
   margin:0;
   padding:0;
+  box-sizing:border-box;
 }
 
 
@@ -103,6 +98,7 @@ body{
 
 
 body{
+  overflow-x:hidden;
 
   font-family:
     var(--font-body);
@@ -110,10 +106,7 @@ body{
   color:
     var(--ink);
 
-  overflow-x:hidden;
-
   background:
-
     linear-gradient(
       180deg,
       #BFEAFF 0%,
@@ -121,16 +114,14 @@ body{
       #FFD8B6 72%,
       #F4FBFB 100%
     );
-
 }
 
 
-/* ==========================================================
-   COLOMBO BACKGROUND
-   ========================================================== */
+/* ============================================================
+   BACKGROUND
+   ============================================================ */
 
 .hero-bg{
-
   position:fixed;
 
   inset:0;
@@ -140,7 +131,6 @@ body{
   pointer-events:none;
 
   background-image:
-
     var(--hero-bg-image),
 
     linear-gradient(
@@ -162,12 +152,10 @@ body{
   background-repeat:
     no-repeat,
     no-repeat;
-
 }
 
 
 .bg-overlay{
-
   position:fixed;
 
   inset:0;
@@ -177,7 +165,6 @@ body{
   pointer-events:none;
 
   background:
-
     linear-gradient(
       180deg,
 
@@ -185,10 +172,10 @@ body{
       0%,
 
       rgba(255,255,255,0)
-      calc(var(--safe-y) - 80px),
+      calc(var(--safe-y) - 70px),
 
-      rgba(247,252,252,.62)
-      calc(var(--safe-y) + 20px),
+      rgba(247,252,252,.58)
+      calc(var(--safe-y) + 15px),
 
       rgba(247,252,252,.92)
       78%,
@@ -196,16 +183,17 @@ body{
       rgba(247,252,252,.98)
       100%
     );
-
 }
 
 
-.sr-only{
+/* ============================================================
+   ACCESSIBILITY
+   ============================================================ */
 
+.sr-only{
   position:absolute;
 
   width:1px;
-
   height:1px;
 
   padding:0;
@@ -219,12 +207,14 @@ body{
   white-space:nowrap;
 
   border:0;
-
 }
 
 
-.confetti{
+/* ============================================================
+   CONFETTI
+   ============================================================ */
 
+.confetti{
   position:fixed;
 
   inset:0;
@@ -234,16 +224,14 @@ body{
   pointer-events:none;
 
   overflow:hidden;
-
 }
 
 
-/* ==========================================================
+/* ============================================================
    PAGE
-   ========================================================== */
+   ============================================================ */
 
 .page{
-
   position:relative;
 
   z-index:2;
@@ -259,8 +247,7 @@ body{
   padding:
     var(--safe-y)
     18px
-    30px;
-
+    28px;
 }
 
 
@@ -273,32 +260,27 @@ body{
 }
 
 
-/* ==========================================================
+/* ============================================================
    COUNTDOWN
-   ========================================================== */
+   ============================================================ */
 
 .countdown-wrap{
-
-  width:min(
-    100%,
-    390px
-  );
+  width:min(100%,390px);
 
   margin:
-    0 auto 16px;
+    0 auto 14px;
 
   padding:
-    14px 16px 15px;
+    13px 15px 14px;
 
   border:
     1px solid
-    rgba(255,255,255,.74);
+    rgba(255,255,255,.78);
 
-  border-radius:
-    20px;
+  border-radius:20px;
 
   background:
-    rgba(255,255,255,.76);
+    rgba(255,255,255,.78);
 
   backdrop-filter:
     blur(16px)
@@ -311,12 +293,10 @@ body{
   box-shadow:
     0 12px 34px
     rgba(12,79,103,.14);
-
 }
 
 
 .countdown-label{
-
   display:flex;
 
   align-items:center;
@@ -325,7 +305,7 @@ body{
 
   gap:7px;
 
-  margin-bottom:10px;
+  margin-bottom:9px;
 
   color:
     var(--ocean-deep);
@@ -333,23 +313,20 @@ body{
   font-family:
     var(--font-display);
 
-  font-size:.74rem;
+  font-size:.72rem;
 
   font-weight:800;
 
   letter-spacing:.045em;
 
   text-transform:uppercase;
-
 }
 
 
 .countdown-label::before{
-
   content:"";
 
   width:7px;
-
   height:7px;
 
   border-radius:50%;
@@ -360,12 +337,10 @@ body{
   box-shadow:
     0 0 0 5px
     rgba(243,123,69,.12);
-
 }
 
 
 .countdown-stats{
-
   display:flex;
 
   align-items:center;
@@ -373,15 +348,12 @@ body{
   justify-content:center;
 
   gap:8px;
-
 }
 
 
 .stat-box{
-
-  width:62px;
-
-  height:58px;
+  width:60px;
+  height:56px;
 
   display:flex;
 
@@ -391,7 +363,7 @@ body{
 
   justify-content:center;
 
-  border-radius:16px;
+  border-radius:15px;
 
   background:
     rgba(238,249,252,.92);
@@ -399,16 +371,14 @@ body{
   border:
     1px solid
     rgba(8,119,185,.12);
-
 }
 
 
 .stat-num{
-
   font-family:
     var(--font-display);
 
-  font-size:1.35rem;
+  font-size:1.3rem;
 
   line-height:1;
 
@@ -419,54 +389,49 @@ body{
 
   font-variant-numeric:
     tabular-nums;
-
 }
 
 
 .stat-label{
-
   margin-top:4px;
-
-  font-size:.54rem;
-
-  font-weight:700;
 
   color:
     var(--muted);
 
+  font-size:.52rem;
+
+  font-weight:700;
+
   letter-spacing:.09em;
 
   text-transform:uppercase;
-
 }
 
 
 .stat-sep{
-
   color:
     var(--sunset);
 
-  font-size:1rem;
+  font-size:.9rem;
 
   font-weight:800;
-
 }
 
 
 .countdown-done{
-
   display:inline-flex;
 
   align-items:center;
 
   gap:8px;
 
-  padding:9px 18px;
+  padding:
+    9px 18px;
 
   border-radius:999px;
 
   background:
-    rgba(255,255,255,.88);
+    rgba(255,255,255,.90);
 
   border:
     1px solid
@@ -481,16 +446,14 @@ body{
   font-size:.86rem;
 
   font-weight:800;
-
 }
 
 
-/* ==========================================================
+/* ============================================================
    MAIN CARD
-   ========================================================== */
+   ============================================================ */
 
 .card{
-
   position:relative;
 
   overflow:hidden;
@@ -500,17 +463,16 @@ body{
   max-width:390px;
 
   padding:
-    26px 20px 22px;
+    24px 20px 21px;
 
-  border-radius:
-    26px;
+  border-radius:25px;
 
   border:
     1px solid
-    rgba(255,255,255,.9);
+    rgba(255,255,255,.92);
 
   background:
-    rgba(255,255,255,.88);
+    rgba(255,255,255,.90);
 
   backdrop-filter:
     blur(20px)
@@ -526,52 +488,48 @@ body{
 
     0 2px 8px
     rgba(12,79,103,.06);
-
 }
 
 
 .card::before{
-
   content:"";
 
   position:absolute;
 
   top:0;
-
   left:0;
-
   right:0;
 
   height:5px;
 
   background:
-
     linear-gradient(
       90deg,
+
       var(--ocean) 0%,
+
       var(--teal) 38%,
+
       var(--sun) 67%,
+
       var(--sunset) 100%
     );
-
 }
 
 
 .section-kicker{
-
   display:inline-flex;
 
   align-items:center;
 
-  gap:7px;
+  gap:6px;
 
-  margin-bottom:8px;
+  margin-bottom:6px;
 
   padding:
-    6px 10px;
+    5px 9px;
 
-  border-radius:
-    999px;
+  border-radius:999px;
 
   background:
     #EDF8FC;
@@ -579,92 +537,81 @@ body{
   color:
     var(--ocean-deep);
 
-  font-size:.67rem;
+  font-size:.63rem;
 
   font-weight:800;
 
+  letter-spacing:.07em;
+
   text-transform:uppercase;
-
-  letter-spacing:.08em;
-
 }
 
 
 .section-kicker::before{
-
   content:"";
 
   width:7px;
-
   height:7px;
 
   border-radius:50%;
 
   background:
     var(--sun);
-
 }
 
 
 .card-title{
+  color:#123A4A;
 
   font-family:
     var(--font-display);
 
+  font-size:1.22rem;
+
   font-weight:800;
 
-  font-size:1.32rem;
+  line-height:1.2;
 
   letter-spacing:-.025em;
-
-  color:#123A4A;
-
 }
 
 
 .card-instruction{
-
   max-width:310px;
 
   margin:
-    7px auto 19px;
+    6px auto 15px;
 
   color:
     var(--muted);
 
-  font-size:.87rem;
+  font-size:.82rem;
 
-  line-height:1.5;
+  line-height:1.42;
 
   text-align:center;
-
 }
 
 
-/* ==========================================================
+/* ============================================================
    INPUT
-   ========================================================== */
+   ============================================================ */
 
 .input-wrap{
-
   position:relative;
 
-  margin-bottom:12px;
-
+  margin-bottom:9px;
 }
 
 
 .input-icon{
-
   position:absolute;
 
   left:14px;
-
   top:50%;
 
-  width:18px;
-
-  height:18px;
+  width:17px;
+  height:17px;
 
   transform:
     translateY(-50%);
@@ -673,26 +620,25 @@ body{
     var(--ocean);
 
   pointer-events:none;
-
 }
 
 
 input{
-
   display:block;
 
   width:100%;
 
-  min-height:50px;
+  min-height:47px;
 
   padding:
-    13px 14px 13px 44px;
-
-  border-radius:15px;
+    11px 13px
+    11px 42px;
 
   border:
     1.5px solid
     #D8E7EC;
+
+  border-radius:14px;
 
   outline:none;
 
@@ -712,56 +658,48 @@ input{
   transition:
     border-color .18s ease,
     box-shadow .18s ease;
-
 }
 
 
 input::placeholder{
-
   color:#8AA0AA;
 
   font-weight:500;
-
 }
 
 
 input:focus{
-
   border-color:
     var(--ocean);
 
   box-shadow:
     0 0 0 4px
     rgba(8,119,185,.11);
-
 }
 
 
 input[aria-invalid="true"]{
-
   border-color:
     var(--error);
 
   box-shadow:
     0 0 0 4px
     rgba(201,66,66,.1);
-
 }
 
 
-/* ==========================================================
-   BUTTON
-   ========================================================== */
+/* ============================================================
+   CTA
+   ============================================================ */
 
 #btn{
-
   width:100%;
 
-  min-height:50px;
+  min-height:47px;
 
   border:0;
 
-  border-radius:15px;
+  border-radius:14px;
 
   cursor:pointer;
 
@@ -777,7 +715,7 @@ input[aria-invalid="true"]{
   font-family:
     var(--font-body);
 
-  font-size:.94rem;
+  font-size:.9rem;
 
   font-weight:800;
 
@@ -785,18 +723,28 @@ input[aria-invalid="true"]{
     0 12px 24px
     rgba(8,119,185,.22);
 
+  transition:
+    transform .15s ease,
+    box-shadow .15s ease;
+}
+
+
+#btn:hover{
+  transform:
+    translateY(-1px);
+
+  box-shadow:
+    0 16px 28px
+    rgba(8,119,185,.25);
 }
 
 
 #btn:disabled{
-
   cursor:not-allowed;
-
 }
 
 
 #btn.success-state{
-
   color:
     var(--success);
 
@@ -808,19 +756,17 @@ input[aria-invalid="true"]{
     #BDE9D8;
 
   box-shadow:none;
-
 }
 
 
-/* ==========================================================
-   LOADER
-   ========================================================== */
+/* ============================================================
+   LOADER / MESSAGE
+   ============================================================ */
 
 .loader{
-
   display:none;
 
-  margin-top:14px;
+  margin-top:12px;
 
   align-items:center;
 
@@ -831,24 +777,19 @@ input[aria-invalid="true"]{
   color:
     var(--ocean-deep);
 
-  font-size:.86rem;
+  font-size:.82rem;
 
   font-weight:600;
-
 }
 
 
 .loader.show{
-
   display:flex;
-
 }
 
 
 .spinner{
-
   width:15px;
-
   height:15px;
 
   border:
@@ -862,120 +803,111 @@ input[aria-invalid="true"]{
 
   animation:
     spin .75s linear infinite;
-
 }
 
 
 #msg{
-
-  margin-top:12px;
+  margin-top:10px;
 
   text-align:center;
 
-  font-size:.86rem;
+  font-size:.83rem;
 
   font-weight:700;
 
   line-height:1.4;
-
 }
 
 
 .success{
-  color:var(--success);
+  color:
+    var(--success);
 }
 
 
 .error{
-  color:var(--error);
+  color:
+    var(--error);
 }
 
 
-/* ==========================================================
+/* ============================================================
    DOCUMENTS
-   ========================================================== */
+   ============================================================ */
 
 .downloads{
-
   display:none;
 
-  margin-top:18px;
-
+  margin-top:14px;
 }
 
 
 .downloads.show{
-
   display:block;
-
 }
 
 
 .docs-heading{
-
   display:flex;
+
+  align-items:center;
 
   justify-content:space-between;
 
-  margin-bottom:9px;
-
+  margin-bottom:8px;
 }
 
 
 .docs-heading span:first-child{
+  color:
+    var(--ocean-deep);
 
-  font-size:.74rem;
+  font-size:.7rem;
 
   font-weight:800;
 
   letter-spacing:.07em;
 
   text-transform:uppercase;
-
-  color:
-    var(--ocean-deep);
-
 }
 
 
 .docs-heading span:last-child{
-
-  font-size:.7rem;
-
   color:
     var(--muted);
 
+  font-size:.68rem;
 }
 
 
 .docs-list{
-
   display:flex;
 
   flex-direction:column;
 
-  gap:9px;
+  gap:8px;
 
+  text-align:left;
 }
 
 
 .doc-row{
-
   display:flex;
 
   align-items:center;
 
-  gap:12px;
+  gap:11px;
 
-  min-height:64px;
+  min-height:59px;
 
-  padding:12px;
-
-  border-radius:17px;
+  padding:
+    10px 11px;
 
   border:
     1px solid
     #DDECEF;
+
+  border-radius:16px;
 
   background:
     #FFFFFF;
@@ -989,16 +921,32 @@ input[aria-invalid="true"]{
     0 5px 14px
     rgba(25,88,108,.055);
 
+  transition:
+    transform .15s ease,
+    border-color .15s ease,
+    box-shadow .15s ease;
+}
+
+
+a.doc-row:hover,
+a.doc-row:focus-visible{
+  transform:
+    translateY(-1px);
+
+  border-color:
+    rgba(243,123,69,.55);
+
+  box-shadow:
+    0 10px 22px
+    rgba(25,88,108,.09);
 }
 
 
 .doc-icon{
-
   flex-shrink:0;
 
-  width:40px;
-
-  height:40px;
+  width:37px;
+  height:37px;
 
   display:flex;
 
@@ -1006,7 +954,7 @@ input[aria-invalid="true"]{
 
   justify-content:center;
 
-  border-radius:13px;
+  border-radius:12px;
 
   color:
     var(--ocean-deep);
@@ -1017,21 +965,16 @@ input[aria-invalid="true"]{
       #E7F8FF,
       #F1FBF7
     );
-
 }
 
 
 .doc-icon svg{
-
-  width:18px;
-
-  height:18px;
-
+  width:17px;
+  height:17px;
 }
 
 
 .doc-text{
-
   flex:1;
 
   min-width:0;
@@ -1040,79 +983,65 @@ input[aria-invalid="true"]{
 
   flex-direction:column;
 
-  gap:3px;
-
+  gap:2px;
 }
 
 
 .doc-title{
-
   color:#173D4C;
 
-  font-size:.88rem;
+  font-size:.84rem;
 
   font-weight:800;
-
 }
 
 
 .doc-desc{
-
   color:
     var(--muted);
 
-  font-size:.74rem;
+  font-size:.71rem;
 
-  line-height:1.35;
-
+  line-height:1.32;
 }
 
 
 .doc-chevron{
+  width:17px;
+  height:17px;
 
-  width:18px;
-
-  height:18px;
+  flex-shrink:0;
 
   color:
     var(--sunset);
-
 }
 
 
 .doc-row.pending{
+  cursor:default;
 
   background:#F8FAFA;
 
-  cursor:default;
-
   box-shadow:none;
-
 }
 
 
 .doc-desc.doc-soon{
-
   color:#A37545;
 
   font-weight:700;
-
 }
 
 
 .doc-status{
-
-  width:17px;
-
-  height:17px;
+  width:16px;
+  height:16px;
 
   color:#A0AEB3;
-
 }
 
 
 .doc-row[data-doc="pc"] .doc-icon{
-
   color:#A85D16;
 
   background:
@@ -1121,21 +1050,20 @@ input[aria-invalid="true"]{
       #FFF8D8,
       #FFF0E4
     );
-
 }
 
 
-/* ==========================================================
+/* ============================================================
    RESET
-   ========================================================== */
+   ============================================================ */
 
 .reset-link{
-
   display:inline-flex;
 
-  margin-top:15px;
+  margin-top:12px;
 
-  padding:6px 4px;
+  padding:
+    5px 4px;
 
   border:0;
 
@@ -1147,65 +1075,70 @@ input[aria-invalid="true"]{
   font-family:
     var(--font-body);
 
-  font-size:.78rem;
+  font-size:.74rem;
 
   font-weight:700;
 
   text-decoration:underline;
 
-  cursor:pointer;
+  text-underline-offset:3px;
 
+  cursor:pointer;
 }
 
 
 .reset-link[hidden]{
-
   display:none;
-
 }
 
 
-/* ==========================================================
+/* ============================================================
    FOOTER
-   ========================================================== */
+   ============================================================ */
 
 .footer-note{
-
   margin-top:auto;
 
-  padding-top:26px;
+  padding-top:18px;
 
   color:#24596A;
 
   font-family:
     var(--font-display);
 
-  font-size:.83rem;
+  font-size:.78rem;
 
   font-weight:800;
 
+  text-shadow:
+    0 1px 8px
+    rgba(255,255,255,.9);
 }
 
 
-/* ==========================================================
+/* ============================================================
    TOAST
-   ========================================================== */
+   ============================================================ */
 
 .toast{
-
   position:fixed;
 
   top:14px;
-
   left:50%;
 
   z-index:100;
+
+  max-width:90vw;
 
   transform:
     translate(-50%,-8px);
 
   padding:
     10px 16px;
+
+  border:
+    1px solid
+    rgba(255,255,255,.86);
 
   border-radius:999px;
 
@@ -1219,6 +1152,8 @@ input[aria-invalid="true"]{
 
   font-weight:800;
 
+  white-space:nowrap;
+
   box-shadow:
     0 12px 30px
     rgba(12,79,103,.18);
@@ -1230,26 +1165,22 @@ input[aria-invalid="true"]{
   transition:
     opacity .25s ease,
     transform .25s ease;
-
 }
 
 
 .toast.show{
-
   opacity:1;
 
   transform:
     translate(-50%,0);
-
 }
 
 
-/* ==========================================================
-   PU ANNOUNCEMENT POPUP
-   ========================================================== */
+/* ============================================================
+   PU ANNOUNCEMENT
+   ============================================================ */
 
 .popup-overlay{
-
   display:none;
 
   position:fixed;
@@ -1267,28 +1198,39 @@ input[aria-invalid="true"]{
   background:
     rgba(8,50,65,.48);
 
-  backdrop-filter:
+  -webkit-backdrop-filter:
     blur(5px);
 
+  backdrop-filter:
+    blur(5px);
 }
 
 
 .popup-overlay.show{
-
   display:flex;
-
 }
 
 
 .popup-box{
-
   position:relative;
 
   width:100%;
 
   max-width:480px;
 
+  max-height:86vh;
+
   padding:18px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:12px;
+
+  border:
+    1px solid
+    rgba(255,255,255,.9);
 
   border-radius:24px;
 
@@ -1298,37 +1240,31 @@ input[aria-invalid="true"]{
   box-shadow:
     0 30px 70px
     rgba(7,83,109,.28);
-
 }
 
 
 .popup-title{
-
-  margin-bottom:12px;
-
   text-align:center;
-
-  font-family:
-    var(--font-display);
-
-  font-weight:800;
 
   color:
     var(--ocean-deep);
 
+  font-family:
+    var(--font-display);
+
+  font-size:1rem;
+
+  font-weight:800;
 }
 
 
 .popup-close{
-
   position:absolute;
 
   top:-12px;
-
   right:-8px;
 
   width:36px;
-
   height:36px;
 
   border:0;
@@ -1344,10 +1280,14 @@ input[aria-invalid="true"]{
 
   font-size:17px;
 
+  box-shadow:
+    0 8px 20px
+    rgba(243,123,69,.28);
 }
 
 
 .popup-well{
+  min-height:100px;
 
   display:flex;
 
@@ -1355,33 +1295,42 @@ input[aria-invalid="true"]{
 
   justify-content:center;
 
+  overflow:hidden;
+
   padding:7px;
 
-  overflow:hidden;
+  border:
+    1px solid
+    #E2EDEF;
 
   border-radius:16px;
 
   background:#F4F8F9;
-
 }
 
 
 .popup-loading{
-
   display:flex;
+
+  align-items:center;
+
+  justify-content:center;
 
   gap:8px;
 
-  padding:38px 12px;
+  padding:
+    38px 12px;
 
   color:
     var(--ocean-deep);
 
+  font-size:.84rem;
+
+  font-weight:700;
 }
 
 
 .popup-well iframe{
-
   width:100%;
 
   height:56vh;
@@ -1390,92 +1339,394 @@ input[aria-invalid="true"]{
 
   border-radius:11px;
 
+  background:#FFFFFF;
 }
 
 
 .popup-well img{
-
   display:block;
 
-  max-width:100%;
+  width:auto;
+  height:auto;
 
+  max-width:100%;
   max-height:70vh;
 
   object-fit:contain;
 
   border-radius:11px;
 
+  background:#FFFFFF;
 }
 
 
-/* ==========================================================
-   RESPONSIVE
-   ========================================================== */
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
 
 @keyframes spin{
 
   to{
-    transform:rotate(360deg);
+    transform:
+      rotate(360deg);
   }
 
 }
 
 
-@media (min-width:600px){
+/* ============================================================
+   MOBILE — FIRST SCREEN OPTIMISATION
+   ============================================================ */
 
-  .card{
+@media (max-width:480px){
 
-    max-width:420px;
+  :root{
 
+    /*
+      Crucial adjustment:
+      reduces poster space enough to keep CTA above fold.
+    */
+
+    --safe-fraction:.38;
+
+  }
+
+
+  .page{
     padding:
-      30px 28px 25px;
-
+      var(--safe-y)
+      13px
+      20px;
   }
 
 
   .countdown-wrap{
+    width:min(100%,360px);
 
-    max-width:420px;
+    margin:
+      0 auto 8px;
 
+    padding:
+      8px 10px 9px;
+
+    border-radius:16px;
   }
 
-}
+
+  .countdown-label{
+    gap:5px;
+
+    margin-bottom:5px;
+
+    font-size:.59rem;
+
+    letter-spacing:.03em;
+
+    white-space:nowrap;
+  }
 
 
-@media (max-width:380px){
+  .countdown-label::before{
+    width:6px;
+    height:6px;
 
-  .page{
+    box-shadow:
+      0 0 0 3px
+      rgba(243,123,69,.12);
+  }
 
-    padding-left:13px;
 
-    padding-right:13px;
+  .countdown-stats{
+    gap:6px;
+  }
 
+
+  .stat-box{
+    width:51px;
+    height:43px;
+
+    border-radius:12px;
+  }
+
+
+  .stat-num{
+    font-size:1rem;
+  }
+
+
+  .stat-label{
+    margin-top:2px;
+
+    font-size:.43rem;
+  }
+
+
+  .stat-sep{
+    font-size:.7rem;
   }
 
 
   .card{
+    max-width:360px;
 
     padding:
-      24px 16px 20px;
+      16px 15px 15px;
 
+    border-radius:20px;
+  }
+
+
+  .card::before{
+    height:4px;
+  }
+
+
+  .section-kicker{
+    gap:5px;
+
+    margin-bottom:4px;
+
+    padding:
+      4px 8px;
+
+    font-size:.55rem;
+
+    letter-spacing:.06em;
+  }
+
+
+  .section-kicker::before{
+    width:6px;
+    height:6px;
+  }
+
+
+  .card-title{
+    font-size:1.04rem;
+
+    line-height:1.17;
+  }
+
+
+  .card-instruction{
+    max-width:300px;
+
+    margin:
+      4px auto 9px;
+
+    font-size:.72rem;
+
+    line-height:1.34;
+  }
+
+
+  .input-wrap{
+    margin-bottom:7px;
+  }
+
+
+  .input-icon{
+    left:13px;
+
+    width:15px;
+    height:15px;
+  }
+
+
+  input{
+    min-height:41px;
+
+    padding:
+      9px 11px
+      9px 38px;
+
+    border-radius:12px;
+
+    font-size:15px;
+  }
+
+
+  #btn{
+    min-height:42px;
+
+    border-radius:12px;
+
+    font-size:.84rem;
+  }
+
+
+  .downloads{
+    margin-top:11px;
+  }
+
+
+  .docs-heading{
+    margin-bottom:6px;
+  }
+
+
+  .docs-list{
+    gap:6px;
+  }
+
+
+  .doc-row{
+    min-height:53px;
+
+    padding:
+      8px 9px;
+
+    border-radius:13px;
+  }
+
+
+  .doc-icon{
+    width:32px;
+    height:32px;
+
+    border-radius:10px;
+  }
+
+
+  .doc-icon svg{
+    width:15px;
+    height:15px;
+  }
+
+
+  .doc-title{
+    font-size:.79rem;
+  }
+
+
+  .doc-desc{
+    font-size:.67rem;
+  }
+
+
+  .reset-link{
+    margin-top:9px;
+
+    font-size:.7rem;
+  }
+
+
+  .footer-note{
+    padding-top:13px;
+
+    font-size:.72rem;
+  }
+
+
+  .popup-well iframe{
+    height:49vh;
+  }
+
+
+  .popup-well img{
+    max-height:57vh;
   }
 
 }
 
 
-@media (max-width:480px){
+/* Even shorter browser viewports */
 
-  .popup-well iframe{
+@media (max-width:480px) and (max-height:700px){
 
-    height:49vh;
-
+  :root{
+    --safe-fraction:.35;
   }
 
 
-  .popup-well img{
+  .countdown-wrap{
+    margin-bottom:6px;
 
-    max-height:57vh;
+    padding:
+      6px 9px;
+  }
 
+
+  .countdown-label{
+    margin-bottom:3px;
+
+    font-size:.55rem;
+  }
+
+
+  .stat-box{
+    width:48px;
+    height:38px;
+  }
+
+
+  .stat-num{
+    font-size:.9rem;
+  }
+
+
+  .card{
+    padding:
+      13px 13px 13px;
+  }
+
+
+  .card-title{
+    font-size:.96rem;
+  }
+
+
+  .card-instruction{
+    margin:
+      3px auto 7px;
+
+    font-size:.69rem;
+  }
+
+
+  input{
+    min-height:39px;
+  }
+
+
+  #btn{
+    min-height:39px;
+  }
+
+}
+
+
+/* Desktop */
+
+@media (min-width:600px){
+
+  .card{
+    max-width:420px;
+
+    padding:
+      29px 28px 24px;
+  }
+
+
+  .countdown-wrap{
+    max-width:420px;
+  }
+
+}
+
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion:reduce){
+
+  *,
+  *::before,
+  *::after{
+    animation-duration:.001ms !important;
+
+    animation-iteration-count:1 !important;
+
+    transition-duration:.001ms !important;
   }
 
 }
@@ -1506,6 +1757,11 @@ input[aria-invalid="true"]{
 </div>
 
 
+<h1 class="sr-only">
+  Colombo Training Convention 2026
+</h1>
+
+
 <div
   class="toast"
   id="toast"
@@ -1516,6 +1772,10 @@ input[aria-invalid="true"]{
 
 <main class="page">
 
+
+  <!-- ======================================================
+       COUNTDOWN
+       ====================================================== -->
 
   <div
     class="countdown-wrap"
@@ -1533,7 +1793,9 @@ input[aria-invalid="true"]{
 
     <div
       class="countdown-stats"
-      id="countdownStats">
+      id="countdownStats"
+      role="status"
+      aria-live="polite">
 
 
       <div class="stat-box">
@@ -1547,16 +1809,18 @@ input[aria-invalid="true"]{
         </span>
 
         <span class="stat-label">
-
           Days
-
         </span>
 
       </div>
 
 
-      <span class="stat-sep">
+      <span
+        class="stat-sep"
+        aria-hidden="true">
+
         :
+
       </span>
 
 
@@ -1571,16 +1835,18 @@ input[aria-invalid="true"]{
         </span>
 
         <span class="stat-label">
-
           Hrs
-
         </span>
 
       </div>
 
 
-      <span class="stat-sep">
+      <span
+        class="stat-sep"
+        aria-hidden="true">
+
         :
+
       </span>
 
 
@@ -1595,9 +1861,7 @@ input[aria-invalid="true"]{
         </span>
 
         <span class="stat-label">
-
           Mins
-
         </span>
 
       </div>
@@ -1609,27 +1873,25 @@ input[aria-invalid="true"]{
 
 
 
+  <!-- ======================================================
+       ACCESS CARD
+       ====================================================== -->
+
   <section class="card">
 
 
     <div class="section-kicker">
-
       Colombo Travel Hub
-
     </div>
 
 
     <h2 class="card-title">
-
-      Your journey starts here
-
+      Access Your Colombo Pack
     </h2>
 
 
     <p class="card-instruction">
-
-      Enter your registered Employee ID or Mobile Number to unlock your personalised Colombo convention documents.
-
+      Enter your Employee ID or Mobile Number to access your personalised documents.
     </p>
 
 
@@ -1656,7 +1918,8 @@ input[aria-invalid="true"]{
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
-          stroke-width="1.8">
+          stroke-width="1.8"
+          aria-hidden="true">
 
           <circle
             cx="12"
@@ -1676,6 +1939,8 @@ input[aria-invalid="true"]{
           name="input"
           type="text"
           inputmode="text"
+          autocapitalize="off"
+          spellcheck="false"
           placeholder="Employee ID / Mobile No."
           autocomplete="off"
           aria-describedby="msg"
@@ -1700,14 +1965,14 @@ input[aria-invalid="true"]{
 
     <div
       class="loader"
-      id="loader">
+      id="loader"
+      role="status"
+      aria-live="polite">
 
       <span class="spinner"></span>
 
       <span>
-
         Finding your documents...
-
       </span>
 
     </div>
@@ -1730,15 +1995,11 @@ input[aria-invalid="true"]{
       <div class="docs-heading">
 
         <span>
-
           Your Colombo Pack
-
         </span>
 
         <span>
-
           Tap to open
-
         </span>
 
       </div>
@@ -1770,9 +2031,7 @@ input[aria-invalid="true"]{
 
 
   <p class="footer-note">
-
     See you in Colombo ☀
-
   </p>
 
 
@@ -1781,7 +2040,7 @@ input[aria-invalid="true"]{
 
 
 <!-- ========================================================
-     PU / GENERAL ANNOUNCEMENT
+     PU / ANNOUNCEMENT
      ======================================================== -->
 
 <div
@@ -1800,7 +2059,7 @@ input[aria-invalid="true"]{
       type="button"
       class="popup-close"
       onclick="closePopup()"
-      aria-label="Close">
+      aria-label="Close announcement">
 
       ✕
 
@@ -1808,9 +2067,7 @@ input[aria-invalid="true"]{
 
 
     <p class="popup-title">
-
       Colombo Convention Update
-
     </p>
 
 
@@ -1824,9 +2081,7 @@ input[aria-invalid="true"]{
         <span class="spinner"></span>
 
         <span>
-
           Loading announcement...
-
         </span>
 
       </div>
@@ -1835,7 +2090,8 @@ input[aria-invalid="true"]{
       <img
         id="popupImage"
         alt="Colombo Convention Announcement"
-        style="display:none;">
+        style="display:none;"
+      >
 
 
       <iframe
@@ -1866,24 +2122,37 @@ const API_URL =
 "https://script.google.com/macros/s/AKfycbxrW_2FiQXPp64YLDEvKEJC-FNu4qiVfHNhr7iyj_9yuFb6a2P7OUHl4vI2N-39JAir/exec";
 
 
+/* ============================================================
+   COLOMBO CONVENTION DATE
+   ============================================================ */
+
 const CONVENTION_DATE =
 new Date(
-  "2026-10-05T00:00:00"
+  "2026-11-24T00:00:00"
 );
 
+
+/* ============================================================
+   VERIFIED USER
+   ============================================================ */
 
 let verifiedLookupValue =
 "";
 
+
+/*
+  True only if PU popup was actually displayed on this page load.
+*/
 
 let popupShownThisLoad =
 false;
 
 
 /* ============================================================
-   FOUR VISIBLE COLOMBO DOCUMENTS
+   DOCUMENT AVAILABILITY
 
-   F4 remains in Apps Script / Sheet, but is hidden here.
+   F4 continues existing in Apps Script / Sheet but is
+   intentionally NOT displayed on the Colombo page yet.
    ============================================================ */
 
 const DOC_AVAILABILITY = {
@@ -1904,7 +2173,7 @@ const DOC_AVAILABILITY = {
    ============================================================ */
 
 const ICON_NOTE =
-'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 1.8h5.2L12 4.6v9.6H4z"/><path d="M9.2 1.8v2.8H12"/><path d="M6 8.4h4M6 10.6h4"/></svg>';
+'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 1.8h5.2L12 4.6v9.6H4z"/><path d="M9.2 1.8v2.8H12"/><path d="M6 8.4h4M6 10.6h4"/></svg>';
 
 
 const ICON_CHECKLIST =
@@ -1912,23 +2181,23 @@ const ICON_CHECKLIST =
 
 
 const ICON_CAL =
-'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2" y="3" width="12" height="11" rx="1.3"/><path d="M2 6.4h12"/><path d="M5.4 1.6v2.4M10.6 1.6v2.4"/></svg>';
+'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="12" height="11" rx="1.3"/><path d="M2 6.4h12"/><path d="M5.4 1.6v2.4M10.6 1.6v2.4"/></svg>';
 
 
 const ICON_PRODUCT =
-'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2" y="2" width="12" height="12" rx="1.5"/><path d="M5 5h6M5 8h6M5 11h4"/></svg>';
+'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="12" height="12" rx="1.5"/><path d="M5 5h6M5 8h6M5 11h4"/></svg>';
 
 
 const ICON_CLOCK =
-'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="8" cy="8" r="6.4"/><path d="M8 4.8V8l2.6 1.6"/></svg>';
+'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6.4"/><path d="M8 4.8V8l2.6 1.6"/></svg>';
 
 
 const ICON_CHEVRON =
-'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3.5 11 8l-5 4.5"/></svg>';
+'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3.5 11 8l-5 4.5"/></svg>';
 
 
 /* ============================================================
-   DOCUMENTS
+   FOUR VISIBLE COLOMBO DOCUMENTS
 
    F1 = CEO's Note
    F3 = Itinerary
@@ -2042,8 +2311,11 @@ async function trackDocument(
         trackingUrl,
 
         {
+
           method:"GET",
+
           cache:"no-store"
+
         }
 
       );
@@ -2055,10 +2327,15 @@ async function trackDocument(
 
 
     console.log(
+
       "Tracked:",
+
       docKey,
+
       "Count:",
+
       data.count
+
     );
 
 
@@ -2069,9 +2346,13 @@ async function trackDocument(
 
 
     console.warn(
+
       "Tracking failed:",
+
       docKey,
+
       error
+
     );
 
 
@@ -2156,6 +2437,17 @@ function renderDocs(
           "noopener";
 
 
+        link.setAttribute(
+
+          "aria-label",
+
+          d.label +
+          " — " +
+          d.desc
+
+        );
+
+
         link.innerHTML =
 
           '<span class="doc-icon" aria-hidden="true">' +
@@ -2188,8 +2480,12 @@ function renderDocs(
 
 
         /*
-         * Record click first,
-         * then open actual document.
+         * Reliable counter:
+         *
+         * 1. User taps document.
+         * 2. Blank tab opens immediately.
+         * 3. Google Sheet counter increments.
+         * 4. Actual document opens.
          */
 
         link.addEventListener(
@@ -2207,8 +2503,11 @@ function renderDocs(
             const newTab =
 
               window.open(
+
                 "about:blank",
+
                 "_blank"
+
               );
 
 
@@ -2238,8 +2537,6 @@ function renderDocs(
 
                   'margin:0;' +
 
-                  'font-family:Arial,sans-serif;' +
-
                   'height:100vh;' +
 
                   'display:flex;' +
@@ -2247,6 +2544,8 @@ function renderDocs(
                   'align-items:center;' +
 
                   'justify-content:center;' +
+
+                  'font-family:Arial,sans-serif;' +
 
                   'background:#F4FBFC;' +
 
@@ -2258,7 +2557,7 @@ function renderDocs(
 
                   '<div style="font-size:18px;font-weight:700;">Opening your Colombo document...</div>' +
 
-                  '<div style="margin-top:6px;font-size:13px;opacity:.7;">Please wait</div>' +
+                  '<div style="margin-top:6px;font-size:13px;opacity:.65;">Please wait</div>' +
 
                   '</div>' +
 
@@ -2276,10 +2575,18 @@ function renderDocs(
             }
 
 
+            /*
+             * Increment counter.
+             */
+
             await trackDocument(
               d.key
             );
 
+
+            /*
+             * Open document.
+             */
 
             if(
               newTab
@@ -2328,6 +2635,15 @@ function renderDocs(
           d.key;
 
 
+        row.setAttribute(
+
+          "aria-disabled",
+
+          "true"
+
+        );
+
+
         row.innerHTML =
 
           '<span class="doc-icon" aria-hidden="true">' +
@@ -2352,7 +2668,7 @@ function renderDocs(
 
           '</span>' +
 
-          '<span class="doc-status">' +
+          '<span class="doc-status" aria-hidden="true">' +
 
             ICON_CLOCK +
 
@@ -2385,17 +2701,25 @@ function getDaysRemaining(){
 
   const today =
     new Date(
+
       now.getFullYear(),
+
       now.getMonth(),
+
       now.getDate()
+
     );
 
 
   const target =
     new Date(
+
       CONVENTION_DATE.getFullYear(),
+
       CONVENTION_DATE.getMonth(),
+
       CONVENTION_DATE.getDate()
+
     );
 
 
@@ -2638,10 +2962,13 @@ function openPopup(){
 
 
   document
+
     .getElementById(
       "popupOverlay"
     )
+
     .classList
+
     .add(
       "show"
     );
@@ -2653,10 +2980,13 @@ function closePopup(){
 
 
   document
+
     .getElementById(
       "popupOverlay"
     )
+
     .classList
+
     .remove(
       "show"
     );
@@ -2676,6 +3006,8 @@ function closePopup(){
 
   if(
     lastFocusedEl
+    &&
+    typeof lastFocusedEl.focus === "function"
   ){
 
     lastFocusedEl.focus();
@@ -2748,6 +3080,16 @@ function renderPopupContent(
       };
 
 
+    img.onerror =
+      function(){
+
+
+        loading.style.display =
+          "none";
+
+      };
+
+
     img.src =
       url;
 
@@ -2787,11 +3129,13 @@ async function showGeneralPopup(){
 
 
   if(
+
     sessionStorage.getItem(
       POPUP_SESSION_KEY
     )
     ===
     "1"
+
   ){
 
     return;
@@ -2813,7 +3157,9 @@ async function showGeneralPopup(){
         Date.now(),
 
         {
+
           cache:"no-store"
+
         }
 
       );
@@ -2825,9 +3171,11 @@ async function showGeneralPopup(){
 
 
     if(
+
       data
       &&
       data.popup
+
     ){
 
 
@@ -2860,8 +3208,11 @@ async function showGeneralPopup(){
 
 
     console.error(
-      "Colombo popup error:",
+
+      "Colombo announcement error:",
+
       error
+
     );
 
   }
@@ -3030,6 +3381,19 @@ async function searchDoc(
     );
 
 
+  msg.className =
+    "";
+
+
+  msg.innerHTML =
+    "";
+
+
+  inputEl.removeAttribute(
+    "aria-invalid"
+  );
+
+
   if(
     !value
   ){
@@ -3044,9 +3408,15 @@ async function searchDoc(
 
 
     inputEl.setAttribute(
+
       "aria-invalid",
+
       "true"
+
     );
+
+
+    inputEl.focus();
 
 
     return;
@@ -3083,7 +3453,9 @@ async function searchDoc(
         Date.now(),
 
         {
+
           cache:"no-store"
+
         }
 
       );
@@ -3117,8 +3489,8 @@ async function searchDoc(
 
 
       /*
-       * F4 returned by Apps Script is intentionally
-       * ignored on Colombo for now.
+       * F4 may still be returned by Apps Script,
+       * but Colombo intentionally ignores it for now.
        */
 
       renderDocs({
@@ -3159,8 +3531,8 @@ async function searchDoc(
       /*
        * PU remains active.
        *
-       * Announcement is displayed before the employee
-       * has entered an ID. Once they verify, record PU.
+       * Popup appears before employee identity is known.
+       * Once the employee verifies, record the PU view.
        */
 
       if(
@@ -3209,8 +3581,11 @@ async function searchDoc(
 
 
       inputEl.setAttribute(
+
         "aria-invalid",
+
         "true"
+
       );
 
     }
@@ -3239,7 +3614,16 @@ async function searchDoc(
 
 
     msg.textContent =
-      "Unable to connect to server. Please try again.";
+      "Unable to connect to the server. Please try again.";
+
+
+    console.error(
+
+      "Colombo lookup error:",
+
+      error
+
+    );
 
   }
 
@@ -3251,22 +3635,32 @@ async function searchDoc(
    ============================================================ */
 
 document
+
   .getElementById(
     "lookupForm"
   )
+
   .addEventListener(
+
     "submit",
+
     searchDoc
+
   );
 
 
 document
+
   .getElementById(
     "resetLink"
   )
+
   .addEventListener(
+
     "click",
+
     resetLookupState
+
   );
 
 
@@ -3281,14 +3675,13 @@ window.addEventListener(
 
 
     setInterval(
+
       updateCountdown,
+
       20000
+
     );
 
-
-    /*
-     * PU announcement remains active.
-     */
 
     showGeneralPopup();
 
@@ -3366,6 +3759,7 @@ function celebrateSuccess(){
 
       function(){
 
+
         toast.classList.remove(
           "show"
         );
@@ -3417,9 +3811,13 @@ function fireConfettiBurst(){
 
 
   for(
+
     let i = 0;
+
     i < 34;
+
     i++
+
   ){
 
 
@@ -3511,6 +3909,10 @@ function fireConfettiBurst(){
 
     piece.style.height =
       size * 1.8 + "px";
+
+
+    piece.style.borderRadius =
+      "2px";
 
 
     piece.style.background =
