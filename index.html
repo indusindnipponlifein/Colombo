@@ -11,12 +11,10 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
 
 <style>
-
 :root{
   --ocean:#0877B9;
   --ocean-deep:#07536D;
   --teal:#0A7C78;
-
   --sun:#F7C94B;
   --sunset:#F37B45;
 
@@ -26,31 +24,13 @@
   --success:#148A63;
   --error:#C94242;
 
-  --font-body:
-    'DM Sans',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    sans-serif;
+  --font-body:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --font-display:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 
-  --font-display:
-    'Manrope',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    sans-serif;
-
-
-  /* ========================================================
-     REPLACE THIS WITH THE FINAL COLOMBO POSTER IMAGE
-     ======================================================== */
-
-  --hero-bg-image:
-    url('https://iili.io/nF0X6ZB.png');
-
+  /* Replace with final Colombo poster when ready */
+  --hero-bg-image:url('https://iili.io/nF0X6ZB.png');
 
   --poster-ar:1.75587;
-
   --safe-fraction:.45;
 
   --safe-y:
@@ -64,11 +44,8 @@
     );
 }
 
-
 @supports (height:100dvh){
-
   :root{
-
     --safe-y:
       calc(
         min(
@@ -78,11 +55,8 @@
         *
         var(--safe-fraction)
       );
-
   }
-
 }
-
 
 *{
   margin:0;
@@ -90,21 +64,15 @@
   box-sizing:border-box;
 }
 
-
 html,
 body{
   min-height:100%;
 }
 
-
 body{
   overflow-x:hidden;
-
-  font-family:
-    var(--font-body);
-
-  color:
-    var(--ink);
+  font-family:var(--font-body);
+  color:var(--ink);
 
   background:
     linear-gradient(
@@ -123,17 +91,12 @@ body{
 
 .hero-bg{
   position:fixed;
-
   inset:0;
-
   z-index:0;
-
   pointer-events:none;
 
   background-image:
-
     var(--hero-bg-image),
-
     linear-gradient(
       150deg,
       #9CE2FF 0%,
@@ -142,47 +105,25 @@ body{
       #FF9A62 100%
     );
 
-  background-size:
-    contain,
-    cover;
-
-  background-position:
-    top center,
-    center;
-
-  background-repeat:
-    no-repeat,
-    no-repeat;
+  background-size:contain,cover;
+  background-position:top center,center;
+  background-repeat:no-repeat,no-repeat;
 }
-
 
 .bg-overlay{
   position:fixed;
-
   inset:0;
-
   z-index:1;
-
   pointer-events:none;
 
   background:
     linear-gradient(
       180deg,
-
-      rgba(255,255,255,0)
-      0%,
-
-      rgba(255,255,255,0)
-      calc(var(--safe-y) - 70px),
-
-      rgba(247,252,252,.58)
-      calc(var(--safe-y) + 15px),
-
-      rgba(247,252,252,.92)
-      78%,
-
-      rgba(247,252,252,.98)
-      100%
+      rgba(255,255,255,0) 0%,
+      rgba(255,255,255,0) calc(var(--safe-y) - 70px),
+      rgba(247,252,252,.58) calc(var(--safe-y) + 15px),
+      rgba(247,252,252,.92) 78%,
+      rgba(247,252,252,.98) 100%
     );
 }
 
@@ -193,20 +134,13 @@ body{
 
 .sr-only{
   position:absolute;
-
   width:1px;
   height:1px;
-
   padding:0;
-
   margin:-1px;
-
   overflow:hidden;
-
   clip:rect(0,0,0,0);
-
   white-space:nowrap;
-
   border:0;
 }
 
@@ -217,13 +151,9 @@ body{
 
 .confetti{
   position:fixed;
-
   inset:0;
-
   z-index:80;
-
   pointer-events:none;
-
   overflow:hidden;
 }
 
@@ -234,15 +164,12 @@ body{
 
 .page{
   position:relative;
-
   z-index:2;
 
   min-height:100vh;
 
   display:flex;
-
   flex-direction:column;
-
   align-items:center;
 
   padding:
@@ -251,13 +178,10 @@ body{
     28px;
 }
 
-
 @supports (height:100dvh){
-
   .page{
     min-height:100dvh;
   }
-
 }
 
 
@@ -268,61 +192,40 @@ body{
 .countdown-wrap{
   width:min(100%,390px);
 
-  margin:
-    0 auto 14px;
+  margin:0 auto 14px;
 
-  padding:
-    13px 15px 14px;
+  padding:13px 15px 14px;
 
-  border:
-    1px solid
-    rgba(255,255,255,.78);
-
+  border:1px solid rgba(255,255,255,.78);
   border-radius:20px;
 
-  background:
-    rgba(255,255,255,.78);
+  background:rgba(255,255,255,.78);
 
-  backdrop-filter:
-    blur(16px)
-    saturate(135%);
-
-  -webkit-backdrop-filter:
-    blur(16px)
-    saturate(135%);
+  backdrop-filter:blur(16px) saturate(135%);
+  -webkit-backdrop-filter:blur(16px) saturate(135%);
 
   box-shadow:
-    0 12px 34px
-    rgba(12,79,103,.14);
+    0 12px 34px rgba(12,79,103,.14);
 }
-
 
 .countdown-label{
   display:flex;
-
   align-items:center;
-
   justify-content:center;
 
   gap:7px;
 
   margin-bottom:9px;
 
-  color:
-    var(--ocean-deep);
+  color:var(--ocean-deep);
 
-  font-family:
-    var(--font-display);
-
+  font-family:var(--font-display);
   font-size:.72rem;
-
   font-weight:800;
 
   letter-spacing:.045em;
-
   text-transform:uppercase;
 }
-
 
 .countdown-label::before{
   content:"";
@@ -332,75 +235,54 @@ body{
 
   border-radius:50%;
 
-  background:
-    var(--sunset);
+  background:var(--sunset);
 
   box-shadow:
-    0 0 0 5px
-    rgba(243,123,69,.12);
+    0 0 0 5px rgba(243,123,69,.12);
 }
-
 
 .countdown-stats{
   display:flex;
-
   align-items:center;
-
   justify-content:center;
-
   gap:8px;
 }
-
 
 .stat-box{
   width:60px;
   height:56px;
 
   display:flex;
-
   flex-direction:column;
-
   align-items:center;
-
   justify-content:center;
 
   border-radius:15px;
 
-  background:
-    rgba(238,249,252,.92);
+  background:rgba(238,249,252,.92);
 
-  border:
-    1px solid
-    rgba(8,119,185,.12);
+  border:1px solid rgba(8,119,185,.12);
 }
 
-
 .stat-num{
-  font-family:
-    var(--font-display);
+  font-family:var(--font-display);
 
   font-size:1.3rem;
-
   line-height:1;
 
   font-weight:800;
 
-  color:
-    var(--ocean-deep);
+  color:var(--ocean-deep);
 
-  font-variant-numeric:
-    tabular-nums;
+  font-variant-numeric:tabular-nums;
 }
-
 
 .stat-label{
   margin-top:4px;
 
-  color:
-    var(--muted);
+  color:var(--muted);
 
   font-size:.52rem;
-
   font-weight:700;
 
   letter-spacing:.09em;
@@ -408,44 +290,32 @@ body{
   text-transform:uppercase;
 }
 
-
 .stat-sep{
-  color:
-    var(--sunset);
+  color:var(--sunset);
 
   font-size:.9rem;
-
   font-weight:800;
 }
 
-
 .countdown-done{
   display:inline-flex;
-
   align-items:center;
 
   gap:8px;
 
-  padding:
-    9px 18px;
+  padding:9px 18px;
 
   border-radius:999px;
 
-  background:
-    rgba(255,255,255,.90);
+  background:rgba(255,255,255,.90);
 
-  border:
-    1px solid
-    rgba(8,119,185,.16);
+  border:1px solid rgba(8,119,185,.16);
 
-  color:
-    var(--ocean-deep);
+  color:var(--ocean-deep);
 
-  font-family:
-    var(--font-display);
+  font-family:var(--font-display);
 
   font-size:.86rem;
-
   font-weight:800;
 }
 
@@ -456,41 +326,26 @@ body{
 
 .card{
   position:relative;
-
   overflow:hidden;
 
   width:100%;
-
   max-width:390px;
 
-  padding:
-    24px 20px 21px;
+  padding:24px 20px 21px;
 
   border-radius:25px;
 
-  border:
-    1px solid
-    rgba(255,255,255,.92);
+  border:1px solid rgba(255,255,255,.92);
 
-  background:
-    rgba(255,255,255,.90);
+  background:rgba(255,255,255,.90);
 
-  backdrop-filter:
-    blur(20px)
-    saturate(140%);
-
-  -webkit-backdrop-filter:
-    blur(20px)
-    saturate(140%);
+  backdrop-filter:blur(20px) saturate(140%);
+  -webkit-backdrop-filter:blur(20px) saturate(140%);
 
   box-shadow:
-    0 24px 60px
-    rgba(12,79,103,.16),
-
-    0 2px 8px
-    rgba(12,79,103,.06);
+    0 24px 60px rgba(12,79,103,.16),
+    0 2px 8px rgba(12,79,103,.06);
 }
-
 
 .card::before{
   content:"";
@@ -513,36 +368,29 @@ body{
     );
 }
 
-
 .section-kicker{
   display:inline-flex;
-
   align-items:center;
 
   gap:6px;
 
   margin-bottom:6px;
 
-  padding:
-    5px 9px;
+  padding:5px 9px;
 
   border-radius:999px;
 
-  background:
-    #EDF8FC;
+  background:#EDF8FC;
 
-  color:
-    var(--ocean-deep);
+  color:var(--ocean-deep);
 
   font-size:.63rem;
-
   font-weight:800;
 
   letter-spacing:.07em;
 
   text-transform:uppercase;
 }
-
 
 .section-kicker::before{
   content:"";
@@ -552,19 +400,15 @@ body{
 
   border-radius:50%;
 
-  background:
-    var(--sun);
+  background:var(--sun);
 }
-
 
 .card-title{
   color:#123A4A;
 
-  font-family:
-    var(--font-display);
+  font-family:var(--font-display);
 
   font-size:1.22rem;
-
   font-weight:800;
 
   line-height:1.2;
@@ -572,15 +416,12 @@ body{
   letter-spacing:-.025em;
 }
 
-
 .card-instruction{
   max-width:310px;
 
-  margin:
-    6px auto 15px;
+  margin:6px auto 15px;
 
-  color:
-    var(--muted);
+  color:var(--muted);
 
   font-size:.82rem;
 
@@ -600,7 +441,6 @@ body{
   margin-bottom:9px;
 }
 
-
 .input-icon{
   position:absolute;
 
@@ -610,15 +450,12 @@ body{
   width:17px;
   height:17px;
 
-  transform:
-    translateY(-50%);
+  transform:translateY(-50%);
 
-  color:
-    var(--ocean);
+  color:var(--ocean);
 
   pointer-events:none;
 }
-
 
 input{
   display:block;
@@ -631,25 +468,19 @@ input{
     11px 13px
     11px 42px;
 
-  border:
-    1.5px solid
-    #D8E7EC;
+  border:1.5px solid #D8E7EC;
 
   border-radius:14px;
 
   outline:none;
 
-  background:
-    #FFFFFF;
+  background:#FFFFFF;
 
-  color:
-    var(--ink);
+  color:var(--ink);
 
-  font-family:
-    var(--font-body);
+  font-family:var(--font-body);
 
   font-size:16px;
-
   font-weight:600;
 
   transition:
@@ -657,36 +488,29 @@ input{
     box-shadow .18s ease;
 }
 
-
 input::placeholder{
   color:#8AA0AA;
 
   font-weight:500;
 }
 
-
 input:focus{
-  border-color:
-    var(--ocean);
+  border-color:var(--ocean);
 
   box-shadow:
-    0 0 0 4px
-    rgba(8,119,185,.11);
+    0 0 0 4px rgba(8,119,185,.11);
 }
 
-
 input[aria-invalid="true"]{
-  border-color:
-    var(--error);
+  border-color:var(--error);
 
   box-shadow:
-    0 0 0 4px
-    rgba(201,66,66,.1);
+    0 0 0 4px rgba(201,66,66,.1);
 }
 
 
 /* ============================================================
-   CTA BUTTON
+   CTA
    ============================================================ */
 
 #btn{
@@ -709,48 +533,36 @@ input[aria-invalid="true"]{
       var(--teal) 100%
     );
 
-  font-family:
-    var(--font-body);
+  font-family:var(--font-body);
 
   font-size:.9rem;
-
   font-weight:800;
 
   box-shadow:
-    0 12px 24px
-    rgba(8,119,185,.22);
+    0 12px 24px rgba(8,119,185,.22);
 
   transition:
     transform .15s ease,
     box-shadow .15s ease;
 }
 
-
 #btn:hover{
-  transform:
-    translateY(-1px);
+  transform:translateY(-1px);
 
   box-shadow:
-    0 16px 28px
-    rgba(8,119,185,.25);
+    0 16px 28px rgba(8,119,185,.25);
 }
-
 
 #btn:disabled{
   cursor:not-allowed;
 }
 
-
 #btn.success-state{
-  color:
-    var(--success);
+  color:var(--success);
 
-  background:
-    #EBF8F2;
+  background:#EBF8F2;
 
-  border:
-    1px solid
-    #BDE9D8;
+  border:1px solid #BDE9D8;
 
   box-shadow:none;
 }
@@ -766,35 +578,28 @@ input[aria-invalid="true"]{
   margin-top:12px;
 
   align-items:center;
-
   justify-content:center;
 
   gap:8px;
 
-  color:
-    var(--ocean-deep);
+  color:var(--ocean-deep);
 
   font-size:.82rem;
-
   font-weight:600;
 }
-
 
 .loader.show{
   display:flex;
 }
-
 
 .spinner{
   width:15px;
   height:15px;
 
   border:
-    2px solid
-    rgba(8,119,185,.18);
+    2px solid rgba(8,119,185,.18);
 
-  border-top-color:
-    var(--ocean);
+  border-top-color:var(--ocean);
 
   border-radius:50%;
 
@@ -802,29 +607,23 @@ input[aria-invalid="true"]{
     spin .75s linear infinite;
 }
 
-
 #msg{
   margin-top:10px;
 
   text-align:center;
 
   font-size:.83rem;
-
   font-weight:700;
 
   line-height:1.4;
 }
 
-
 .success{
-  color:
-    var(--success);
+  color:var(--success);
 }
 
-
 .error{
-  color:
-    var(--error);
+  color:var(--error);
 }
 
 
@@ -838,29 +637,23 @@ input[aria-invalid="true"]{
   margin-top:14px;
 }
 
-
 .downloads.show{
   display:block;
 }
-
 
 .docs-heading{
   display:flex;
 
   align-items:center;
-
   justify-content:space-between;
 
   margin-bottom:8px;
 }
 
-
 .docs-heading span:first-child{
-  color:
-    var(--ocean-deep);
+  color:var(--ocean-deep);
 
   font-size:.7rem;
-
   font-weight:800;
 
   letter-spacing:.07em;
@@ -868,18 +661,14 @@ input[aria-invalid="true"]{
   text-transform:uppercase;
 }
 
-
 .docs-heading span:last-child{
-  color:
-    var(--muted);
+  color:var(--muted);
 
   font-size:.68rem;
 }
 
-
 .docs-list{
   display:flex;
-
   flex-direction:column;
 
   gap:8px;
@@ -887,36 +676,28 @@ input[aria-invalid="true"]{
   text-align:left;
 }
 
-
 .doc-row{
   display:flex;
-
   align-items:center;
 
   gap:11px;
 
   min-height:59px;
 
-  padding:
-    10px 11px;
+  padding:10px 11px;
 
-  border:
-    1px solid
-    #DDECEF;
+  border:1px solid #DDECEF;
 
   border-radius:16px;
 
-  background:
-    #FFFFFF;
+  background:#FFFFFF;
 
-  color:
-    var(--ink);
+  color:var(--ink);
 
   text-decoration:none;
 
   box-shadow:
-    0 5px 14px
-    rgba(25,88,108,.055);
+    0 5px 14px rgba(25,88,108,.055);
 
   transition:
     transform .15s ease,
@@ -924,20 +705,15 @@ input[aria-invalid="true"]{
     box-shadow .15s ease;
 }
 
-
 a.doc-row:hover,
 a.doc-row:focus-visible{
-  transform:
-    translateY(-1px);
+  transform:translateY(-1px);
 
-  border-color:
-    rgba(243,123,69,.55);
+  border-color:rgba(243,123,69,.55);
 
   box-shadow:
-    0 10px 22px
-    rgba(25,88,108,.09);
+    0 10px 22px rgba(25,88,108,.09);
 }
-
 
 .doc-icon{
   flex-shrink:0;
@@ -946,15 +722,12 @@ a.doc-row:focus-visible{
   height:37px;
 
   display:flex;
-
   align-items:center;
-
   justify-content:center;
 
   border-radius:12px;
 
-  color:
-    var(--ocean-deep);
+  color:var(--ocean-deep);
 
   background:
     linear-gradient(
@@ -964,12 +737,10 @@ a.doc-row:focus-visible{
     );
 }
 
-
 .doc-icon svg{
   width:17px;
   height:17px;
 }
-
 
 .doc-text{
   flex:1;
@@ -977,31 +748,25 @@ a.doc-row:focus-visible{
   min-width:0;
 
   display:flex;
-
   flex-direction:column;
 
   gap:2px;
 }
 
-
 .doc-title{
   color:#173D4C;
 
   font-size:.84rem;
-
   font-weight:800;
 }
 
-
 .doc-desc{
-  color:
-    var(--muted);
+  color:var(--muted);
 
   font-size:.71rem;
 
   line-height:1.32;
 }
-
 
 .doc-chevron{
   width:17px;
@@ -1009,10 +774,8 @@ a.doc-row:focus-visible{
 
   flex-shrink:0;
 
-  color:
-    var(--sunset);
+  color:var(--sunset);
 }
-
 
 .doc-row.pending{
   cursor:default;
@@ -1022,13 +785,11 @@ a.doc-row:focus-visible{
   box-shadow:none;
 }
 
-
 .doc-desc.doc-soon{
   color:#A37545;
 
   font-weight:700;
 }
-
 
 .doc-status{
   width:16px;
@@ -1036,7 +797,6 @@ a.doc-row:focus-visible{
 
   color:#A0AEB3;
 }
-
 
 .doc-row[data-doc="pc"] .doc-icon{
   color:#A85D16;
@@ -1059,21 +819,17 @@ a.doc-row:focus-visible{
 
   margin-top:12px;
 
-  padding:
-    5px 4px;
+  padding:5px 4px;
 
   border:0;
 
   background:transparent;
 
-  color:
-    var(--ocean-deep);
+  color:var(--ocean-deep);
 
-  font-family:
-    var(--font-body);
+  font-family:var(--font-body);
 
   font-size:.74rem;
-
   font-weight:700;
 
   text-decoration:underline;
@@ -1082,7 +838,6 @@ a.doc-row:focus-visible{
 
   cursor:pointer;
 }
-
 
 .reset-link[hidden]{
   display:none;
@@ -1100,16 +855,13 @@ a.doc-row:focus-visible{
 
   color:#24596A;
 
-  font-family:
-    var(--font-display);
+  font-family:var(--font-display);
 
   font-size:.78rem;
-
   font-weight:800;
 
   text-shadow:
-    0 1px 8px
-    rgba(255,255,255,.9);
+    0 1px 8px rgba(255,255,255,.9);
 }
 
 
@@ -1127,33 +879,27 @@ a.doc-row:focus-visible{
 
   max-width:90vw;
 
-  transform:
-    translate(-50%,-8px);
+  transform:translate(-50%,-8px);
 
-  padding:
-    10px 16px;
+  padding:10px 16px;
 
   border:
-    1px solid
-    rgba(255,255,255,.86);
+    1px solid rgba(255,255,255,.86);
 
   border-radius:999px;
 
   background:
     rgba(255,255,255,.94);
 
-  color:
-    var(--ocean-deep);
+  color:var(--ocean-deep);
 
   font-size:.82rem;
-
   font-weight:800;
 
   white-space:nowrap;
 
   box-shadow:
-    0 12px 30px
-    rgba(12,79,103,.18);
+    0 12px 30px rgba(12,79,103,.18);
 
   opacity:0;
 
@@ -1164,17 +910,15 @@ a.doc-row:focus-visible{
     transform .25s ease;
 }
 
-
 .toast.show{
   opacity:1;
 
-  transform:
-    translate(-50%,0);
+  transform:translate(-50%,0);
 }
 
 
 /* ============================================================
-   PU ANNOUNCEMENT POPUP
+   PU ANNOUNCEMENT
    ============================================================ */
 
 .popup-overlay{
@@ -1187,7 +931,6 @@ a.doc-row:focus-visible{
   z-index:90;
 
   align-items:center;
-
   justify-content:center;
 
   padding:20px;
@@ -1195,18 +938,13 @@ a.doc-row:focus-visible{
   background:
     rgba(8,50,65,.48);
 
-  -webkit-backdrop-filter:
-    blur(5px);
-
-  backdrop-filter:
-    blur(5px);
+  -webkit-backdrop-filter:blur(5px);
+  backdrop-filter:blur(5px);
 }
-
 
 .popup-overlay.show{
   display:flex;
 }
-
 
 .popup-box{
   position:relative;
@@ -1220,14 +958,12 @@ a.doc-row:focus-visible{
   padding:18px;
 
   display:flex;
-
   flex-direction:column;
 
   gap:12px;
 
   border:
-    1px solid
-    rgba(255,255,255,.9);
+    1px solid rgba(255,255,255,.9);
 
   border-radius:24px;
 
@@ -1235,25 +971,19 @@ a.doc-row:focus-visible{
     rgba(255,255,255,.97);
 
   box-shadow:
-    0 30px 70px
-    rgba(7,83,109,.28);
+    0 30px 70px rgba(7,83,109,.28);
 }
-
 
 .popup-title{
   text-align:center;
 
-  color:
-    var(--ocean-deep);
+  color:var(--ocean-deep);
 
-  font-family:
-    var(--font-display);
+  font-family:var(--font-display);
 
   font-size:1rem;
-
   font-weight:800;
 }
-
 
 .popup-close{
   position:absolute;
@@ -1270,26 +1000,21 @@ a.doc-row:focus-visible{
 
   cursor:pointer;
 
-  background:
-    var(--sunset);
+  background:var(--sunset);
 
   color:#FFFFFF;
 
   font-size:17px;
 
   box-shadow:
-    0 8px 20px
-    rgba(243,123,69,.28);
+    0 8px 20px rgba(243,123,69,.28);
 }
-
 
 .popup-well{
   min-height:100px;
 
   display:flex;
-
   align-items:center;
-
   justify-content:center;
 
   overflow:hidden;
@@ -1297,35 +1022,27 @@ a.doc-row:focus-visible{
   padding:7px;
 
   border:
-    1px solid
-    #E2EDEF;
+    1px solid #E2EDEF;
 
   border-radius:16px;
 
   background:#F4F8F9;
 }
 
-
 .popup-loading{
   display:flex;
-
   align-items:center;
-
   justify-content:center;
 
   gap:8px;
 
-  padding:
-    38px 12px;
+  padding:38px 12px;
 
-  color:
-    var(--ocean-deep);
+  color:var(--ocean-deep);
 
   font-size:.84rem;
-
   font-weight:700;
 }
-
 
 .popup-well iframe{
   width:100%;
@@ -1338,7 +1055,6 @@ a.doc-row:focus-visible{
 
   background:#FFFFFF;
 }
-
 
 .popup-well img{
   display:block;
@@ -1362,67 +1078,41 @@ a.doc-row:focus-visible{
    ============================================================ */
 
 @keyframes spin{
-
   to{
-    transform:
-      rotate(360deg);
+    transform:rotate(360deg);
   }
-
 }
 
 
 /* ============================================================
    MOBILE
-   Bigger than previous version + shifted lower
+   Larger UI + shifted lower
    ============================================================ */
 
 @media (max-width:480px){
 
   :root{
-
-    /*
-     * Pushes the UI lower so that the poster title/content
-     * remains clear above the countdown.
-     */
-
     --safe-fraction:.445;
-
   }
 
-
   .page{
-
     padding:
       var(--safe-y)
       15px
       24px;
-
   }
-
-
-  /* COUNTDOWN */
 
   .countdown-wrap{
+    width:min(100%,390px);
 
-    width:min(
-      100%,
-      390px
-    );
+    margin:0 auto 12px;
 
-    margin:
-      0 auto 12px;
+    padding:11px 13px 12px;
 
-    padding:
-      11px 13px 12px;
-
-    border-radius:
-      19px;
-
+    border-radius:19px;
   }
 
-
   .countdown-label{
-
     gap:6px;
 
     margin-bottom:7px;
@@ -1432,160 +1122,102 @@ a.doc-row:focus-visible{
     letter-spacing:.035em;
 
     white-space:nowrap;
-
   }
 
-
   .countdown-label::before{
-
     width:7px;
-
     height:7px;
 
     box-shadow:
-      0 0 0 4px
-      rgba(243,123,69,.12);
-
+      0 0 0 4px rgba(243,123,69,.12);
   }
-
 
   .countdown-stats{
-
     gap:7px;
-
   }
 
-
   .stat-box{
-
     width:57px;
-
     height:49px;
 
     border-radius:14px;
-
   }
-
 
   .stat-num{
-
     font-size:1.15rem;
-
   }
 
-
   .stat-label{
-
     margin-top:3px;
 
     font-size:.47rem;
-
   }
-
 
   .stat-sep{
-
     font-size:.8rem;
-
   }
 
-
-  /* CARD */
-
   .card{
-
     width:100%;
 
     max-width:390px;
 
-    padding:
-      20px 18px 18px;
+    padding:20px 18px 18px;
 
-    border-radius:
-      23px;
-
+    border-radius:23px;
   }
-
 
   .card::before{
-
     height:5px;
-
   }
 
-
   .section-kicker{
-
     gap:6px;
 
     margin-bottom:6px;
 
-    padding:
-      5px 9px;
+    padding:5px 9px;
 
     font-size:.61rem;
 
     letter-spacing:.065em;
-
   }
-
 
   .section-kicker::before{
-
     width:7px;
-
     height:7px;
-
   }
 
-
   .card-title{
-
     font-size:1.18rem;
 
     line-height:1.2;
 
     letter-spacing:-.02em;
-
   }
 
-
   .card-instruction{
-
     max-width:325px;
 
-    margin:
-      6px auto 13px;
+    margin:6px auto 13px;
 
     font-size:.78rem;
 
     line-height:1.4;
-
   }
-
-
-  /* INPUT */
 
   .input-wrap{
-
     margin-bottom:9px;
-
   }
 
-
   .input-icon{
-
     left:14px;
 
     width:17px;
-
     height:17px;
-
   }
 
-
   input{
-
     min-height:47px;
 
     padding:
@@ -1595,274 +1227,168 @@ a.doc-row:focus-visible{
     border-radius:14px;
 
     font-size:16px;
-
   }
 
-
-  /* CTA */
-
   #btn{
-
     min-height:47px;
 
     border-radius:14px;
 
     font-size:.91rem;
-
   }
-
-
-  /* RESULTS */
 
   .downloads{
-
     margin-top:14px;
-
   }
-
 
   .docs-heading{
-
     margin-bottom:8px;
-
   }
-
 
   .docs-heading span:first-child{
-
     font-size:.72rem;
-
   }
-
 
   .docs-heading span:last-child{
-
     font-size:.69rem;
-
   }
-
 
   .docs-list{
-
     gap:8px;
-
   }
-
 
   .doc-row{
-
     min-height:59px;
 
-    padding:
-      10px 11px;
+    padding:10px 11px;
 
     border-radius:15px;
-
   }
 
-
   .doc-icon{
-
     width:37px;
-
     height:37px;
 
     border-radius:11px;
-
   }
-
 
   .doc-icon svg{
-
     width:17px;
-
     height:17px;
-
   }
-
 
   .doc-title{
-
     font-size:.84rem;
-
   }
 
-
   .doc-desc{
-
     font-size:.71rem;
 
     line-height:1.32;
-
   }
 
-
   .reset-link{
-
     margin-top:11px;
 
     font-size:.74rem;
-
   }
 
-
   .footer-note{
-
     padding-top:20px;
 
     font-size:.78rem;
-
   }
-
 
   .popup-well iframe{
-
     height:49vh;
-
   }
-
 
   .popup-well img{
-
     max-height:57vh;
-
   }
-
 }
 
 
-/* ============================================================
-   SHORT MOBILE SCREENS
-   ============================================================ */
+/* Short phone screens */
 
 @media (max-width:480px) and (max-height:700px){
 
   :root{
-
     --safe-fraction:.42;
-
   }
-
 
   .countdown-wrap{
-
     margin-bottom:9px;
 
-    padding:
-      9px 11px;
-
+    padding:9px 11px;
   }
 
-
   .countdown-label{
-
     margin-bottom:5px;
 
     font-size:.62rem;
-
   }
-
 
   .stat-box{
-
     width:54px;
-
     height:45px;
-
   }
-
 
   .stat-num{
-
     font-size:1.05rem;
-
   }
-
 
   .card{
-
-    padding:
-      17px 16px 16px;
-
+    padding:17px 16px 16px;
   }
-
 
   .card-title{
-
     font-size:1.1rem;
-
   }
-
 
   .card-instruction{
-
-    margin:
-      5px auto 10px;
+    margin:5px auto 10px;
 
     font-size:.74rem;
-
   }
-
 
   input{
-
     min-height:44px;
-
   }
-
 
   #btn{
-
     min-height:44px;
-
   }
-
 }
 
 
-/* ============================================================
-   DESKTOP
-   ============================================================ */
+/* Desktop */
 
 @media (min-width:600px){
 
   .card{
-
     max-width:420px;
 
-    padding:
-      29px 28px 24px;
-
+    padding:29px 28px 24px;
   }
-
 
   .countdown-wrap{
-
     max-width:420px;
-
   }
-
 }
 
 
-/* ============================================================
-   REDUCED MOTION
-   ============================================================ */
+/* Reduced motion */
 
 @media (prefers-reduced-motion:reduce){
 
   *,
   *::before,
   *::after{
-
     animation-duration:.001ms !important;
-
     animation-iteration-count:1 !important;
-
     transition-duration:.001ms !important;
-
   }
-
 }
 
 </style>
@@ -1871,18 +1397,8 @@ a.doc-row:focus-visible{
 
 <body>
 
-
-<div
-  class="hero-bg"
-  aria-hidden="true">
-</div>
-
-
-<div
-  class="bg-overlay"
-  aria-hidden="true">
-</div>
-
+<div class="hero-bg" aria-hidden="true"></div>
+<div class="bg-overlay" aria-hidden="true"></div>
 
 <div
   class="confetti"
@@ -1890,11 +1406,9 @@ a.doc-row:focus-visible{
   aria-hidden="true">
 </div>
 
-
 <h1 class="sr-only">
   Colombo Training Convention 2026
 </h1>
-
 
 <div
   class="toast"
@@ -1906,15 +1420,11 @@ a.doc-row:focus-visible{
 
 <main class="page">
 
-
-  <!-- ======================================================
-       COUNTDOWN
-       ====================================================== -->
+  <!-- COUNTDOWN -->
 
   <div
     class="countdown-wrap"
     id="countdownWrap">
-
 
     <p
       class="countdown-label"
@@ -1924,22 +1434,18 @@ a.doc-row:focus-visible{
 
     </p>
 
-
     <div
       class="countdown-stats"
       id="countdownStats"
       role="status"
       aria-live="polite">
 
-
       <div class="stat-box">
 
         <span
           class="stat-num"
           id="cdDays">
-
           --
-
         </span>
 
         <span class="stat-label">
@@ -1948,24 +1454,18 @@ a.doc-row:focus-visible{
 
       </div>
 
-
       <span
         class="stat-sep"
         aria-hidden="true">
-
         :
-
       </span>
-
 
       <div class="stat-box">
 
         <span
           class="stat-num"
           id="cdHours">
-
           --
-
         </span>
 
         <span class="stat-label">
@@ -1974,24 +1474,18 @@ a.doc-row:focus-visible{
 
       </div>
 
-
       <span
         class="stat-sep"
         aria-hidden="true">
-
         :
-
       </span>
-
 
       <div class="stat-box">
 
         <span
           class="stat-num"
           id="cdMins">
-
           --
-
         </span>
 
         <span class="stat-label">
@@ -2000,40 +1494,31 @@ a.doc-row:focus-visible{
 
       </div>
 
-
     </div>
 
   </div>
 
 
-
-  <!-- ======================================================
-       ACCESS CARD
-       ====================================================== -->
+  <!-- ACCESS CARD -->
 
   <section class="card">
-
 
     <div class="section-kicker">
       Colombo Travel Hub
     </div>
 
-
     <h2 class="card-title">
       Access Your Colombo Pack
     </h2>
-
 
     <p class="card-instruction">
       Enter your Employee ID or Mobile Number to access your personalised documents.
     </p>
 
 
-
     <form
       id="lookupForm"
       novalidate>
-
 
       <label
         class="sr-only"
@@ -2043,9 +1528,7 @@ a.doc-row:focus-visible{
 
       </label>
 
-
       <div class="input-wrap">
-
 
         <svg
           class="input-icon"
@@ -2067,7 +1550,6 @@ a.doc-row:focus-visible{
 
         </svg>
 
-
         <input
           id="input"
           name="input"
@@ -2080,7 +1562,6 @@ a.doc-row:focus-visible{
           aria-describedby="msg"
         >
 
-
       </div>
 
 
@@ -2092,9 +1573,7 @@ a.doc-row:focus-visible{
 
       </button>
 
-
     </form>
-
 
 
     <div
@@ -2112,7 +1591,6 @@ a.doc-row:focus-visible{
     </div>
 
 
-
     <div
       id="msg"
       role="status"
@@ -2120,11 +1598,9 @@ a.doc-row:focus-visible{
     </div>
 
 
-
     <div
       class="downloads"
       id="downloads">
-
 
       <div class="docs-heading">
 
@@ -2138,15 +1614,12 @@ a.doc-row:focus-visible{
 
       </div>
 
-
       <div
         class="docs-list"
         id="docsList">
       </div>
 
-
     </div>
-
 
 
     <button
@@ -2159,23 +1632,17 @@ a.doc-row:focus-visible{
 
     </button>
 
-
   </section>
-
 
 
   <p class="footer-note">
     See you in Colombo ☀
   </p>
 
-
 </main>
 
 
-
-<!-- ========================================================
-     PU / GENERAL ANNOUNCEMENT
-     ======================================================== -->
+<!-- PU / GENERAL ANNOUNCEMENT -->
 
 <div
   class="popup-overlay"
@@ -2185,28 +1652,21 @@ a.doc-row:focus-visible{
   aria-label="Colombo Convention Announcement"
   onclick="if(event.target===this)closePopup()">
 
-
   <div class="popup-box">
-
 
     <button
       type="button"
       class="popup-close"
       onclick="closePopup()"
       aria-label="Close announcement">
-
       ✕
-
     </button>
-
 
     <p class="popup-title">
       Colombo Convention Update
     </p>
 
-
     <div class="popup-well">
-
 
       <div
         class="popup-loading"
@@ -2220,13 +1680,11 @@ a.doc-row:focus-visible{
 
       </div>
 
-
       <img
         id="popupImage"
         alt="Colombo Convention Announcement"
         style="display:none;"
       >
-
 
       <iframe
         id="popupFrame"
@@ -2235,15 +1693,11 @@ a.doc-row:focus-visible{
         style="display:none;">
       </iframe>
 
-
     </div>
-
 
   </div>
 
-
 </div>
-
 
 
 <script>
@@ -2257,44 +1711,30 @@ const API_URL =
 
 
 /* ============================================================
-   COLOMBO CONVENTION DATE
+   COLOMBO DATE
    ============================================================ */
 
 const CONVENTION_DATE =
-new Date(
-  "2026-10-05T00:00:00"
-);
+new Date("2026-10-05T00:00:00");
+
+
+let verifiedLookupValue = "";
+
+let popupShownThisLoad = false;
 
 
 /* ============================================================
-   VERIFIED USER
-   ============================================================ */
+   DOCUMENTS
 
-let verifiedLookupValue =
-"";
-
-
-let popupShownThisLoad =
-false;
-
-
-/* ============================================================
-   VISIBLE DOCUMENTS
-
-   F4 remains available in Apps Script / Google Sheet.
-   It is simply hidden on the Colombo page for now.
+   F4 remains supported in Apps Script / Sheet,
+   but is intentionally hidden for Colombo right now.
    ============================================================ */
 
 const DOC_AVAILABILITY = {
-
   f1:true,
-
   f2:true,
-
   f3:true,
-
   pc:true
-
 };
 
 
@@ -2327,162 +1767,96 @@ const ICON_CHEVRON =
 
 
 /* ============================================================
-   FOUR COLOMBO DOCUMENTS
-
-   F1 = CEO's Note
-   F3 = Itinerary
-   F2 = Do's & Don'ts
-   PC = Product Collateral
+   FOUR VISIBLE DOCUMENTS
    ============================================================ */
 
 const DOCS = [
 
   {
-
     key:"f1",
-
     label:"CEO's Note",
-
     desc:"A welcome message ahead of the Colombo convention.",
-
     icon:ICON_NOTE
-
   },
 
-
   {
-
     key:"f3",
-
     label:"Itinerary",
-
     desc:"Your complete day-by-day Colombo schedule.",
-
     icon:ICON_CAL
-
   },
 
-
   {
-
     key:"f2",
-
     label:"Do's & Don'ts",
-
     desc:"Important guidelines for your Colombo journey.",
-
     icon:ICON_CHECKLIST
-
   },
 
-
   {
-
     key:"pc",
-
     label:"Product Collateral",
-
     desc:"Product information and reference material.",
-
     icon:ICON_PRODUCT
-
   }
 
 ];
 
 
 /* ============================================================
-   CLICK TRACKING
+   TRACK DOCUMENT CLICK
    ============================================================ */
 
-async function trackDocument(
-  docKey
-){
+async function trackDocument(docKey){
 
-  if(
-    !verifiedLookupValue
-  ){
-
+  if(!verifiedLookupValue){
     return null;
-
   }
 
 
   const trackingUrl =
-
     API_URL +
-
     "?action=track" +
-
     "&input=" +
-
-    encodeURIComponent(
-      verifiedLookupValue
-    ) +
-
+    encodeURIComponent(verifiedLookupValue) +
     "&doc=" +
-
-    encodeURIComponent(
-      docKey
-    ) +
-
+    encodeURIComponent(docKey) +
     "&_=" +
-
     Date.now();
 
 
   try{
 
-
     const response =
-
       await fetch(
-
         trackingUrl,
-
         {
-
           method:"GET",
-
           cache:"no-store"
-
         }
-
       );
 
 
     const data =
-
       await response.json();
 
 
     console.log(
-
       "Tracked:",
-
       docKey,
-
       "Count:",
-
       data.count
-
     );
 
 
     return data;
 
-
   }catch(error){
 
-
     console.warn(
-
       "Tracking failed:",
-
       docKey,
-
       error
-
     );
 
 
@@ -2494,15 +1868,377 @@ async function trackDocument(
 
 
 /* ============================================================
-   DOCUMENT RENDERING
+   LARGE DOCUMENT OPENING PAGE
    ============================================================ */
 
-function renderDocs(
-  fileMap
-){
+function writeOpeningScreen(newTab, documentLabel){
+
+  if(!newTab){
+    return;
+  }
+
+
+  const safeLabel =
+    String(documentLabel)
+      .replace(/&/g,"&amp;")
+      .replace(/</g,"&lt;")
+      .replace(/>/g,"&gt;")
+      .replace(/"/g,"&quot;")
+      .replace(/'/g,"&#039;");
+
+
+  try{
+
+    newTab.document.open();
+
+
+    newTab.document.write(
+      '<!DOCTYPE html>' +
+
+      '<html lang="en">' +
+
+      '<head>' +
+
+      '<meta charset="UTF-8">' +
+
+      '<meta name="viewport" content="width=device-width,initial-scale=1">' +
+
+      '<title>Opening ' +
+      safeLabel +
+      '</title>' +
+
+
+      '<style>' +
+
+      '*{' +
+        'box-sizing:border-box;' +
+        'margin:0;' +
+        'padding:0;' +
+      '}' +
+
+
+      'html,body{' +
+        'width:100%;' +
+        'height:100%;' +
+      '}' +
+
+
+      'body{' +
+
+        'min-height:100vh;' +
+
+        'display:flex;' +
+
+        'align-items:center;' +
+
+        'justify-content:center;' +
+
+        'padding:24px;' +
+
+        'font-family:Arial,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;' +
+
+        'background:' +
+          'linear-gradient(' +
+            '145deg,' +
+            '#DDF5FF 0%,' +
+            '#FFF4C4 52%,' +
+            '#FFD2AF 100%' +
+          ');' +
+
+        'color:#07536D;' +
+
+      '}' +
+
+
+      '.card{' +
+
+        'width:100%;' +
+
+        'max-width:440px;' +
+
+        'padding:44px 26px;' +
+
+        'text-align:center;' +
+
+        'background:rgba(255,255,255,.96);' +
+
+        'border:1px solid rgba(255,255,255,.95);' +
+
+        'border-radius:30px;' +
+
+        'box-shadow:0 28px 70px rgba(7,83,109,.20);' +
+
+      '}' +
+
+
+      '.spinner-wrap{' +
+
+        'width:82px;' +
+
+        'height:82px;' +
+
+        'margin:0 auto 24px;' +
+
+        'display:flex;' +
+
+        'align-items:center;' +
+
+        'justify-content:center;' +
+
+        'border-radius:50%;' +
+
+        'background:linear-gradient(135deg,#0877B9,#0A7C78);' +
+
+        'box-shadow:0 14px 30px rgba(8,119,185,.26);' +
+
+      '}' +
+
+
+      '.spinner{' +
+
+        'width:40px;' +
+
+        'height:40px;' +
+
+        'border:5px solid rgba(255,255,255,.30);' +
+
+        'border-top-color:#FFFFFF;' +
+
+        'border-radius:50%;' +
+
+        'animation:spin .8s linear infinite;' +
+
+      '}' +
+
+
+      '.eyebrow{' +
+
+        'margin-bottom:12px;' +
+
+        'font-size:13px;' +
+
+        'font-weight:800;' +
+
+        'letter-spacing:.12em;' +
+
+        'text-transform:uppercase;' +
+
+        'color:#0A7C78;' +
+
+      '}' +
+
+
+      'h1{' +
+
+        'margin:0 auto 14px;' +
+
+        'font-size:30px;' +
+
+        'line-height:1.18;' +
+
+        'font-weight:800;' +
+
+        'color:#123A4A;' +
+
+      '}' +
+
+
+      'p{' +
+
+        'max-width:340px;' +
+
+        'margin:0 auto;' +
+
+        'font-size:16px;' +
+
+        'line-height:1.55;' +
+
+        'color:#617683;' +
+
+      '}' +
+
+
+      '.tag{' +
+
+        'display:inline-flex;' +
+
+        'align-items:center;' +
+
+        'gap:7px;' +
+
+        'margin-top:24px;' +
+
+        'padding:10px 15px;' +
+
+        'border-radius:999px;' +
+
+        'background:#EDF8FC;' +
+
+        'color:#07536D;' +
+
+        'font-size:13px;' +
+
+        'font-weight:700;' +
+
+      '}' +
+
+
+      '.tag::before{' +
+
+        'content:"";' +
+
+        'width:8px;' +
+
+        'height:8px;' +
+
+        'border-radius:50%;' +
+
+        'background:#F37B45;' +
+
+      '}' +
+
+
+      '@keyframes spin{' +
+
+        'to{' +
+
+          'transform:rotate(360deg);' +
+
+        '}' +
+
+      '}' +
+
+
+      '@media(max-width:480px){' +
+
+        'body{' +
+
+          'padding:18px;' +
+
+        '}' +
+
+
+        '.card{' +
+
+          'padding:38px 20px;' +
+
+          'border-radius:26px;' +
+
+        '}' +
+
+
+        '.spinner-wrap{' +
+
+          'width:76px;' +
+
+          'height:76px;' +
+
+          'margin-bottom:22px;' +
+
+        '}' +
+
+
+        '.spinner{' +
+
+          'width:37px;' +
+
+          'height:37px;' +
+
+        '}' +
+
+
+        '.eyebrow{' +
+
+          'font-size:12px;' +
+
+        '}' +
+
+
+        'h1{' +
+
+          'font-size:28px;' +
+
+        '}' +
+
+
+        'p{' +
+
+          'font-size:15px;' +
+
+        '}' +
+
+      '}' +
+
+      '</style>' +
+
+      '</head>' +
+
+
+      '<body>' +
+
+      '<main class="card">' +
+
+        '<div class="spinner-wrap">' +
+
+          '<div class="spinner"></div>' +
+
+        '</div>' +
+
+        '<div class="eyebrow">' +
+
+          'Colombo Training Convention 2026' +
+
+        '</div>' +
+
+        '<h1>' +
+
+          'Opening ' +
+          safeLabel +
+          '...' +
+
+        '</h1>' +
+
+        '<p>' +
+
+          'Your document is being prepared and will open automatically in a moment.' +
+
+        '</p>' +
+
+        '<div class="tag">' +
+
+          'Colombo Travel Hub' +
+
+        '</div>' +
+
+      '</main>' +
+
+      '</body>' +
+
+      '</html>'
+    );
+
+
+    newTab.document.close();
+
+  }catch(error){
+
+    console.warn(
+      "Could not render opening screen:",
+      error
+    );
+
+  }
+
+}
+
+
+/* ============================================================
+   RENDER DOCUMENTS
+   ============================================================ */
+
+function renderDocs(fileMap){
 
   const list =
-
     document.getElementById(
       "docsList"
     );
@@ -2517,31 +2253,23 @@ function renderDocs(
 
 
       const url =
-
         String(
           fileMap[d.key] || ""
-        )
-        .trim();
+        ).trim();
 
 
       const available =
-
         Boolean(
           DOC_AVAILABILITY[d.key]
         )
-
         &&
-
         url !== "";
 
 
-      if(
-        available
-      ){
+      if(available){
 
 
         const link =
-
           document.createElement(
             "a"
           );
@@ -2568,13 +2296,10 @@ function renderDocs(
 
 
         link.setAttribute(
-
           "aria-label",
-
           d.label +
           " — " +
           d.desc
-
         );
 
 
@@ -2609,118 +2334,85 @@ function renderDocs(
           '</span>';
 
 
-        /*
-         * Reliable tracking:
-         *
-         * 1. User clicks.
-         * 2. Blank tab opens immediately.
-         * 3. Counter is updated.
-         * 4. Actual document opens.
-         */
+        /* ====================================================
+           CLICK → SHOW LARGE OPENING SCREEN → TRACK → OPEN FILE
+           ==================================================== */
 
         link.addEventListener(
-
           "click",
-
-          async function(
-            event
-          ){
+          async function(event){
 
 
             event.preventDefault();
 
 
+            /*
+             * Must happen immediately during the tap
+             * so mobile browsers allow the new tab.
+             */
+
             const newTab =
-
               window.open(
-
                 "about:blank",
-
                 "_blank"
+              );
 
+
+            /*
+             * Shows:
+             *
+             * Opening CEO's Note...
+             * Opening Itinerary...
+             * Opening Do's & Don'ts...
+             * Opening Product Collateral...
+             */
+
+            writeOpeningScreen(
+              newTab,
+              d.label
+            );
+
+
+            /*
+             * Update click counter first.
+             */
+
+            const result =
+              await trackDocument(
+                d.key
               );
 
 
             if(
-              newTab
+              result &&
+              result.status === "success"
             ){
 
-
-              try{
-
-
-                newTab.document.write(
-
-                  '<!DOCTYPE html>' +
-
-                  '<html>' +
-
-                  '<head>' +
-
-                  '<meta name="viewport" content="width=device-width,initial-scale=1">' +
-
-                  '<title>Opening...</title>' +
-
-                  '</head>' +
-
-                  '<body style="' +
-
-                  'margin:0;' +
-
-                  'height:100vh;' +
-
-                  'display:flex;' +
-
-                  'align-items:center;' +
-
-                  'justify-content:center;' +
-
-                  'font-family:Arial,sans-serif;' +
-
-                  'background:#F4FBFC;' +
-
-                  'color:#07536D;' +
-
-                  '">' +
-
-                  '<div style="text-align:center;">' +
-
-                  '<div style="font-size:18px;font-weight:700;">Opening your Colombo document...</div>' +
-
-                  '<div style="margin-top:6px;font-size:13px;opacity:.65;">Please wait</div>' +
-
-                  '</div>' +
-
-                  '</body>' +
-
-                  '</html>'
-
-                );
-
-
-              }catch(error){
-
-              }
+              console.log(
+                d.label +
+                " total opens = " +
+                result.count
+              );
 
             }
 
 
-            await trackDocument(
-              d.key
-            );
+            /*
+             * Then redirect the loading tab
+             * to the actual document.
+             */
 
-
-            if(
-              newTab
-            ){
+            if(newTab){
 
               newTab.location.replace(
                 url
               );
 
-            }
+            }else{
 
-            else{
+              /*
+               * Fallback if popup/new tab was blocked.
+               */
 
               window.location.href =
                 url;
@@ -2728,7 +2420,6 @@ function renderDocs(
             }
 
           }
-
         );
 
 
@@ -2736,14 +2427,10 @@ function renderDocs(
           link
         );
 
-      }
-
-
-      else{
+      }else{
 
 
         const row =
-
           document.createElement(
             "div"
           );
@@ -2758,11 +2445,8 @@ function renderDocs(
 
 
         row.setAttribute(
-
           "aria-disabled",
-
           "true"
-
         );
 
 
@@ -2804,7 +2488,6 @@ function renderDocs(
       }
 
     }
-
   );
 
 }
@@ -2816,46 +2499,33 @@ function renderDocs(
 
 function getDaysRemaining(){
 
-
   const now =
     new Date();
 
 
   const today =
     new Date(
-
       now.getFullYear(),
-
       now.getMonth(),
-
       now.getDate()
-
     );
 
 
   const target =
     new Date(
-
       CONVENTION_DATE.getFullYear(),
-
       CONVENTION_DATE.getMonth(),
-
       CONVENTION_DATE.getDate()
-
     );
 
 
   return Math.round(
-
     (
       target -
       today
     )
-
     /
-
     86400000
-
   );
 
 }
@@ -2863,46 +2533,36 @@ function getDaysRemaining(){
 
 function updateCountdown(){
 
-
   const diff =
-
     CONVENTION_DATE -
-
     new Date();
 
 
   const label =
-
     document.getElementById(
       "countdownLabel"
     );
 
 
   const stats =
-
     document.getElementById(
       "countdownStats"
     );
 
 
   const wrap =
-
     document.getElementById(
       "countdownWrap"
     );
 
 
   let done =
-
     document.getElementById(
       "countdownDone"
     );
 
 
-  if(
-    diff <= 0
-  ){
-
+  if(diff <= 0){
 
     stats.style.display =
       "none";
@@ -2912,13 +2572,9 @@ function updateCountdown(){
       "none";
 
 
-    if(
-      !done
-    ){
-
+    if(!done){
 
       done =
-
         document.createElement(
           "div"
         );
@@ -2944,15 +2600,10 @@ function updateCountdown(){
 
 
     done.textContent =
-
       getDaysRemaining() === 0
-
       ?
-
       "Colombo starts today!"
-
       :
-
       "See you in Colombo";
 
 
@@ -2961,13 +2612,9 @@ function updateCountdown(){
   }
 
 
-  if(
-    done
-  ){
-
+  if(done){
     done.style.display =
       "none";
-
   }
 
 
@@ -2980,7 +2627,6 @@ function updateCountdown(){
 
 
   const days =
-
     Math.floor(
       diff /
       86400000
@@ -2988,34 +2634,24 @@ function updateCountdown(){
 
 
   const hours =
-
     Math.floor(
-
       (
         diff %
         86400000
       )
-
       /
-
       3600000
-
     );
 
 
   const mins =
-
     Math.floor(
-
       (
         diff %
         3600000
       )
-
       /
-
       60000
-
     );
 
 
@@ -3028,11 +2664,9 @@ function updateCountdown(){
   document.getElementById(
     "cdHours"
   ).textContent =
-
     String(
       hours
-    )
-    .padStart(
+    ).padStart(
       2,
       "0"
     );
@@ -3041,11 +2675,9 @@ function updateCountdown(){
   document.getElementById(
     "cdMins"
   ).textContent =
-
     String(
       mins
-    )
-    .padStart(
+    ).padStart(
       2,
       "0"
     );
@@ -3065,9 +2697,7 @@ const POPUP_SESSION_KEY =
 "colomboConventionPopupShown";
 
 
-function isImageUrl(
-  url
-){
+function isImageUrl(url){
 
   return /\.(png|jpe?g|gif|webp|bmp|svg)(\?.*)?$/i.test(
     url
@@ -3078,19 +2708,15 @@ function isImageUrl(
 
 function openPopup(){
 
-
   lastFocusedEl =
     document.activeElement;
 
 
   document
-
     .getElementById(
       "popupOverlay"
     )
-
     .classList
-
     .add(
       "show"
     );
@@ -3100,15 +2726,11 @@ function openPopup(){
 
 function closePopup(){
 
-
   document
-
     .getElementById(
       "popupOverlay"
     )
-
     .classList
-
     .remove(
       "show"
     );
@@ -3127,8 +2749,7 @@ function closePopup(){
 
 
   if(
-    lastFocusedEl
-    &&
+    lastFocusedEl &&
     typeof lastFocusedEl.focus === "function"
   ){
 
@@ -3139,27 +2760,21 @@ function closePopup(){
 }
 
 
-function renderPopupContent(
-  url
-){
-
+function renderPopupContent(url){
 
   const img =
-
     document.getElementById(
       "popupImage"
     );
 
 
   const frame =
-
     document.getElementById(
       "popupFrame"
     );
 
 
   const loading =
-
     document.getElementById(
       "popupLoading"
     );
@@ -3177,12 +2792,7 @@ function renderPopupContent(
     "none";
 
 
-  if(
-    isImageUrl(
-      url
-    )
-  ){
-
+  if(isImageUrl(url)){
 
     frame.src =
       "";
@@ -3190,7 +2800,6 @@ function renderPopupContent(
 
     img.onload =
       function(){
-
 
         loading.style.display =
           "none";
@@ -3205,7 +2814,6 @@ function renderPopupContent(
     img.onerror =
       function(){
 
-
         loading.style.display =
           "none";
 
@@ -3215,11 +2823,7 @@ function renderPopupContent(
     img.src =
       url;
 
-  }
-
-
-  else{
-
+  }else{
 
     img.src =
       "";
@@ -3227,7 +2831,6 @@ function renderPopupContent(
 
     frame.onload =
       function(){
-
 
         loading.style.display =
           "none";
@@ -3249,15 +2852,12 @@ function renderPopupContent(
 
 async function showGeneralPopup(){
 
-
   if(
-
     sessionStorage.getItem(
       POPUP_SESSION_KEY
     )
     ===
     "1"
-
   ){
 
     return;
@@ -3267,39 +2867,25 @@ async function showGeneralPopup(){
 
   try{
 
-
     const response =
-
       await fetch(
-
         API_URL +
-
         "?action=popup&_=" +
-
         Date.now(),
-
         {
-
           cache:"no-store"
-
         }
-
       );
 
 
     const data =
-
       await response.json();
 
 
     if(
-
-      data
-      &&
+      data &&
       data.popup
-
     ){
-
 
       renderPopupContent(
         data.popup
@@ -3307,11 +2893,8 @@ async function showGeneralPopup(){
 
 
       sessionStorage.setItem(
-
         POPUP_SESSION_KEY,
-
         "1"
-
       );
 
 
@@ -3323,18 +2906,11 @@ async function showGeneralPopup(){
 
     }
 
-  }
-
-
-  catch(error){
-
+  }catch(error){
 
     console.error(
-
       "Colombo announcement error:",
-
       error
-
     );
 
   }
@@ -3348,41 +2924,35 @@ async function showGeneralPopup(){
 
 function resetLookupState(){
 
-
   verifiedLookupValue =
     "";
 
 
   const input =
-
     document.getElementById(
       "input"
     );
 
 
   const msg =
-
     document.getElementById(
       "msg"
     );
 
 
   const downloads =
-
     document.getElementById(
       "downloads"
     );
 
 
   const btn =
-
     document.getElementById(
       "btn"
     );
 
 
   const reset =
-
     document.getElementById(
       "resetLink"
     );
@@ -3442,62 +3012,48 @@ function resetLookupState(){
    EMPLOYEE LOOKUP
    ============================================================ */
 
-async function searchDoc(
-  event
-){
+async function searchDoc(event){
 
-
-  if(
-    event
-  ){
-
+  if(event){
     event.preventDefault();
-
   }
 
 
   const inputEl =
-
     document.getElementById(
       "input"
     );
 
 
   const value =
-
     inputEl.value.trim();
 
 
   const msg =
-
     document.getElementById(
       "msg"
     );
 
 
   const loader =
-
     document.getElementById(
       "loader"
     );
 
 
   const btn =
-
     document.getElementById(
       "btn"
     );
 
 
   const downloads =
-
     document.getElementById(
       "downloads"
     );
 
 
   const reset =
-
     document.getElementById(
       "resetLink"
     );
@@ -3516,10 +3072,7 @@ async function searchDoc(
   );
 
 
-  if(
-    !value
-  ){
-
+  if(!value){
 
     msg.className =
       "error";
@@ -3530,11 +3083,8 @@ async function searchDoc(
 
 
     inputEl.setAttribute(
-
       "aria-invalid",
-
       "true"
-
     );
 
 
@@ -3557,34 +3107,20 @@ async function searchDoc(
 
   try{
 
-
     const response =
-
       await fetch(
-
         API_URL +
-
         "?input=" +
-
-        encodeURIComponent(
-          value
-        ) +
-
+        encodeURIComponent(value) +
         "&_=" +
-
         Date.now(),
-
         {
-
           cache:"no-store"
-
         }
-
       );
 
 
     const data =
-
       await response.json();
 
 
@@ -3593,10 +3129,7 @@ async function searchDoc(
     );
 
 
-    if(
-      data.status === "success"
-    ){
-
+    if(data.status === "success"){
 
       verifiedLookupValue =
         value;
@@ -3611,8 +3144,8 @@ async function searchDoc(
 
 
       /*
-       * F4 can continue being returned by Apps Script.
-       * We intentionally do not display it yet.
+       * F4 can still be returned by Apps Script.
+       * Colombo simply does not display it right now.
        */
 
       renderDocs({
@@ -3654,13 +3187,10 @@ async function searchDoc(
        * PU remains active.
        *
        * Once the employee verifies,
-       * record that the announcement was shown.
+       * track the announcement that was shown.
        */
 
-      if(
-        popupShownThisLoad
-      ){
-
+      if(popupShownThisLoad){
 
         await trackDocument(
           "pu"
@@ -3675,11 +3205,7 @@ async function searchDoc(
 
       celebrateSuccess();
 
-    }
-
-
-    else{
-
+    }else{
 
       verifiedLookupValue =
         "";
@@ -3694,29 +3220,19 @@ async function searchDoc(
 
 
       msg.textContent =
-
         data.message
-
         ||
-
         "No record found. Please check your Employee ID or Mobile Number and try again.";
 
 
       inputEl.setAttribute(
-
         "aria-invalid",
-
         "true"
-
       );
 
     }
 
-  }
-
-
-  catch(error){
-
+  }catch(error){
 
     verifiedLookupValue =
       "";
@@ -3740,11 +3256,8 @@ async function searchDoc(
 
 
     console.error(
-
       "Colombo lookup error:",
-
       error
-
     );
 
   }
@@ -3757,63 +3270,46 @@ async function searchDoc(
    ============================================================ */
 
 document
-
   .getElementById(
     "lookupForm"
   )
-
   .addEventListener(
-
     "submit",
-
     searchDoc
-
   );
 
 
 document
-
   .getElementById(
     "resetLink"
   )
-
   .addEventListener(
-
     "click",
-
     resetLookupState
-
   );
 
 
 window.addEventListener(
-
   "DOMContentLoaded",
-
   function(){
-
 
     updateCountdown();
 
 
     setInterval(
-
       updateCountdown,
-
       20000
-
     );
 
 
     showGeneralPopup();
 
   }
-
 );
 
 
 /* ============================================================
-   COLOMBO SUCCESS MESSAGES
+   SUCCESS MESSAGES
    ============================================================ */
 
 const successMessages = [
@@ -3837,31 +3333,22 @@ null;
 
 function celebrateSuccess(){
 
-
   fireConfettiBurst();
 
 
   const toast =
-
     document.getElementById(
       "toast"
     );
 
 
   toast.textContent =
-
     successMessages[
-
       Math.floor(
-
         Math.random()
-
         *
-
         successMessages.length
-
       )
-
     ];
 
 
@@ -3876,20 +3363,15 @@ function celebrateSuccess(){
 
 
   toastTimer =
-
     setTimeout(
-
       function(){
-
 
         toast.classList.remove(
           "show"
         );
 
       },
-
       2300
-
     );
 
 }
@@ -3901,26 +3383,18 @@ function celebrateSuccess(){
 
 function fireConfettiBurst(){
 
-
   const container =
-
     document.getElementById(
       "confetti"
     );
 
 
   const colors = [
-
     "#0877B9",
-
     "#0A7C78",
-
     "#F7C94B",
-
     "#F37B45",
-
     "#FFFFFF"
-
   ];
 
 
@@ -3933,56 +3407,40 @@ function fireConfettiBurst(){
 
 
   for(
-
     let i = 0;
-
     i < 34;
-
     i++
-
   ){
 
-
     const piece =
-
       document.createElement(
         "span"
       );
 
 
     const startX =
-
       Math.random()
       *
       width;
 
 
     const startY =
-
       -30
-
       -
-
       Math.random()
       *
       160;
 
 
     const fall =
-
       height
-
       -
-
       startY
-
       +
-
       100;
 
 
     const drift =
-
       (
         Math.random()
         *
@@ -3990,24 +3448,19 @@ function fireConfettiBurst(){
         -
         1
       )
-
       *
       140;
 
 
     const rotation =
-
       Math.random()
       *
       720;
 
 
     const size =
-
       6
-
       +
-
       Math.random()
       *
       4;
@@ -4038,19 +3491,12 @@ function fireConfettiBurst(){
 
 
     piece.style.background =
-
       colors[
-
         Math.floor(
-
           Math.random()
-
           *
-
           colors.length
-
         )
-
       ];
 
 
@@ -4060,66 +3506,46 @@ function fireConfettiBurst(){
 
 
     const animation =
-
       piece.animate(
-
         [
 
           {
-
             transform:
               "translate(0,0)",
 
             opacity:1
-
           },
 
           {
-
             transform:
-
               "translate(" +
-
               drift +
-
               "px," +
-
               fall +
-
               "px) rotate(" +
-
               rotation +
-
               "deg)",
 
             opacity:0
-
           }
 
         ],
 
         {
-
           duration:
-
             2700
-
             +
-
             Math.random()
             *
             1200,
 
           easing:
             "cubic-bezier(.3,.5,.4,1)"
-
         }
-
       );
 
 
     animation.onfinish =
-
       function(){
 
         piece.remove();
