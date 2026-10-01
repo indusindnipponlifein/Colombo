@@ -47,8 +47,6 @@
   --success:#148A63;
   --error:#C94242;
 
-  --white:#FFFFFF;
-
   --font-body:
     'DM Sans',
     -apple-system,
@@ -65,7 +63,7 @@
 
 
   /* ========================================================
-     REPLACE ONLY THIS URL WITH FINAL COLOMBO POSTER
+     BACKGROUND POSTER
      ======================================================== */
 
   --hero-bg-image:
@@ -74,7 +72,7 @@
 
   --poster-ar:1.75587;
 
-  --safe-fraction:.45;
+  --safe-fraction:.445;
 
 
   --safe-y:
@@ -149,7 +147,7 @@ body{
 
 
 /* ============================================================
-   POSTER BACKGROUND
+   BACKGROUND
    ============================================================ */
 
 .hero-bg{
@@ -214,7 +212,7 @@ body{
       rgba(255,255,255,0)
       calc(var(--safe-y) - 65px),
 
-      rgba(246,252,252,.55)
+      rgba(246,252,252,.56)
       calc(var(--safe-y) + 15px),
 
       rgba(246,252,252,.93)
@@ -236,11 +234,12 @@ body{
   position:absolute;
 
   width:1px;
+
   height:1px;
 
-  margin:-1px;
-
   padding:0;
+
+  margin:-1px;
 
   overflow:hidden;
 
@@ -278,7 +277,7 @@ body{
 
     15px
 
-    26px;
+    24px;
 
 }
 
@@ -286,7 +285,9 @@ body{
 @supports (height:100dvh){
 
   .page{
+
     min-height:100dvh;
+
   }
 
 }
@@ -298,40 +299,50 @@ body{
 
 .countdown-wrap{
 
-  width:min(100%,390px);
+  width:min(
+    100%,
+    390px
+  );
+
 
   margin:
-    0 auto 12px;
+
+    0 auto 11px;
 
 
   padding:
+
     11px 14px 12px;
 
 
   border:
+
     1px solid
     rgba(255,255,255,.85);
 
 
-  border-radius:
-    20px;
+  border-radius:20px;
 
 
   background:
+
     rgba(255,255,255,.82);
 
 
   backdrop-filter:
+
     blur(16px)
     saturate(135%);
 
 
   -webkit-backdrop-filter:
+
     blur(16px)
     saturate(135%);
 
 
   box-shadow:
+
     0 14px 34px
     rgba(12,79,103,.13);
 
@@ -390,6 +401,7 @@ body{
 
 
   box-shadow:
+
     0 0 0 4px
     rgba(243,123,69,.12);
 
@@ -429,10 +441,12 @@ body{
 
 
   background:
+
     rgba(238,249,252,.95);
 
 
   border:
+
     1px solid
     rgba(8,119,185,.10);
 
@@ -506,6 +520,7 @@ body{
 
 
   padding:
+
     9px 16px;
 
 
@@ -527,7 +542,7 @@ body{
 
 
 /* ============================================================
-   ACCESS CARD
+   CARD
    ============================================================ */
 
 .card{
@@ -543,33 +558,38 @@ body{
 
 
   padding:
-    20px 18px 18px;
+
+    19px 17px 17px;
 
 
   border:
+
     1px solid
-    rgba(255,255,255,.92);
+    rgba(255,255,255,.94);
 
 
-  border-radius:
-    23px;
+  border-radius:23px;
 
 
   background:
+
     rgba(255,255,255,.92);
 
 
   backdrop-filter:
+
     blur(20px)
     saturate(140%);
 
 
   -webkit-backdrop-filter:
+
     blur(20px)
     saturate(140%);
 
 
   box-shadow:
+
     0 24px 60px
     rgba(12,79,103,.16);
 
@@ -594,11 +614,16 @@ body{
 
 
   background:
+
     linear-gradient(
       90deg,
+
       var(--ocean),
+
       var(--teal),
+
       var(--sun),
+
       var(--sunset)
     );
 
@@ -618,14 +643,14 @@ body{
 
 
   padding:
+
     5px 9px;
 
 
   border-radius:999px;
 
 
-  background:
-    #EDF8FC;
+  background:#EDF8FC;
 
 
   color:
@@ -688,6 +713,7 @@ body{
 .card-instruction{
 
   margin:
+
     5px 0 13px;
 
 
@@ -731,6 +757,7 @@ body{
 
 
   transform:
+
     translateY(-50%);
 
 
@@ -755,11 +782,13 @@ input{
 
 
   padding:
+
     11px 13px
     11px 42px;
 
 
   border:
+
     1.5px solid
     #D8E7EC;
 
@@ -770,8 +799,7 @@ input{
   outline:none;
 
 
-  background:
-    #FFFFFF;
+  background:#FFFFFF;
 
 
   color:
@@ -788,7 +816,9 @@ input{
 
 
   transition:
+
     border-color .18s ease,
+
     box-shadow .18s ease;
 
 }
@@ -810,6 +840,7 @@ input:focus{
 
 
   box-shadow:
+
     0 0 0 4px
     rgba(8,119,185,.10);
 
@@ -823,6 +854,7 @@ input[aria-invalid="true"]{
 
 
   box-shadow:
+
     0 0 0 4px
     rgba(201,66,66,.09);
 
@@ -851,9 +883,12 @@ input[aria-invalid="true"]{
 
 
   background:
+
     linear-gradient(
       110deg,
+
       var(--ocean),
+
       var(--teal)
     );
 
@@ -871,21 +906,22 @@ input[aria-invalid="true"]{
 
 
   box-shadow:
+
     0 12px 24px
     rgba(8,119,185,.20);
 
 
   transition:
-    transform .15s ease,
-    box-shadow .15s ease;
+
+    transform .15s ease;
 
 }
 
 
-#btn:hover{
+#btn:active{
 
   transform:
-    translateY(-1px);
+    scale(.99);
 
 }
 
@@ -899,11 +935,11 @@ input[aria-invalid="true"]{
 
 #btn.success-state{
 
-  background:
-    #EAF8F1;
+  background:#EAF8F1;
 
 
   border:
+
     1px solid
     #BCE7D5;
 
@@ -918,7 +954,7 @@ input[aria-invalid="true"]{
 
 
 /* ============================================================
-   STATUS
+   LOOKUP STATUS
    ============================================================ */
 
 .loader{
@@ -963,6 +999,7 @@ input[aria-invalid="true"]{
 
 
   border:
+
     2px solid
     rgba(8,119,185,.18);
 
@@ -975,7 +1012,10 @@ input[aria-invalid="true"]{
 
 
   animation:
-    spin .75s linear infinite;
+
+    spin .75s
+    linear
+    infinite;
 
 }
 
@@ -999,17 +1039,23 @@ input[aria-invalid="true"]{
 
 
 .success{
-  color:var(--success);
+
+  color:
+    var(--success);
+
 }
 
 
 .error{
-  color:var(--error);
+
+  color:
+    var(--error);
+
 }
 
 
 /* ============================================================
-   DOCUMENTS
+   DOCUMENT HUB
    ============================================================ */
 
 .downloads{
@@ -1071,6 +1117,231 @@ input[aria-invalid="true"]{
 }
 
 
+/* ============================================================
+   NEW: INLINE DOCUMENT LOADER
+   ============================================================ */
+
+.inline-doc-loader{
+
+  display:none;
+
+
+  position:relative;
+
+
+  align-items:center;
+
+
+  gap:11px;
+
+
+  margin-bottom:9px;
+
+
+  padding:
+
+    10px 12px;
+
+
+  overflow:hidden;
+
+
+  border:
+
+    1px solid
+    rgba(8,119,185,.13);
+
+
+  border-radius:14px;
+
+
+  background:
+
+    linear-gradient(
+      100deg,
+      #EDF9FD 0%,
+      #F5FBF8 48%,
+      #FFF9E7 100%
+    );
+
+
+  box-shadow:
+
+    0 6px 16px
+    rgba(8,119,185,.07);
+
+
+  animation:
+
+    loaderEnter .2s ease;
+
+}
+
+
+.inline-doc-loader.show{
+
+  display:flex;
+
+}
+
+
+.inline-loader-icon{
+
+  flex-shrink:0;
+
+
+  width:36px;
+
+  height:36px;
+
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+
+  border-radius:11px;
+
+
+  background:
+
+    linear-gradient(
+      135deg,
+      var(--ocean),
+      var(--teal)
+    );
+
+
+  box-shadow:
+
+    0 6px 14px
+    rgba(8,119,185,.18);
+
+}
+
+
+.inline-loader-spinner{
+
+  width:18px;
+
+  height:18px;
+
+
+  border:
+
+    2.5px solid
+    rgba(255,255,255,.30);
+
+
+  border-top-color:#FFFFFF;
+
+
+  border-radius:50%;
+
+
+  animation:
+
+    spin .7s
+    linear
+    infinite;
+
+}
+
+
+.inline-loader-copy{
+
+  min-width:0;
+
+
+  display:flex;
+
+  flex-direction:column;
+
+
+  gap:2px;
+
+}
+
+
+.inline-loader-title{
+
+  overflow:hidden;
+
+
+  color:#164657;
+
+
+  font-size:.79rem;
+
+  font-weight:800;
+
+
+  white-space:nowrap;
+
+  text-overflow:ellipsis;
+
+}
+
+
+.inline-loader-subtitle{
+
+  color:
+    var(--muted);
+
+
+  font-size:.66rem;
+
+  font-weight:500;
+
+}
+
+
+.inline-doc-loader::after{
+
+  content:"";
+
+
+  position:absolute;
+
+
+  left:0;
+
+  bottom:0;
+
+
+  height:2px;
+
+
+  width:35%;
+
+
+  border-radius:99px;
+
+
+  background:
+
+    linear-gradient(
+      90deg,
+      var(--ocean),
+      var(--sunset)
+    );
+
+
+  animation:
+
+    loaderProgress 1.2s
+    ease-in-out
+    infinite;
+
+}
+
+
+/* ============================================================
+   DOCUMENT CARDS
+   ============================================================ */
+
 .docs-list{
 
   display:flex;
@@ -1097,10 +1368,12 @@ input[aria-invalid="true"]{
 
 
   padding:
+
     10px 11px;
 
 
   border:
+
     1px solid
     #DDECEF;
 
@@ -1119,14 +1392,20 @@ input[aria-invalid="true"]{
 
 
   box-shadow:
+
     0 5px 14px
     rgba(25,88,108,.05);
 
 
   transition:
+
     transform .15s ease,
+
     box-shadow .15s ease,
-    border-color .15s ease;
+
+    border-color .15s ease,
+
+    opacity .15s ease;
 
 }
 
@@ -1135,6 +1414,20 @@ a.doc-row:active{
 
   transform:
     scale(.985);
+
+}
+
+
+.doc-row.opening{
+
+  border-color:
+
+    rgba(8,119,185,.28);
+
+
+  background:
+
+    #F8FCFD;
 
 }
 
@@ -1164,6 +1457,7 @@ a.doc-row:active{
 
 
   background:
+
     linear-gradient(
       145deg,
       #E7F8FF,
@@ -1279,6 +1573,7 @@ a.doc-row:active{
 
 
   background:
+
     linear-gradient(
       145deg,
       #FFF8D8,
@@ -1301,6 +1596,7 @@ a.doc-row:active{
 
 
   padding:
+
     5px 3px;
 
 
@@ -1324,7 +1620,6 @@ a.doc-row:active{
 
 
   text-decoration:underline;
-
 
   text-underline-offset:3px;
 
@@ -1392,6 +1687,7 @@ a.doc-row:active{
 
 
   padding:
+
     10px 15px;
 
 
@@ -1399,6 +1695,7 @@ a.doc-row:active{
 
 
   background:
+
     rgba(255,255,255,.96);
 
 
@@ -1415,6 +1712,7 @@ a.doc-row:active{
 
 
   box-shadow:
+
     0 12px 30px
     rgba(12,79,103,.18);
 
@@ -1426,7 +1724,10 @@ a.doc-row:active{
 
 
   transition:
-    .25s ease;
+
+    opacity .25s ease,
+
+    transform .25s ease;
 
 }
 
@@ -1468,14 +1769,17 @@ a.doc-row:active{
 
 
   background:
+
     rgba(8,50,65,.48);
 
 
   backdrop-filter:
+
     blur(6px);
 
 
   -webkit-backdrop-filter:
+
     blur(6px);
 
 }
@@ -1508,10 +1812,12 @@ a.doc-row:active{
 
 
   background:
+
     rgba(255,255,255,.98);
 
 
   box-shadow:
+
     0 30px 70px
     rgba(7,83,109,.28);
 
@@ -1616,6 +1922,7 @@ a.doc-row:active{
 
 
   padding:
+
     36px 12px;
 
 
@@ -1633,7 +1940,6 @@ a.doc-row:active{
 .popup-well iframe{
 
   width:100%;
-
 
   height:56vh;
 
@@ -1665,271 +1971,65 @@ a.doc-row:active{
 
 
 /* ============================================================
-   DOCUMENT OPENING OVERLAY
-   ============================================================ */
-
-.document-opening-overlay{
-
-  position:fixed;
-
-  inset:0;
-
-
-  z-index:9999;
-
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-
-  padding:20px;
-
-
-  background:
-
-    radial-gradient(
-      circle at 82% 13%,
-      rgba(255,218,78,.55),
-      transparent 29%
-    ),
-
-    linear-gradient(
-      145deg,
-      #DDF5FF 0%,
-      #FFF4C4 52%,
-      #FFD2AF 100%
-    );
-
-
-  opacity:0;
-
-  visibility:hidden;
-
-
-  transition:
-    opacity .2s ease,
-    visibility .2s ease;
-
-}
-
-
-.document-opening-overlay.show{
-
-  opacity:1;
-
-  visibility:visible;
-
-}
-
-
-.document-opening-card{
-
-  position:relative;
-
-
-  overflow:hidden;
-
-
-  width:100%;
-
-  max-width:390px;
-
-
-  padding:
-    40px 24px 36px;
-
-
-  text-align:center;
-
-
-  border:
-    1px solid
-    rgba(255,255,255,.95);
-
-
-  border-radius:28px;
-
-
-  background:
-    rgba(255,255,255,.96);
-
-
-  box-shadow:
-    0 30px 75px
-    rgba(7,83,109,.19);
-
-}
-
-
-.document-opening-card::before{
-
-  content:"";
-
-
-  position:absolute;
-
-  top:0;
-
-  left:0;
-
-  right:0;
-
-
-  height:5px;
-
-
-  background:
-    linear-gradient(
-      90deg,
-      var(--ocean),
-      var(--teal),
-      var(--sun),
-      var(--sunset)
-    );
-
-}
-
-
-.document-opening-spinner-wrap{
-
-  width:78px;
-
-  height:78px;
-
-
-  margin:
-    0 auto 23px;
-
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-
-  border-radius:50%;
-
-
-  background:
-    linear-gradient(
-      135deg,
-      var(--ocean),
-      var(--teal)
-    );
-
-
-  box-shadow:
-    0 14px 30px
-    rgba(8,119,185,.24);
-
-}
-
-
-.document-opening-spinner{
-
-  width:38px;
-
-  height:38px;
-
-
-  border:
-    5px solid
-    rgba(255,255,255,.30);
-
-
-  border-top-color:#FFFFFF;
-
-
-  border-radius:50%;
-
-
-  animation:
-    openingSpin .8s linear infinite;
-
-}
-
-
-.document-opening-kicker{
-
-  margin-bottom:9px;
-
-
-  color:
-    var(--teal);
-
-
-  font-size:.68rem;
-
-  font-weight:800;
-
-
-  letter-spacing:.10em;
-
-  text-transform:uppercase;
-
-}
-
-
-.document-opening-title{
-
-  color:#123A4A;
-
-
-  font-family:
-    var(--font-display);
-
-
-  font-size:1.75rem;
-
-  font-weight:800;
-
-
-  line-height:1.18;
-
-
-  letter-spacing:-.035em;
-
-}
-
-
-.document-opening-text{
-
-  margin-top:10px;
-
-
-  color:
-    var(--muted);
-
-
-  font-size:.87rem;
-
-
-  line-height:1.45;
-
-}
-
-
-/* ============================================================
    ANIMATIONS
    ============================================================ */
 
 @keyframes spin{
 
   to{
-    transform:rotate(360deg);
+
+    transform:
+      rotate(360deg);
+
   }
 
 }
 
 
-@keyframes openingSpin{
+@keyframes loaderEnter{
+
+  from{
+
+    opacity:0;
+
+    transform:
+      translateY(-4px);
+
+  }
+
 
   to{
-    transform:rotate(360deg);
+
+    opacity:1;
+
+    transform:
+      translateY(0);
+
+  }
+
+}
+
+
+@keyframes loaderProgress{
+
+  0%{
+
+    left:-35%;
+
+  }
+
+
+  50%{
+
+    left:45%;
+
+  }
+
+
+  100%{
+
+    left:100%;
+
   }
 
 }
@@ -1942,11 +2042,6 @@ a.doc-row:active{
 @media(max-width:480px){
 
   :root{
-
-    /*
-       Keeps UI below poster title
-       while retaining comfortable sizing.
-    */
 
     --safe-fraction:.445;
 
@@ -1965,50 +2060,12 @@ a.doc-row:active{
 
   }
 
-
-  .countdown-wrap{
-
-    margin-bottom:11px;
-
-  }
-
-
-  .card{
-
-    padding:
-      19px 17px 17px;
-
-  }
-
-
-  .document-opening-card{
-
-    max-width:355px;
-
-
-    padding:
-      38px 20px 34px;
-
-  }
-
-
-  .document-opening-title{
-
-    font-size:1.6rem;
-
-  }
-
-
-  .document-opening-text{
-
-    font-size:.84rem;
-
-  }
-
 }
 
 
-/* Short devices */
+/* ============================================================
+   SHORTER MOBILE SCREENS
+   ============================================================ */
 
 @media(max-width:480px) and (max-height:700px){
 
@@ -2022,6 +2079,7 @@ a.doc-row:active{
   .countdown-wrap{
 
     padding:
+
       9px 11px;
 
 
@@ -2033,6 +2091,7 @@ a.doc-row:active{
   .card{
 
     padding:
+
       17px 16px 16px;
 
   }
@@ -2040,7 +2099,9 @@ a.doc-row:active{
 }
 
 
-/* Desktop */
+/* ============================================================
+   DESKTOP
+   ============================================================ */
 
 @media(min-width:600px){
 
@@ -2055,14 +2116,13 @@ a.doc-row:active{
   .card{
 
     padding:
+
       27px 27px 23px;
 
   }
 
 }
 
-
-/* Reduce motion */
 
 @media(prefers-reduced-motion:reduce){
 
@@ -2107,8 +2167,11 @@ a.doc-row:active{
 
 
 <h1 class="sr-only">
+
   Colombo Training Convention 2026
+
 </h1>
+
 
 
 <main class="page">
@@ -2215,7 +2278,7 @@ a.doc-row:active{
 
 
   <!-- ======================================================
-       ACCESS
+       ACCESS CARD
        ====================================================== -->
 
   <section class="card">
@@ -2240,6 +2303,7 @@ a.doc-row:active{
       Enter your Employee ID or mobile number.
 
     </p>
+
 
 
     <form
@@ -2308,6 +2372,7 @@ a.doc-row:active{
     </form>
 
 
+
     <div
       class="loader"
       id="loader">
@@ -2323,6 +2388,7 @@ a.doc-row:active{
     </div>
 
 
+
     <div
       id="msg"
       role="status"
@@ -2331,7 +2397,9 @@ a.doc-row:active{
 
 
 
-    <!-- DOCUMENTS -->
+    <!-- ====================================================
+         DOCUMENTS
+         ==================================================== -->
 
     <div
       class="downloads"
@@ -2355,6 +2423,49 @@ a.doc-row:active{
       </div>
 
 
+
+      <!-- INLINE LOADING MESSAGE -->
+
+      <div
+        class="inline-doc-loader"
+        id="inlineDocLoader"
+        role="status"
+        aria-live="polite">
+
+
+        <div class="inline-loader-icon">
+
+          <div class="inline-loader-spinner"></div>
+
+        </div>
+
+
+        <div class="inline-loader-copy">
+
+
+          <div
+            class="inline-loader-title"
+            id="inlineLoaderTitle">
+
+            Opening document...
+
+          </div>
+
+
+          <div class="inline-loader-subtitle">
+
+            Opens in a new tab
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+
       <div
         class="docs-list"
         id="docsList">
@@ -2362,6 +2473,7 @@ a.doc-row:active{
 
 
     </div>
+
 
 
     <button
@@ -2376,6 +2488,7 @@ a.doc-row:active{
 
 
   </section>
+
 
 
   <p class="footer-note">
@@ -2466,56 +2579,6 @@ a.doc-row:active{
 
 
 
-<!-- ========================================================
-     DOCUMENT OPENING SCREEN
-     ======================================================== -->
-
-<div
-  class="document-opening-overlay"
-  id="documentOpeningOverlay"
-  aria-hidden="true">
-
-
-  <div class="document-opening-card">
-
-
-    <div class="document-opening-spinner-wrap">
-
-      <div class="document-opening-spinner"></div>
-
-    </div>
-
-
-    <div class="document-opening-kicker">
-
-      Colombo 2026
-
-    </div>
-
-
-    <h2
-      class="document-opening-title"
-      id="documentOpeningTitle">
-
-      Opening document...
-
-    </h2>
-
-
-    <p class="document-opening-text">
-
-      One moment while we open your document.
-
-    </p>
-
-
-  </div>
-
-
-</div>
-
-
-
 <script>
 
 /* ============================================================
@@ -2540,11 +2603,19 @@ let popupShownThisLoad =
 false;
 
 
+let documentLoaderTimer =
+null;
+
+
+let activeOpeningRow =
+null;
+
+
 
 /* ============================================================
-   DOCUMENTS
+   DOCUMENT AVAILABILITY
 
-   F4 remains in Apps Script/Sheet but is hidden for now.
+   F4 remains available in backend but hidden for Colombo.
    ============================================================ */
 
 const DOC_AVAILABILITY = {
@@ -2591,7 +2662,7 @@ const ICON_CHEVRON =
 
 
 /* ============================================================
-   TAB CONTENT
+   DOCUMENTS
    ============================================================ */
 
 const DOCS = [
@@ -2652,28 +2723,150 @@ const DOCS = [
 
 
 /* ============================================================
-   UTILITY
+   INLINE DOCUMENT LOADER
    ============================================================ */
 
-function wait(ms){
+function showDocumentLoading(
+  documentName,
+  row
+){
 
-  return new Promise(
-    function(resolve){
+  const loader =
 
-      setTimeout(
-        resolve,
-        ms
-      );
+    document.getElementById(
+      "inlineDocLoader"
+    );
 
-    }
+
+  const title =
+
+    document.getElementById(
+      "inlineLoaderTitle"
+    );
+
+
+  clearTimeout(
+    documentLoaderTimer
   );
+
+
+  if(
+    activeOpeningRow
+  ){
+
+    activeOpeningRow.classList.remove(
+      "opening"
+    );
+
+  }
+
+
+  activeOpeningRow =
+    row;
+
+
+  if(
+    activeOpeningRow
+  ){
+
+    activeOpeningRow.classList.add(
+      "opening"
+    );
+
+  }
+
+
+  title.textContent =
+
+    "Opening " +
+    documentName +
+    "...";
+
+
+  loader.classList.add(
+    "show"
+  );
+
+
+  /*
+   * Scroll only if loader is outside the visible area.
+   * Usually no movement is required.
+   */
+
+  const rect =
+    loader.getBoundingClientRect();
+
+
+  if(
+    rect.top < 0
+    ||
+    rect.bottom > window.innerHeight
+  ){
+
+    loader.scrollIntoView({
+
+      behavior:"smooth",
+
+      block:"nearest"
+
+    });
+
+  }
+
+
+  /*
+   * Automatically clear after 2.2 sec.
+   */
+
+  documentLoaderTimer =
+
+    setTimeout(
+
+      hideDocumentLoading,
+
+      2200
+
+    );
+
+}
+
+
+
+function hideDocumentLoading(){
+
+
+  const loader =
+
+    document.getElementById(
+      "inlineDocLoader"
+    );
+
+
+  loader.classList.remove(
+    "show"
+  );
+
+
+  if(
+    activeOpeningRow
+  ){
+
+    activeOpeningRow.classList.remove(
+      "opening"
+    );
+
+
+    activeOpeningRow =
+      null;
+
+  }
 
 }
 
 
 
 /* ============================================================
-   TRACKING
+   TRACK DOCUMENT CLICK
    ============================================================ */
 
 async function trackDocument(
@@ -2725,101 +2918,54 @@ async function trackDocument(
 
           method:"GET",
 
-          cache:"no-store"
+          cache:"no-store",
+
+          keepalive:true
 
         }
 
       );
 
 
-    return await response.json();
+    const data =
+
+      await response.json();
 
 
-  }catch(error){
+    console.log(
+
+      docKey,
+
+      "opens:",
+
+      data.count
+
+    );
+
+
+    return data;
+
+
+  }
+
+
+  catch(error){
 
 
     console.warn(
+
       "Tracking failed:",
+
       docKey,
+
       error
+
     );
 
 
     return null;
 
   }
-
-}
-
-
-
-/* ============================================================
-   OPENING SCREEN
-   ============================================================ */
-
-function showDocumentOpening(
-  name
-){
-
-  const overlay =
-
-    document.getElementById(
-      "documentOpeningOverlay"
-    );
-
-
-  const title =
-
-    document.getElementById(
-      "documentOpeningTitle"
-    );
-
-
-  title.textContent =
-
-    "Opening " +
-    name +
-    "...";
-
-
-  overlay.classList.add(
-    "show"
-  );
-
-
-  overlay.setAttribute(
-
-    "aria-hidden",
-
-    "false"
-
-  );
-
-}
-
-
-function hideDocumentOpening(){
-
-
-  const overlay =
-
-    document.getElementById(
-      "documentOpeningOverlay"
-    );
-
-
-  overlay.classList.remove(
-    "show"
-  );
-
-
-  overlay.setAttribute(
-
-    "aria-hidden",
-
-    "true"
-
-  );
 
 }
 
@@ -2867,6 +3013,10 @@ function renderDocs(
         url !== "";
 
 
+      /* ======================================================
+         AVAILABLE DOCUMENT
+         ====================================================== */
+
       if(
         available
       ){
@@ -2889,6 +3039,20 @@ function renderDocs(
 
         link.href =
           url;
+
+
+        /*
+         * IMPORTANT:
+         * Document opens separately.
+         * Original Colombo page stays open.
+         */
+
+        link.target =
+          "_blank";
+
+
+        link.rel =
+          "noopener";
 
 
         link.setAttribute(
@@ -2933,87 +3097,47 @@ function renderDocs(
           '</span>';
 
 
+
+        /* ====================================================
+           DOCUMENT CLICK
+           ==================================================== */
+
         link.addEventListener(
 
           "click",
 
-          async function(event){
-
-
-            event.preventDefault();
+          function(event){
 
 
             /*
-             * 1. Show loading experience
+             * Do NOT preventDefault.
+             *
+             * Browser handles target="_blank" natively.
+             * This prevents the about:blank issue.
              */
 
-            showDocumentOpening(
-              d.label
+
+            /* Show compact loader on current page */
+
+            showDocumentLoading(
+
+              d.label,
+
+              link
+
             );
 
 
             /*
-             * Give browser time to paint overlay.
+             * Send tracking request without waiting.
+             *
+             * Because the original page remains open,
+             * the request can finish in the background.
              */
 
-            await wait(
-              120
+            trackDocument(
+              d.key
             );
-
-
-            /*
-             * 2. Track click.
-             *
-             * Loading screen remains visible for at least
-             * ~750ms so it is clearly readable.
-             */
-
-            const results =
-
-              await Promise.all([
-
-                trackDocument(
-                  d.key
-                ),
-
-                wait(
-                  750
-                )
-
-              ]);
-
-
-            const trackingResult =
-              results[0];
-
-
-            if(
-              trackingResult
-              &&
-              trackingResult.status === "success"
-            ){
-
-              console.log(
-
-                d.label,
-
-                "opens:",
-
-                trackingResult.count
-
-              );
-
-            }
-
-
-            /*
-             * 3. Open actual document in same tab.
-             *
-             * This avoids the broken about:blank experience.
-             */
-
-            window.location.href =
-              url;
 
           }
 
@@ -3026,6 +3150,10 @@ function renderDocs(
 
       }
 
+
+      /* ======================================================
+         COMING SOON
+         ====================================================== */
 
       else{
 
@@ -3152,6 +3280,7 @@ function getDaysRemaining(){
 }
 
 
+
 function updateCountdown(){
 
 
@@ -3230,6 +3359,10 @@ function updateCountdown(){
     }
 
 
+    done.style.display =
+      "inline-flex";
+
+
     done.textContent =
 
       getDaysRemaining() === 0
@@ -3244,6 +3377,16 @@ function updateCountdown(){
 
 
     return;
+
+  }
+
+
+  if(
+    done
+  ){
+
+    done.style.display =
+      "none";
 
   }
 
@@ -3335,6 +3478,7 @@ let lastFocusedEl =
 null;
 
 
+
 function isImageUrl(
   url
 ){
@@ -3344,6 +3488,7 @@ function isImageUrl(
   );
 
 }
+
 
 
 function openPopup(){
@@ -3366,6 +3511,7 @@ function openPopup(){
     );
 
 }
+
 
 
 function closePopup(){
@@ -3407,6 +3553,7 @@ function closePopup(){
   }
 
 }
+
 
 
 function renderPopupContent(
@@ -3454,6 +3601,10 @@ function renderPopupContent(
   ){
 
 
+    frame.src =
+      "";
+
+
     image.onload =
       function(){
 
@@ -3468,6 +3619,16 @@ function renderPopupContent(
       };
 
 
+    image.onerror =
+      function(){
+
+
+        loading.style.display =
+          "none";
+
+      };
+
+
     image.src =
       url;
 
@@ -3475,6 +3636,10 @@ function renderPopupContent(
 
 
   else{
+
+
+    image.src =
+      "";
 
 
     frame.onload =
@@ -3497,6 +3662,7 @@ function renderPopupContent(
   }
 
 }
+
 
 
 async function showGeneralPopup(){
@@ -3580,8 +3746,11 @@ async function showGeneralPopup(){
 
 
     console.warn(
+
       "Announcement unavailable:",
+
       error
+
     );
 
   }
@@ -3599,6 +3768,9 @@ function resetLookupState(){
 
   verifiedLookupValue =
     "";
+
+
+  hideDocumentLoading();
 
 
   const input =
@@ -3622,13 +3794,6 @@ function resetLookupState(){
     );
 
 
-  const downloads =
-
-    document.getElementById(
-      "downloads"
-    );
-
-
   input.value =
     "";
 
@@ -3646,9 +3811,17 @@ function resetLookupState(){
     "";
 
 
-  downloads.classList.remove(
-    "show"
-  );
+  document
+
+    .getElementById(
+      "downloads"
+    )
+
+    .classList
+
+    .remove(
+      "show"
+    );
 
 
   document.getElementById(
@@ -3683,7 +3856,7 @@ function resetLookupState(){
 
 
 /* ============================================================
-   LOOKUP
+   EMPLOYEE LOOKUP
    ============================================================ */
 
 async function searchDoc(
@@ -3827,6 +4000,11 @@ async function searchDoc(
         "Verified. Your pack is ready.";
 
 
+      /*
+       * F4 remains in backend,
+       * but is not displayed on Colombo yet.
+       */
+
       renderDocs({
 
         f1:data.f1,
@@ -3873,7 +4051,7 @@ async function searchDoc(
 
 
       /*
-       * PU remains active.
+       * PU tracking remains active.
        */
 
       if(
@@ -3881,7 +4059,7 @@ async function searchDoc(
       ){
 
 
-        await trackDocument(
+        trackDocument(
           "pu"
         );
 
@@ -3960,7 +4138,7 @@ async function searchDoc(
 
 
 /* ============================================================
-   SUCCESS
+   SUCCESS TOAST
    ============================================================ */
 
 const successMessages = [
@@ -3978,6 +4156,7 @@ const successMessages = [
 
 let toastTimer =
 null;
+
 
 
 function celebrateSuccess(){
@@ -4099,19 +4278,42 @@ window.addEventListener(
 
 
 /*
- * Important:
- * When employee presses Back after viewing a document,
- * remove the loading screen.
+ * If employee returns from a document,
+ * remove the loading message immediately.
  */
+
+window.addEventListener(
+
+  "focus",
+
+  hideDocumentLoading
+
+);
+
 
 window.addEventListener(
 
   "pageshow",
 
+  hideDocumentLoading
+
+);
+
+
+document.addEventListener(
+
+  "visibilitychange",
+
   function(){
 
 
-    hideDocumentOpening();
+    if(
+      document.visibilityState === "visible"
+    ){
+
+      hideDocumentLoading();
+
+    }
 
   }
 
@@ -4121,4 +4323,5 @@ window.addEventListener(
 
 
 </body>
+
 </html>
